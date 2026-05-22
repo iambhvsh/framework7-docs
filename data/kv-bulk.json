@@ -1,18 +1,18 @@
 [
   {
     "key": "knowledge.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"count\": 0, \"docs\": []}"
+    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T13:33:06.925579Z\", \"count\": 0, \"docs\": []}"
   },
   {
     "key": "manifest.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"documentCount\": 0, \"componentCount\": 0, \"coreCount\": 0, \"count\": 0, \"items\": []}"
+    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T13:33:06.925579Z\", \"documentCount\": 0, \"componentCount\": 0, \"coreCount\": 0, \"count\": 0, \"items\": []}"
   },
   {
     "key": "search-index.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"count\": 0, \"items\": []}"
+    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T13:33:06.925579Z\", \"count\": 0, \"items\": []}"
   },
   {
     "key": "metadata.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"documentCount\": 0, \"checksum\": \"584f5015afc410b1089f8dadd626aec060bf99a4d774a89dfcb9c77c7e19acf0\", \"buildId\": \"20260522\", \"sourceFile\": \"D:\\\\Bhavesh\\\\framework7\\\\framework7_react_docs_tsx.json\", \"stats\": {\"documents\": 0, \"categories\": {}, \"total_props\": 0, \"total_events\": 0}, \"checksums\": {\"knowledge_sha256\": \"584f5015afc410b1089f8dadd626aec060bf99a4d774a89dfcb9c77c7e19acf0\"}}"
+    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T13:33:06.925579Z\", \"documentCount\": 0, \"checksum\": \"61edb99888b7d290b88fac674d79a654e7045cdfcf06b4f52fc99ebcb1618a88\", \"buildId\": \"20260522\", \"sourceFile\": \"/home/runner/work/framework7-docs/framework7-docs/framework7_react_docs_tsx.json\", \"stats\": {\"documents\": 0, \"categories\": {}, \"total_props\": 0, \"total_events\": 0}, \"checksums\": {\"knowledge_sha256\": \"61edb99888b7d290b88fac674d79a654e7045cdfcf06b4f52fc99ebcb1618a88\"}}"
   }
 ]
