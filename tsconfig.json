@@ -6,7 +6,8 @@
     "strict": true,
     "lib": ["ES2022", "WebWorker"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"]
 }
