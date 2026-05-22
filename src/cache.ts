@@ -1,7 +1,5 @@
-import type { Env } from "./types";
-
-export function withCORS(req: Request, headers: Headers, env: Env): void {
-  const allowed = env.ALLOWED_ORIGIN || "*";
+export function withCORS(req: Request, headers: Headers): void {
+  const allowed = process.env.ALLOWED_ORIGIN || "*";
   const origin = req.headers.get("Origin") || "";
   const allowOrigin = allowed === "*" ? "*" : origin === allowed ? origin : "";
   if (allowOrigin) headers.set("Access-Control-Allow-Origin", allowOrigin);
@@ -26,7 +24,6 @@ function simpleHash(input: string): string {
 
 export function buildJSONResponse(
   req: Request,
-  env: Env,
   bodyObj: unknown,
   maxAgeSeconds: number,
   status = 200,
@@ -40,7 +37,7 @@ export function buildJSONResponse(
     "X-Content-Type-Options": "nosniff",
   });
 
-  withCORS(req, headers, env);
+  withCORS(req, headers);
 
   const etag = etagOverride || etagFor(body);
   headers.set("ETag", etag);
@@ -56,16 +53,4 @@ export function buildJSONResponse(
 export function sanitizeQuery(q: string | null): string {
   if (!q) return "";
   return q.replace(/[^a-zA-Z0-9_\-:.\s]/g, " ").replace(/\s+/g, " ").trim();
-}
-
-export async function enforceRateLimit(req: Request, env: Env): Promise<boolean> {
-  const max = Number(env.RATE_LIMIT_MAX || "120");
-  const windowSec = Number(env.RATE_LIMIT_WINDOW_SECONDS || "60");
-  const ip = req.headers.get("CF-Connecting-IP") || "anon";
-  const id = env.RATE_LIMITER.idFromName(ip);
-  const stub = env.RATE_LIMITER.get(id);
-  const res = await stub.fetch(`https://rate/check?max=${max}&windowSec=${windowSec}`);
-  if (!res.ok) return false;
-  const body = (await res.json()) as { allowed?: boolean };
-  return !!body.allowed;
 }

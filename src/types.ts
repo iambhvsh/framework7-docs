@@ -60,11 +60,3 @@ export interface KnowledgePayload {
   docs: KnowledgeDoc[];
   generated_at?: string;
 }
-
-export interface Env {
-  DOCS_KV: KVNamespace;
-  RATE_LIMITER: DurableObjectNamespace;
-  ALLOWED_ORIGIN?: string;
-  RATE_LIMIT_MAX?: string;
-  RATE_LIMIT_WINDOW_SECONDS?: string;
-}
