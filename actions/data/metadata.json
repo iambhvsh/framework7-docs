@@ -1,12 +1,12 @@
 {
   "version": "v9",
-  "generatedAt": "2026-05-23T07:02:26.320194+00:00",
-  "documentCount": 0,
-  "checksum": "0debdc2196ea3f4c3eef341a6afa2bbe04f7ecbdaa764464973afa92ec4ab182",
-  "buildId": "2026-05-23T07:02:26.320194+00:00",
+  "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+  "documentCount": 75,
+  "checksum": "478d067ca87834862debde1bfbc3242337a8c9f081a94bdea90ef353cd0170c8",
+  "buildId": "2026-05-23T07:16:01.914822+00:00",
   "stats": {
-    "components": 0,
-    "core": 0,
+    "components": 67,
+    "core": 8,
     "totalProps": 0,
     "totalEvents": 0
   }

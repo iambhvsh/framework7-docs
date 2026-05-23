@@ -1,36 +1,4689 @@
 {
   "manifest": {
     "version": "v9",
-    "generatedAt": "2026-05-23T07:02:26.320194+00:00",
-    "documentCount": 0,
-    "componentCount": 0,
-    "coreCount": 0,
-    "count": 0,
-    "items": []
+    "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+    "documentCount": 75,
+    "componentCount": 67,
+    "coreCount": 8,
+    "count": 75,
+    "items": [
+      {
+        "id": "component:accordion",
+        "slug": "accordion",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "accordion",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:action-sheet",
+        "slug": "action-sheet",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "action-sheet",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:app",
+        "slug": "app",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:area-chart",
+        "slug": "area-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "area-chart",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:autocomplete",
+        "slug": "autocomplete",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "autocomplete",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:badge",
+        "slug": "badge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "badge",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:block",
+        "slug": "block",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "block",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:breadcrumbs",
+        "slug": "breadcrumbs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "breadcrumbs",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:button",
+        "slug": "button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:calendar",
+        "slug": "calendar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "calendar",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:cards",
+        "slug": "cards",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "cards",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:checkbox",
+        "slug": "checkbox",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "checkbox",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:chips",
+        "slug": "chips",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "chips",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:color-picker",
+        "slug": "color-picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "color-picker",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:contacts-list",
+        "slug": "contacts-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "contacts-list",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:data-table",
+        "slug": "data-table",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "data-table",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:dialog",
+        "slug": "dialog",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "dialog",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:floating-action-button",
+        "slug": "floating-action-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "floating-action-button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:form",
+        "slug": "form",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "form",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:gauge",
+        "slug": "gauge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "gauge",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:grid",
+        "slug": "grid",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "grid",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:icon",
+        "slug": "icon",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "icon",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:infinite-scroll",
+        "slug": "infinite-scroll",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "infinite-scroll",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:inputs",
+        "slug": "inputs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "inputs",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:link",
+        "slug": "link",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "link",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:list-button",
+        "slug": "list-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-button",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:list-index",
+        "slug": "list-index",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-index",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:list-item",
+        "slug": "list-item",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-item",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:list-view",
+        "slug": "list-view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-view",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:login-screen",
+        "slug": "login-screen",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "login-screen",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:menu-list",
+        "slug": "menu-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "menu-list",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:messagebar",
+        "slug": "messagebar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messagebar",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:messages",
+        "slug": "messages",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messages",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:navbar",
+        "slug": "navbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navbar",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:notification",
+        "slug": "notification",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "notification",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:page",
+        "slug": "page",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "page",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:panel",
+        "slug": "panel",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "panel",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:photo-browser",
+        "slug": "photo-browser",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "photo-browser",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:picker",
+        "slug": "picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "picker",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:pie-chart",
+        "slug": "pie-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pie-chart",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:popover",
+        "slug": "popover",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popover",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:popup",
+        "slug": "popup",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popup",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:preloader",
+        "slug": "preloader",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "preloader",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:progressbar",
+        "slug": "progressbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "progressbar",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:pull-to-refresh",
+        "slug": "pull-to-refresh",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pull-to-refresh",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:radio",
+        "slug": "radio",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "radio",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:range-slider",
+        "slug": "range-slider",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "range-slider",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:searchbar",
+        "slug": "searchbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "searchbar",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:segmented",
+        "slug": "segmented",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "segmented",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:sheet-modal",
+        "slug": "sheet-modal",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sheet-modal",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:skeleton",
+        "slug": "skeleton",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "skeleton",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:smart-select",
+        "slug": "smart-select",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "smart-select",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:sortable",
+        "slug": "sortable",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sortable",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:stepper",
+        "slug": "stepper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "stepper",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:subnavbar",
+        "slug": "subnavbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "subnavbar",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:swipeout",
+        "slug": "swipeout",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swipeout",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:swiper",
+        "slug": "swiper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swiper",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:tabs",
+        "slug": "tabs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tabs",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:text-editor",
+        "slug": "text-editor",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "text-editor",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:timeline",
+        "slug": "timeline",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "timeline",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:toast",
+        "slug": "toast",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toast",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:toggle",
+        "slug": "toggle",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toggle",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:toolbar-tabbar",
+        "slug": "toolbar-tabbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toolbar-tabbar",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:tooltip",
+        "slug": "tooltip",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tooltip",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:treeview",
+        "slug": "treeview",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "treeview",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "component:view",
+        "slug": "view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "view"
+        ]
+      },
+      {
+        "id": "component:virtual-list",
+        "slug": "virtual-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "virtual-list"
+        ]
+      },
+      {
+        "id": "core:app-layout",
+        "slug": "app-layout",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app-layout",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:colors",
+        "slug": "colors",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "colors",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:init-app",
+        "slug": "init-app",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "init-app",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:introduction",
+        "slug": "introduction",
+        "title": "Introduction",
+        "category": "core",
+        "summary": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to.",
+        "keywords": [
+          "Introduction",
+          "framework7",
+          "introduction",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:navigation-router",
+        "slug": "navigation-router",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navigation-router",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:package",
+        "slug": "package",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "package",
+          "react",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:react-component-extensions",
+        "slug": "react-component-extensions",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "react-component-extensions",
+          "tsx",
+          "typescript"
+        ]
+      },
+      {
+        "id": "core:store",
+        "slug": "store",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "store",
+          "tsx",
+          "typescript"
+        ]
+      }
+    ]
   },
   "searchIndex": {
     "version": "v9",
-    "generatedAt": "2026-05-23T07:02:26.320194+00:00",
-    "count": 0,
-    "items": []
+    "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+    "count": 75,
+    "items": [
+      {
+        "id": "component:accordion",
+        "slug": "accordion",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "accordion",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "accordion",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/accordion.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:action-sheet",
+        "slug": "action-sheet",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "action-sheet",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "actionsheet",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/action-sheet.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:app",
+        "slug": "app",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "app",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/app.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:area-chart",
+        "slug": "area-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "area-chart",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "areachart",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/area-chart.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:autocomplete",
+        "slug": "autocomplete",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "autocomplete",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "autocomplete",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/autocomplete.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:badge",
+        "slug": "badge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "badge",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "badge",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/badge.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:block",
+        "slug": "block",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "block",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "block",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/block.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:breadcrumbs",
+        "slug": "breadcrumbs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "breadcrumbs",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "breadcrumbs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/breadcrumbs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:button",
+        "slug": "button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "button",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:calendar",
+        "slug": "calendar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "calendar",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "calendar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/calendar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:cards",
+        "slug": "cards",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "cards",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "cards",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/cards.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:checkbox",
+        "slug": "checkbox",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "checkbox",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "checkbox",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/checkbox.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:chips",
+        "slug": "chips",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "chips",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "chips",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/chips.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:color-picker",
+        "slug": "color-picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "color-picker",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "colorpicker",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/color-picker.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:contacts-list",
+        "slug": "contacts-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "contacts-list",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "contactslist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/contacts-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:data-table",
+        "slug": "data-table",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "data-table",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "datatable",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/data-table.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:dialog",
+        "slug": "dialog",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "dialog",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "dialog",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/dialog.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:floating-action-button",
+        "slug": "floating-action-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "floating-action-button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "floatingactionbutton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/floating-action-button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:form",
+        "slug": "form",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "form",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "form",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/form.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:gauge",
+        "slug": "gauge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "gauge",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "gauge",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/gauge.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:grid",
+        "slug": "grid",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "grid",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "grid",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/grid.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:icon",
+        "slug": "icon",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "icon",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "icon",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/icon.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:infinite-scroll",
+        "slug": "infinite-scroll",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "infinite-scroll",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "infinitescroll",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/infinite-scroll.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:inputs",
+        "slug": "inputs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "inputs",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "inputs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/inputs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:link",
+        "slug": "link",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "link",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "link",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/link.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:list-button",
+        "slug": "list-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-button",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listbutton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:list-index",
+        "slug": "list-index",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-index",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listindex",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-index.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:list-item",
+        "slug": "list-item",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-item",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listitem",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-item.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:list-view",
+        "slug": "list-view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-view",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listview",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-view.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:login-screen",
+        "slug": "login-screen",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "login-screen",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "loginscreen",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/login-screen.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:menu-list",
+        "slug": "menu-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "menu-list",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "menulist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/menu-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:messagebar",
+        "slug": "messagebar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messagebar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "messagebar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/messagebar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:messages",
+        "slug": "messages",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messages",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "messages",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/messages.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:navbar",
+        "slug": "navbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navbar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "navbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/navbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:notification",
+        "slug": "notification",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "notification",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "notification",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/notification.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:page",
+        "slug": "page",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "page",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "page",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/page.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:panel",
+        "slug": "panel",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "panel",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "panel",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/panel.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:photo-browser",
+        "slug": "photo-browser",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "photo-browser",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "photobrowser",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/photo-browser.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:picker",
+        "slug": "picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "picker",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "picker",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/picker.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:pie-chart",
+        "slug": "pie-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pie-chart",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "piechart",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/pie-chart.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:popover",
+        "slug": "popover",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popover",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "popover",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/popover.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:popup",
+        "slug": "popup",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popup",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "popup",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/popup.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:preloader",
+        "slug": "preloader",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "preloader",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "preloader",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/preloader.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:progressbar",
+        "slug": "progressbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "progressbar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "progressbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/progressbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:pull-to-refresh",
+        "slug": "pull-to-refresh",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pull-to-refresh",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "pulltorefresh",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/pull-to-refresh.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:radio",
+        "slug": "radio",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "radio",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "radio",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/radio.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:range-slider",
+        "slug": "range-slider",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "range-slider",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "rangeslider",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/range-slider.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:searchbar",
+        "slug": "searchbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "searchbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "searchbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/searchbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:segmented",
+        "slug": "segmented",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "segmented",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "segmented",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/segmented.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:sheet-modal",
+        "slug": "sheet-modal",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sheet-modal",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "sheetmodal",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/sheet-modal.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:skeleton",
+        "slug": "skeleton",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "skeleton",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "skeleton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/skeleton.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:smart-select",
+        "slug": "smart-select",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "smart-select",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "smartselect",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/smart-select.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:sortable",
+        "slug": "sortable",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sortable",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "sortable",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/sortable.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:stepper",
+        "slug": "stepper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "stepper",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "stepper",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/stepper.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:subnavbar",
+        "slug": "subnavbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "subnavbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "subnavbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/subnavbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:swipeout",
+        "slug": "swipeout",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swipeout",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "swipeout",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/swipeout.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:swiper",
+        "slug": "swiper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swiper",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "swiper",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/swiper.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:tabs",
+        "slug": "tabs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tabs",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "tabs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/tabs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:text-editor",
+        "slug": "text-editor",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "text-editor",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "texteditor",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/text-editor.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:timeline",
+        "slug": "timeline",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "timeline",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "timeline",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/timeline.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:toast",
+        "slug": "toast",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toast",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toast",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toast.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:toggle",
+        "slug": "toggle",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toggle",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toggle",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toggle.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:toolbar-tabbar",
+        "slug": "toolbar-tabbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toolbar-tabbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toolbartabbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toolbar-tabbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:tooltip",
+        "slug": "tooltip",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tooltip",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "tooltip",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/tooltip.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:treeview",
+        "slug": "treeview",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "treeview",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "treeview",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/treeview.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:view",
+        "slug": "view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "view"
+        ],
+        "aliases": [
+          "view",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/view.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "component:virtual-list",
+        "slug": "virtual-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "virtual-list"
+        ],
+        "aliases": [
+          "virtuallist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/virtual-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:app-layout",
+        "slug": "app-layout",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app-layout",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "applayout",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/app-layout.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:colors",
+        "slug": "colors",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "colors",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "colors",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/colors.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:init-app",
+        "slug": "init-app",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "init-app",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "initapp",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/init-app.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:introduction",
+        "slug": "introduction",
+        "title": "Introduction",
+        "category": "core",
+        "summary": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to.",
+        "keywords": [
+          "Introduction",
+          "framework7",
+          "introduction",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "introduction",
+          "introduction"
+        ],
+        "url": "https://framework7.io/docs/introduction.html",
+        "retrieval_text": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:navigation-router",
+        "slug": "navigation-router",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navigation-router",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "navigationrouter",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/navigation-router.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:package",
+        "slug": "package",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "package",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "package",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/package.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:react-component-extensions",
+        "slug": "react-component-extensions",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "react-component-extensions",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "reactcomponentextensions",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/react-component-extensions.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      },
+      {
+        "id": "core:store",
+        "slug": "store",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "store",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "store",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/store.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      }
+    ]
   },
   "metadata": {
     "version": "v9",
-    "generatedAt": "2026-05-23T07:02:26.320194+00:00",
-    "documentCount": 0,
-    "checksum": "0debdc2196ea3f4c3eef341a6afa2bbe04f7ecbdaa764464973afa92ec4ab182",
-    "buildId": "2026-05-23T07:02:26.320194+00:00",
+    "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+    "documentCount": 75,
+    "checksum": "478d067ca87834862debde1bfbc3242337a8c9f081a94bdea90ef353cd0170c8",
+    "buildId": "2026-05-23T07:16:01.914822+00:00",
     "stats": {
-      "components": 0,
-      "core": 0,
+      "components": 67,
+      "core": 8,
       "totalProps": 0,
       "totalEvents": 0
     }
   },
   "knowledge": {
     "version": "v9",
-    "generatedAt": "2026-05-23T07:02:26.320194+00:00",
-    "count": 0,
-    "docs": []
+    "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+    "count": 75,
+    "docs": [
+      {
+        "id": "component:accordion",
+        "slug": "accordion",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "accordion",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "accordion",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/accordion.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:action-sheet",
+        "slug": "action-sheet",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "action-sheet",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "actionsheet",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/action-sheet.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:app",
+        "slug": "app",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "app",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/app.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:area-chart",
+        "slug": "area-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "area-chart",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "areachart",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/area-chart.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:autocomplete",
+        "slug": "autocomplete",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "autocomplete",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "autocomplete",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/autocomplete.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:badge",
+        "slug": "badge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "badge",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "badge",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/badge.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:block",
+        "slug": "block",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "block",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "block",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/block.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:breadcrumbs",
+        "slug": "breadcrumbs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "breadcrumbs",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "breadcrumbs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/breadcrumbs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:button",
+        "slug": "button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "button",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:calendar",
+        "slug": "calendar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "calendar",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "calendar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/calendar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:cards",
+        "slug": "cards",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "cards",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "cards",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/cards.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:checkbox",
+        "slug": "checkbox",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "checkbox",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "checkbox",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/checkbox.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:chips",
+        "slug": "chips",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "chips",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "chips",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/chips.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:color-picker",
+        "slug": "color-picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "color-picker",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "colorpicker",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/color-picker.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:contacts-list",
+        "slug": "contacts-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "contacts-list",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "contactslist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/contacts-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:data-table",
+        "slug": "data-table",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "data-table",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "datatable",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/data-table.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:dialog",
+        "slug": "dialog",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "dialog",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "dialog",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/dialog.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:floating-action-button",
+        "slug": "floating-action-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "floating-action-button",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "floatingactionbutton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/floating-action-button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:form",
+        "slug": "form",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "form",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "form",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/form.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:gauge",
+        "slug": "gauge",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "gauge",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "gauge",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/gauge.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:grid",
+        "slug": "grid",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "grid",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "grid",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/grid.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:icon",
+        "slug": "icon",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "icon",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "icon",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/icon.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:infinite-scroll",
+        "slug": "infinite-scroll",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "infinite-scroll",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "infinitescroll",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/infinite-scroll.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:inputs",
+        "slug": "inputs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "inputs",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "inputs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/inputs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:link",
+        "slug": "link",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "link",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "link",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/link.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:list-button",
+        "slug": "list-button",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-button",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listbutton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-button.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:list-index",
+        "slug": "list-index",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-index",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listindex",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-index.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:list-item",
+        "slug": "list-item",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-item",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listitem",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-item.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:list-view",
+        "slug": "list-view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "list-view",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "listview",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/list-view.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:login-screen",
+        "slug": "login-screen",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "login-screen",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "loginscreen",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/login-screen.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:menu-list",
+        "slug": "menu-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "menu-list",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "menulist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/menu-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:messagebar",
+        "slug": "messagebar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messagebar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "messagebar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/messagebar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:messages",
+        "slug": "messages",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "messages",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "messages",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/messages.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:navbar",
+        "slug": "navbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navbar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "navbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/navbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:notification",
+        "slug": "notification",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "notification",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "notification",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/notification.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:page",
+        "slug": "page",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "page",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "page",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/page.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:panel",
+        "slug": "panel",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "panel",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "panel",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/panel.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:photo-browser",
+        "slug": "photo-browser",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "photo-browser",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "photobrowser",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/photo-browser.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:picker",
+        "slug": "picker",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "picker",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "picker",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/picker.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:pie-chart",
+        "slug": "pie-chart",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pie-chart",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "piechart",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/pie-chart.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:popover",
+        "slug": "popover",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popover",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "popover",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/popover.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:popup",
+        "slug": "popup",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "popup",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "popup",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/popup.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:preloader",
+        "slug": "preloader",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "preloader",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "preloader",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/preloader.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:progressbar",
+        "slug": "progressbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "progressbar",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "progressbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/progressbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:pull-to-refresh",
+        "slug": "pull-to-refresh",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "pull-to-refresh",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "pulltorefresh",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/pull-to-refresh.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:radio",
+        "slug": "radio",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "radio",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "radio",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/radio.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:range-slider",
+        "slug": "range-slider",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "range-slider",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "rangeslider",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/range-slider.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:searchbar",
+        "slug": "searchbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "searchbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "searchbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/searchbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:segmented",
+        "slug": "segmented",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "segmented",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "segmented",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/segmented.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:sheet-modal",
+        "slug": "sheet-modal",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sheet-modal",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "sheetmodal",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/sheet-modal.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:skeleton",
+        "slug": "skeleton",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "skeleton",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "skeleton",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/skeleton.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:smart-select",
+        "slug": "smart-select",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "smart-select",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "smartselect",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/smart-select.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:sortable",
+        "slug": "sortable",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "sortable",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "sortable",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/sortable.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:stepper",
+        "slug": "stepper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "stepper",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "stepper",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/stepper.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:subnavbar",
+        "slug": "subnavbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "subnavbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "subnavbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/subnavbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:swipeout",
+        "slug": "swipeout",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swipeout",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "swipeout",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/swipeout.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:swiper",
+        "slug": "swiper",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "swiper",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "swiper",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/swiper.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:tabs",
+        "slug": "tabs",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tabs",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "tabs",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/tabs.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:text-editor",
+        "slug": "text-editor",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "text-editor",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "texteditor",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/text-editor.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:timeline",
+        "slug": "timeline",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "timeline",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "timeline",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/timeline.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:toast",
+        "slug": "toast",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toast",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toast",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toast.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:toggle",
+        "slug": "toggle",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toggle",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toggle",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toggle.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:toolbar-tabbar",
+        "slug": "toolbar-tabbar",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "toolbar-tabbar",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "toolbartabbar",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/toolbar-tabbar.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:tooltip",
+        "slug": "tooltip",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tooltip",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "tooltip",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/tooltip.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:treeview",
+        "slug": "treeview",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "treeview",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "treeview",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/treeview.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:view",
+        "slug": "view",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "view"
+        ],
+        "aliases": [
+          "view",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/view.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "component:virtual-list",
+        "slug": "virtual-list",
+        "title": "Framework7.io",
+        "category": "component",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript",
+          "virtual-list"
+        ],
+        "aliases": [
+          "virtuallist",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/virtual-list.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:app-layout",
+        "slug": "app-layout",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "app-layout",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "applayout",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/app-layout.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:colors",
+        "slug": "colors",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "colors",
+          "framework7",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "colors",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/colors.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:init-app",
+        "slug": "init-app",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "init-app",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "initapp",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/init-app.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:introduction",
+        "slug": "introduction",
+        "title": "Introduction",
+        "category": "core",
+        "summary": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to.",
+        "keywords": [
+          "Introduction",
+          "framework7",
+          "introduction",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "introduction",
+          "introduction"
+        ],
+        "url": "https://framework7.io/docs/introduction.html",
+        "retrieval_text": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Introduction } from 'framework7-react';\n\ninterface IntroductionProps {}\n\nconst Example: React.FC = () => (\n  <Introduction />\n);\n\nexport default Example;",
+        "content": "Framework7 - is a free and open source mobile HTML framework to develop hybrid mobile apps or web apps with iOS & Android native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to."
+      },
+      {
+        "id": "core:navigation-router",
+        "slug": "navigation-router",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "navigation-router",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "navigationrouter",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/navigation-router.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:package",
+        "slug": "package",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "package",
+          "react",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "package",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/package.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:react-component-extensions",
+        "slug": "react-component-extensions",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "react-component-extensions",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "reactcomponentextensions",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/react-component-extensions.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      },
+      {
+        "id": "core:store",
+        "slug": "store",
+        "title": "Framework7.io",
+        "category": "core",
+        "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+        "keywords": [
+          "Framework7.io",
+          "framework7",
+          "react",
+          "store",
+          "tsx",
+          "typescript"
+        ],
+        "aliases": [
+          "store",
+          "framework7.io"
+        ],
+        "url": "https://framework7.io/react/store.html",
+        "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:",
+        "props": [],
+        "events": [],
+        "notes": [],
+        "tsx_example": "import React from 'react';\nimport { Framework7.io } from 'framework7-react';\n\ninterface Framework7.ioProps {}\n\nconst Example: React.FC = () => (\n  <Framework7.io />\n);\n\nexport default Example;",
+        "content": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots."
+      }
+    ]
   }
 }
