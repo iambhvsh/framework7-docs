@@ -111,6 +111,28 @@ export default async function handler(req: Request): Promise<Response> {
   const path = url.pathname.replace(/\/+$/, "") || "/";
 
   try {
+    // API Home
+    if (path === "/") {
+      const metadata = await getMetadata();
+
+      return buildJSONResponse(
+        req,
+        {
+          name: "Framework7 React Docs API",
+          version: metadata.version,
+          documents: metadata.documentCount,
+          endpoints: {
+            health: "/health",
+            metadata: "/metadata",
+            manifest: "/manifest",
+            search: "/search?q=button",
+            document: "/knowledge/component:button",
+          },
+        },
+        300,
+      );
+    }
+
     if (path === "/manifest") {
       const manifest = await getManifest();
       return buildJSONResponse(req, manifest, 300);
