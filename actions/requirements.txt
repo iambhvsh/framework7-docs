@@ -1,6 +1,2 @@
-playwright
-trafilatura
-beautifulsoup4
-lxml
-pydantic
+pydantic>=2.0
 python-dotenv
