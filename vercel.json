@@ -1,14 +1,8 @@
 {
   "functions": {
-    "src/index.ts": {
+    "api/index.ts": {
       "memory": 1024,
       "maxDuration": 10
     }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/index.ts"
-    }
-  ]
+  }
 }
