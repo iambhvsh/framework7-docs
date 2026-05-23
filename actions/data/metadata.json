@@ -1,13 +1,13 @@
 {
   "version": "v9",
-  "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+  "generatedAt": "2026-05-23T14:48:14.240518+00:00",
   "documentCount": 75,
-  "checksum": "478d067ca87834862debde1bfbc3242337a8c9f081a94bdea90ef353cd0170c8",
-  "buildId": "2026-05-23T07:16:01.914822+00:00",
+  "checksum": "e9c6269f33236094dbbccba4ac25319a1920e1e0575779a776f3528893ad9226",
+  "buildId": "2026-05-23T14:48:14.240518+00:00",
   "stats": {
     "components": 67,
     "core": 8,
-    "totalProps": 0,
-    "totalEvents": 0
+    "totalProps": 616,
+    "totalEvents": 202
   }
 }

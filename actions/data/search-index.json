@@ -1,58 +1,74 @@
 {
   "version": "v9",
-  "generatedAt": "2026-05-23T07:16:01.914822+00:00",
+  "generatedAt": "2026-05-23T14:48:14.240518+00:00",
   "count": 75,
   "items": [
     {
       "id": "component:accordion",
       "slug": "accordion",
-      "title": "Framework7.io",
+      "title": "Accordion",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Accordion React component represents Framework7's Accordion component.",
       "keywords": [
-        "Framework7.io",
+        "Accordion",
         "accordion",
         "framework7",
+        "opened",
         "react",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "accordion",
-        "framework7.io"
+        "accordion"
       ],
       "url": "https://framework7.io/react/accordion.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Accordion React component represents Framework7's Accordion component.\nProps: opened\nEvents: accordionBeforeOpen, accordionOpen, accordionOpened, accordionBeforeClose, accordionClose, accordionClosed"
     },
     {
       "id": "component:action-sheet",
       "slug": "action-sheet",
-      "title": "Framework7.io",
+      "title": "ActionSheet",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Action Sheet is a slide-up pane for presenting the user with a set of alternatives for how to proceed with a given task. You can also use action sheets to prompt the user to confirm a potentially dangerous action. The action sheet contains an optional title and one or more buttons, each of which corresponds to an action to take.",
       "keywords": [
-        "Framework7.io",
+        "ActionSheet",
         "action-sheet",
+        "animate",
+        "backdrop",
+        "backdropEl",
+        "backdropUnique",
+        "close",
+        "closeByBackdropClick",
+        "closeByOutsideClick",
+        "closeOnEscape",
+        "containerEl",
+        "convertToPopover",
+        "forceToPopover",
         "framework7",
+        "grid",
+        "opened",
         "react",
+        "strong",
+        "target",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "actionsheet",
-        "framework7.io"
+        "actionsheet"
       ],
       "url": "https://framework7.io/react/action-sheet.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Action Sheet is a slide-up pane for presenting the user with a set of alternatives for how to proceed with a given task. You can also use action sheets to prompt the user to confirm a potentially dangerous action. The action sheet contains an optional title and one or more buttons, each of which corresponds to an action to take.\nProps: opened, grid, convertToPopover, forceToPopover, target, backdrop, backdropUnique, backdropEl, closeByBackdropClick, closeByOutsideClick, closeOnEscape, animate, containerEl, strong, close\nEvents: actionsOpen, actionsOpened, actionsClose, actionsClosed"
     },
     {
       "id": "component:app",
       "slug": "app",
-      "title": "Framework7.io",
+      "title": "App",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "App React component is the main Framework7 app component where all the Framework7 core initialization happens and where you pass all main Framework7 parameters.",
       "keywords": [
-        "Framework7.io",
+        "App",
         "app",
         "framework7",
         "react",
@@ -61,40 +77,57 @@
       ],
       "aliases": [
         "app",
-        "framework7.io"
+        "app"
       ],
       "url": "https://framework7.io/react/app.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "App React component is the main Framework7 app component where all the Framework7 core initialization happens and where you pass all main Framework7 parameters.\nProps: \nEvents:"
     },
     {
       "id": "component:area-chart",
       "slug": "area-chart",
-      "title": "Framework7.io",
+      "title": "AreaChart",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with simple Area Chart component. It produces nice looking fully responsive SVG charts.",
       "keywords": [
-        "Framework7.io",
+        "AreaChart",
         "area-chart",
+        "axis",
+        "axisLabels",
+        "datasets",
+        "formatAxisLabel",
+        "formatLegendLabel",
+        "formatTooltip",
+        "formatTooltipAxisLabel",
+        "formatTooltipDataset",
+        "formatTooltipTotal",
         "framework7",
+        "height",
+        "id",
+        "legend",
+        "lineChart",
+        "maxAxisLabels",
         "react",
+        "toggleDatasets",
+        "tooltip",
         "tsx",
-        "typescript"
+        "typescript",
+        "width"
       ],
       "aliases": [
         "areachart",
-        "framework7.io"
+        "areachart"
       ],
       "url": "https://framework7.io/react/area-chart.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with simple Area Chart component. It produces nice looking fully responsive SVG charts.\nProps: id, width, height, datasets, lineChart, axis, axisLabels, tooltip, legend, toggleDatasets, maxAxisLabels, formatAxisLabel, formatLegendLabel, formatTooltip, formatTooltipAxisLabel, formatTooltipTotal, formatTooltipDataset\nEvents: select"
     },
     {
       "id": "component:autocomplete",
       "slug": "autocomplete",
-      "title": "Framework7.io",
+      "title": "Autocomplete",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Autocomplete React component, you need to use core Autocomplete component .",
       "keywords": [
-        "Framework7.io",
+        "Autocomplete",
         "autocomplete",
         "framework7",
         "react",
@@ -103,61 +136,78 @@
       ],
       "aliases": [
         "autocomplete",
-        "framework7.io"
+        "autocomplete"
       ],
       "url": "https://framework7.io/react/autocomplete.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Autocomplete React component, you need to use core Autocomplete component .\nProps: \nEvents:"
     },
     {
       "id": "component:badge",
       "slug": "badge",
-      "title": "Framework7.io",
+      "title": "Badge",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Badge React component represents Badge element that can be used in lists, links, navigation bars, etc.",
       "keywords": [
-        "Framework7.io",
+        "Badge",
         "badge",
         "framework7",
         "react",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "badge",
-        "framework7.io"
+        "badge"
       ],
       "url": "https://framework7.io/react/badge.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Badge React component represents Badge element that can be used in lists, links, navigation bars, etc.\nProps: tooltip, tooltipTrigger\nEvents:"
     },
     {
       "id": "component:block",
       "slug": "block",
-      "title": "Framework7.io",
+      "title": "Block",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Block React component represents Block / Content Block element designed (mostly) to add extra formatting and required spacing for text content.",
       "keywords": [
-        "Framework7.io",
+        "Block",
+        "accordionList",
         "block",
         "framework7",
+        "inset",
+        "large",
+        "largeInset",
+        "medium",
+        "mediumInset",
+        "outline",
         "react",
+        "smallInset",
+        "strong",
+        "tab",
+        "tabActive",
+        "tabs",
         "tsx",
-        "typescript"
+        "typescript",
+        "xlargeInset",
+        "xsmallInset"
       ],
       "aliases": [
         "block",
-        "framework7.io"
+        "block"
       ],
       "url": "https://framework7.io/react/block.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Block React component represents Block / Content Block element designed (mostly) to add extra formatting and required spacing for text content.\nProps: inset, xsmallInset, smallInset, mediumInset, largeInset, xlargeInset, strong, outline, accordionList, tabs, tab, tabActive, medium, large\nEvents:"
     },
     {
       "id": "component:breadcrumbs",
       "slug": "breadcrumbs",
-      "title": "Framework7.io",
+      "title": "Breadcrumbs",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Breadcrumbs React component represents Framework7's Breadcrumbs component.",
       "keywords": [
-        "Framework7.io",
+        "Breadcrumbs",
+        "active",
         "breadcrumbs",
         "framework7",
         "react",
@@ -166,40 +216,72 @@
       ],
       "aliases": [
         "breadcrumbs",
-        "framework7.io"
+        "breadcrumbs"
       ],
       "url": "https://framework7.io/react/breadcrumbs.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Breadcrumbs React component represents Framework7's Breadcrumbs component.\nProps: active\nEvents: click"
     },
     {
       "id": "component:button",
       "slug": "button",
-      "title": "Framework7.io",
+      "title": "Button",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Button React component represents Framework7's Button elements.",
       "keywords": [
-        "Framework7.io",
+        "Button",
+        "active",
         "button",
+        "fill",
+        "fillIos",
+        "fillMd",
         "framework7",
+        "large",
+        "largeIos",
+        "largeMd",
+        "loading",
+        "outline",
+        "outlineIos",
+        "outlineMd",
+        "preloader",
+        "preloaderColor",
+        "preloaderSize",
+        "raised",
+        "raisedIos",
+        "raisedMd",
         "react",
+        "round",
+        "roundIos",
+        "roundMd",
+        "small",
+        "smallIos",
+        "smallMd",
+        "tabLink",
+        "tabLinkActive",
+        "text",
+        "tonal",
+        "tonalIos",
+        "tonalMd",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
+        "type",
         "typescript"
       ],
       "aliases": [
         "button",
-        "framework7.io"
+        "button"
       ],
       "url": "https://framework7.io/react/button.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Button React component represents Framework7's Button elements.\nProps: type, tabLink, tabLinkActive, active, text, tooltip, tooltipTrigger, round, roundIos, roundMd, large, largeIos, largeMd, small, smallIos, smallMd, fill, fillIos, fillMd, tonal, tonalIos, tonalMd, raised, raisedIos, raisedMd, outline, outlineIos, outlineMd, preloader, loading\nEvents: click"
     },
     {
       "id": "component:calendar",
       "slug": "calendar",
-      "title": "Framework7.io",
+      "title": "Calendar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Calendar / Datepicker React component, you need to use core Calendar / Datepicker component .",
       "keywords": [
-        "Framework7.io",
+        "Calendar",
         "calendar",
         "framework7",
         "react",
@@ -208,82 +290,116 @@
       ],
       "aliases": [
         "calendar",
-        "framework7.io"
+        "calendar"
       ],
       "url": "https://framework7.io/react/calendar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Calendar / Datepicker React component, you need to use core Calendar / Datepicker component .\nProps: \nEvents:"
     },
     {
       "id": "component:cards",
       "slug": "cards",
-      "title": "Framework7.io",
+      "title": "Card",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Cards, along with List View, is a one more great way to contain and organize your information. Cards contains unique related data, for example, a photo, text, and link all about a single subject. Cards are typically an entry point to more complex and detailed information.",
       "keywords": [
-        "Framework7.io",
+        "Card",
+        "animate",
+        "backdrop",
+        "backdropEl",
         "cards",
+        "closeByBackdropClick",
+        "content",
+        "expandable",
+        "expandableAnimateWidth",
+        "expandableOpened",
+        "footer",
+        "footerDivider",
         "framework7",
+        "headerDivider",
+        "hideNavbarOnOpen",
+        "hideToolbarOnOpen",
+        "outline",
+        "outlineIos",
+        "outlineMd",
+        "padding",
+        "raised",
         "react",
+        "swipeToClose",
+        "title",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "cards",
-        "framework7.io"
+        "card"
       ],
       "url": "https://framework7.io/react/cards.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Cards, along with List View, is a one more great way to contain and organize your information. Cards contains unique related data, for example, a photo, text, and link all about a single subject. Cards are typically an entry point to more complex and detailed information.\nProps: title, content, footer, padding, outline, outlineIos, outlineMd, raised, headerDivider, footerDivider, expandable, expandableAnimateWidth, expandableOpened, animate, hideNavbarOnOpen, hideToolbarOnOpen, swipeToClose, backdrop, backdropEl, closeByBackdropClick\nEvents: cardBeforeOpen, cardOpen, cardOpened, cardClose, cardClosed"
     },
     {
       "id": "component:checkbox",
       "slug": "checkbox",
-      "title": "Framework7.io",
+      "title": "Checkbox",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Checkbox React component represents Checkbox component.",
       "keywords": [
-        "Framework7.io",
+        "Checkbox",
         "checkbox",
+        "checked",
+        "defaultChecked",
+        "disabled",
         "framework7",
+        "indeterminate",
         "react",
+        "readonly",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "checkbox",
-        "framework7.io"
+        "checkbox"
       ],
       "url": "https://framework7.io/react/checkbox.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Checkbox React component represents Checkbox component.\nProps: checked, defaultChecked, indeterminate, value, disabled, readonly\nEvents: change"
     },
     {
       "id": "component:chips",
       "slug": "chips",
-      "title": "Framework7.io",
+      "title": "Chip",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Chips (Tags) React component represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information",
       "keywords": [
-        "Framework7.io",
+        "Chip",
         "chips",
+        "deleteable",
         "framework7",
+        "media",
+        "mediaBgColor",
+        "mediaTextColor",
+        "outline",
         "react",
+        "text",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "chips",
-        "framework7.io"
+        "chip"
       ],
       "url": "https://framework7.io/react/chips.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Chips (Tags) React component represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information\nProps: text, media, mediaBgColor, mediaTextColor, deleteable, outline, tooltip, tooltipTrigger\nEvents: click, delete"
     },
     {
       "id": "component:color-picker",
       "slug": "color-picker",
-      "title": "Framework7.io",
+      "title": "ColorPicker",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Color Picker React component, you need to use core Color Picker component .",
       "keywords": [
-        "Framework7.io",
+        "ColorPicker",
         "color-picker",
         "framework7",
         "react",
@@ -292,20 +408,21 @@
       ],
       "aliases": [
         "colorpicker",
-        "framework7.io"
+        "colorpicker"
       ],
       "url": "https://framework7.io/react/color-picker.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Color Picker React component, you need to use core Color Picker component .\nProps: \nEvents:"
     },
     {
       "id": "component:contacts-list",
       "slug": "contacts-list",
-      "title": "Framework7.io",
+      "title": "ContactsList",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Contacts List is not a separate component, but just a particular case of using <List> and <ListItem> components.",
       "keywords": [
-        "Framework7.io",
+        "ContactsList",
         "contacts-list",
+        "contactsList",
         "framework7",
         "react",
         "tsx",
@@ -313,19 +430,19 @@
       ],
       "aliases": [
         "contactslist",
-        "framework7.io"
+        "contactslist"
       ],
       "url": "https://framework7.io/react/contacts-list.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Contacts List is not a separate component, but just a particular case of using <List> and <ListItem> components.\nProps: contactsList\nEvents:"
     },
     {
       "id": "component:data-table",
       "slug": "data-table",
-      "title": "Framework7.io",
+      "title": "DataTable",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Data Table React component, you need to use core Data Table component .",
       "keywords": [
-        "Framework7.io",
+        "DataTable",
         "data-table",
         "framework7",
         "react",
@@ -334,19 +451,19 @@
       ],
       "aliases": [
         "datatable",
-        "framework7.io"
+        "datatable"
       ],
       "url": "https://framework7.io/react/data-table.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Data Table React component, you need to use core Data Table component .\nProps: \nEvents:"
     },
     {
       "id": "component:dialog",
       "slug": "dialog",
-      "title": "Framework7.io",
+      "title": "Dialog",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Dialog React component, you need to use core Dialog component .",
       "keywords": [
-        "Framework7.io",
+        "Dialog",
         "dialog",
         "framework7",
         "react",
@@ -355,40 +472,49 @@
       ],
       "aliases": [
         "dialog",
-        "framework7.io"
+        "dialog"
       ],
       "url": "https://framework7.io/react/dialog.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Dialog React component, you need to use core Dialog component .\nProps: \nEvents:"
     },
     {
       "id": "component:floating-action-button",
       "slug": "floating-action-button",
-      "title": "Framework7.io",
+      "title": "FloatingActionButton",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Floating action buttons (FABs) are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.",
       "keywords": [
-        "Framework7.io",
+        "FloatingActionButton",
+        "fabClose",
         "floating-action-button",
         "framework7",
+        "href",
+        "label",
+        "morphTo",
+        "position",
         "react",
+        "target",
+        "text",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "floatingactionbutton",
-        "framework7.io"
+        "floatingactionbutton"
       ],
       "url": "https://framework7.io/react/floating-action-button.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Floating action buttons (FABs) are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.\nProps: href, target, position, morphTo, text, tooltip, tooltipTrigger, fabClose, label\nEvents: click"
     },
     {
       "id": "component:form",
       "slug": "form",
-      "title": "Framework7.io",
+      "title": "FormStorage",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Form Storage React component, you need to use core Form Storage component .",
       "keywords": [
-        "Framework7.io",
+        "FormStorage",
         "form",
         "framework7",
         "react",
@@ -397,40 +523,56 @@
       ],
       "aliases": [
         "form",
-        "framework7.io"
+        "formstorage"
       ],
       "url": "https://framework7.io/react/form.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Form Storage React component, you need to use core Form Storage component .\nProps: \nEvents:"
     },
     {
       "id": "component:gauge",
       "slug": "gauge",
-      "title": "Framework7.io",
+      "title": "Gauge",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with Gauge component. It produces nice looking fully responsive SVG gauges.",
       "keywords": [
-        "Framework7.io",
+        "Gauge",
+        "bgColor",
+        "borderBgColor",
+        "borderColor",
+        "borderWidth",
         "framework7",
         "gauge",
+        "id",
+        "labelFontSize",
+        "labelFontWeight",
+        "labelText",
+        "labelTextColor",
         "react",
+        "size",
         "tsx",
-        "typescript"
+        "type",
+        "typescript",
+        "value",
+        "valueFontSize",
+        "valueFontWeight",
+        "valueText",
+        "valueTextColor"
       ],
       "aliases": [
         "gauge",
-        "framework7.io"
+        "gauge"
       ],
       "url": "https://framework7.io/react/gauge.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with Gauge component. It produces nice looking fully responsive SVG gauges.\nProps: id, type, value, size, bgColor, borderBgColor, borderColor, borderWidth, valueText, valueTextColor, valueFontSize, valueFontWeight, labelText, labelTextColor, labelFontSize, labelFontWeight\nEvents:"
     },
     {
       "id": "component:grid",
       "slug": "grid",
-      "title": "Framework7.io",
+      "title": "Grid",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Grid / Layout Grid React component, you need to use core Grid / Layout Grid component .",
       "keywords": [
-        "Framework7.io",
+        "Grid",
         "framework7",
         "grid",
         "react",
@@ -439,40 +581,47 @@
       ],
       "aliases": [
         "grid",
-        "framework7.io"
+        "grid"
       ],
       "url": "https://framework7.io/react/grid.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Grid / Layout Grid React component, you need to use core Grid / Layout Grid component .\nProps: \nEvents:"
     },
     {
       "id": "component:icon",
       "slug": "icon",
-      "title": "Framework7.io",
+      "title": "Icon",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Icon React component represents Icon element. It is ready to be used with custom icons, Framework7 Icons and Material Icons .",
       "keywords": [
-        "Framework7.io",
+        "Icon",
+        "f7",
         "framework7",
         "icon",
+        "ios",
+        "material",
+        "md",
         "react",
+        "size",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "icon",
-        "framework7.io"
+        "icon"
       ],
       "url": "https://framework7.io/react/icon.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Icon React component represents Icon element. It is ready to be used with custom icons, Framework7 Icons and Material Icons .\nProps: size, icon, f7, material, ios, md, tooltip, tooltipTrigger\nEvents:"
     },
     {
       "id": "component:infinite-scroll",
       "slug": "infinite-scroll",
-      "title": "Framework7.io",
+      "title": "InfiniteScroll",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Infinite Scroll in React components is a part of the Page React Component .",
       "keywords": [
-        "Framework7.io",
+        "InfiniteScroll",
         "framework7",
         "infinite-scroll",
         "react",
@@ -481,166 +630,307 @@
       ],
       "aliases": [
         "infinitescroll",
-        "framework7.io"
+        "infinitescroll"
       ],
       "url": "https://framework7.io/react/infinite-scroll.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Infinite Scroll in React components is a part of the Page React Component .\nProps: \nEvents:"
     },
     {
       "id": "component:inputs",
       "slug": "inputs",
-      "title": "Framework7.io",
+      "title": "Input",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Form elements allow you to create flexible and beautiful Form layout. Form elements are just well known List View ( List and List Item React components ) but with few additional components.",
       "keywords": [
-        "Framework7.io",
+        "Input",
+        "accept",
+        "autocomplete",
+        "autofocus",
+        "autosave",
+        "calendarParams",
+        "checked",
+        "clearButton",
+        "colorPickerParams",
+        "defaultValue",
+        "disabled",
+        "errorMessage",
+        "errorMessageForce",
+        "floatingLabel",
         "framework7",
+        "id",
+        "ignoreStoreData",
+        "info",
+        "input",
+        "inputId",
+        "inputStyle",
+        "inputmode",
         "inputs",
+        "label",
+        "max",
+        "maxlength",
+        "media",
+        "min",
+        "minlength",
+        "multiple",
+        "noStoreData",
+        "onValidate",
+        "outline",
+        "pattern",
+        "placeholder",
         "react",
+        "readonly",
+        "required",
+        "resizable",
+        "size",
+        "step",
+        "tabindex",
+        "textEditorParams",
         "tsx",
-        "typescript"
+        "type",
+        "typescript",
+        "validate",
+        "validateOnBlur",
+        "value",
+        "wrap"
       ],
       "aliases": [
         "inputs",
-        "framework7.io"
+        "input"
       ],
       "url": "https://framework7.io/react/inputs.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Form elements allow you to create flexible and beautiful Form layout. Form elements are just well known List View ( List and List Item React components ) but with few additional components.\nProps: media, label, floatingLabel, outline, input, type, resizable, inputStyle, clearButton, validate, validateOnBlur, onValidate, errorMessage, errorMessageForce, info, placeholder, id, inputId, value, defaultValue, inputmode, size, pattern, accept, autocomplete, autofocus, autosave, disabled, max, min\nEvents: focus, blur, input, change, inputClear, textareaResize, inputEmpty, inputNotEmpty, calendarChange, colorPickerChange, textEditorChange"
     },
     {
       "id": "component:link",
       "slug": "link",
-      "title": "Framework7.io",
+      "title": "Link",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Link is main component to create links for navigation, custom actions, switching tabs, open/close panels, etc.",
       "keywords": [
-        "Framework7.io",
+        "Link",
+        "badge",
+        "badgeColor",
         "framework7",
+        "iconBadge",
+        "iconOnly",
         "link",
+        "noLinkClass",
         "react",
+        "smartSelect",
+        "smartSelectParams",
+        "tabLink",
+        "tabLinkActive",
+        "text",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "link",
-        "framework7.io"
+        "link"
       ],
       "url": "https://framework7.io/react/link.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Link is main component to create links for navigation, custom actions, switching tabs, open/close panels, etc.\nProps: noLinkClass, tabLink, tabLinkActive, text, badge, badgeColor, iconOnly, tooltip, tooltipTrigger, smartSelect, smartSelectParams, iconBadge\nEvents: click"
     },
     {
       "id": "component:list-button",
       "slug": "list-button",
-      "title": "Framework7.io",
+      "title": "ListButton",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "List Button React component represents Framework7's List Button element. They are intended to be used inside of the List React Component .",
       "keywords": [
-        "Framework7.io",
+        "ListButton",
         "framework7",
         "list-button",
         "react",
+        "tabLink",
+        "tabLinkActive",
+        "target",
+        "text",
+        "title",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "listbutton",
-        "framework7.io"
+        "listbutton"
       ],
       "url": "https://framework7.io/react/list-button.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "List Button React component represents Framework7's List Button element. They are intended to be used inside of the List React Component .\nProps: title, text, tabLink, tabLinkActive, target, tooltip, tooltipTrigger\nEvents: click"
     },
     {
       "id": "component:list-index",
       "slug": "list-index",
-      "title": "Framework7.io",
+      "title": "ListIndex",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "List Index React component represents List Index component.",
       "keywords": [
-        "Framework7.io",
+        "ListIndex",
         "framework7",
+        "indexes",
+        "init",
+        "iosItemHeight",
+        "label",
         "list-index",
+        "listEl",
+        "mdItemHeight",
         "react",
+        "scrollList",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "listindex",
-        "framework7.io"
+        "listindex"
       ],
       "url": "https://framework7.io/react/list-index.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "List Index React component represents List Index component.\nProps: init, listEl, indexes, scrollList, label, iosItemHeight, mdItemHeight\nEvents: listIndexSelect"
     },
     {
       "id": "component:list-item",
       "slug": "list-item",
-      "title": "Framework7.io",
+      "title": "ListItem",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 React ListItem component.",
       "keywords": [
-        "Framework7.io",
+        "ListItem",
+        "accordionItem",
+        "accordionItemOpened",
+        "after",
+        "badge",
+        "badgeColor",
+        "checkbox",
+        "checkboxIcon",
+        "checked",
+        "chevronCenter",
+        "defaultChecked",
+        "disabled",
+        "footer",
         "framework7",
+        "groupTitle",
+        "header",
+        "indeterminate",
+        "link",
         "list-item",
+        "media",
+        "mediaItem",
+        "noChevron",
+        "radio",
+        "radioIcon",
         "react",
+        "readonly",
+        "required",
+        "selected",
+        "smartSelect",
+        "smartSelectParams",
+        "sortable",
+        "subtitle",
+        "swipeout",
+        "swipeoutOpened",
+        "tabLink",
+        "tabLinkActive",
+        "target",
+        "text",
+        "title",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
-        "typescript"
+        "typescript",
+        "value",
+        "virtualListIndex"
       ],
       "aliases": [
         "listitem",
-        "framework7.io"
+        "listitem"
       ],
       "url": "https://framework7.io/react/list-item.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 React ListItem component.\nProps: title, subtitle, text, header, footer, media, after, badge, badgeColor, mediaItem, groupTitle, target, noChevron, chevronCenter, tooltip, tooltipTrigger, selected, swipeout, swipeoutOpened, accordionItem, accordionItemOpened, sortable, virtualListIndex, smartSelect, smartSelectParams, checkbox, checkboxIcon, radio, radioIcon, checked\nEvents: click, change, swipeout, swipeoutOpen, swipeoutOpened, swipeoutClose, swipeoutClosed, swipeoutDelete, swipeoutDeleted, accordionBeforeOpen, accordionOpen, accordionOpened, accordionBeforeClose, accordionClose, accordionClosed"
     },
     {
       "id": "component:list-view",
       "slug": "list-view",
-      "title": "Framework7.io",
+      "title": "List",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "List views are versatile and powerful user interface components frequently found in apps. A list view presents data in a scrollable list of multiple rows that may be divided into sections/groups.",
       "keywords": [
-        "Framework7.io",
+        "List",
+        "accordion",
+        "accordionOpposite",
+        "chevronCenter",
+        "contactsList",
+        "dividers",
+        "form",
+        "formStoreData",
         "framework7",
+        "inset",
+        "largeInset",
+        "linksList",
         "list-view",
+        "mediaList",
+        "mediumInset",
+        "menuList",
+        "noChevron",
+        "outline",
         "react",
+        "simpleList",
+        "smallInset",
+        "sortable",
+        "sortableEnabled",
+        "sortableMoveElements",
+        "sortableOpposite",
+        "sortableTapHold",
+        "strong",
+        "tab",
+        "tabActive",
         "tsx",
-        "typescript"
+        "typescript",
+        "virtualList",
+        "virtualListParams",
+        "xlargeInset",
+        "xsmallInset"
       ],
       "aliases": [
         "listview",
-        "framework7.io"
+        "list"
       ],
       "url": "https://framework7.io/react/list-view.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "List views are versatile and powerful user interface components frequently found in apps. A list view presents data in a scrollable list of multiple rows that may be divided into sections/groups.\nProps: inset, xsmallInset, smallInset, mediumInset, largeInset, xlargeInset, strong, outline, dividers, mediaList, linksList, simpleList, sortable, sortableOpposite, sortableTapHold, sortableEnabled, sortableMoveElements, menuList, accordion, accordionOpposite, contactsList, form, formStoreData, noChevron, chevronCenter, tab, tabActive, virtualList, virtualListParams\nEvents: tabShow, tabHide, submit, sortableEnable, sortableDisable, sortableSort, virtualItemBeforeInsert, virtualItemsBeforeInsert, virtualItemsAfterInsert, virtualBeforeClear"
     },
     {
       "id": "component:login-screen",
       "slug": "login-screen",
-      "title": "Framework7.io",
+      "title": "LoginScreen",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Login Screen React component represents Login Screen component.",
       "keywords": [
-        "Framework7.io",
+        "LoginScreen",
+        "animate",
+        "containerEl",
         "framework7",
         "login-screen",
+        "opened",
         "react",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "loginscreen",
-        "framework7.io"
+        "loginscreen"
       ],
       "url": "https://framework7.io/react/login-screen.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Login Screen React component represents Login Screen component.\nProps: opened, animate, containerEl\nEvents: loginScreenOpen, loginScreenOpened, loginScreenClose, loginScreenClosed"
     },
     {
       "id": "component:menu-list",
       "slug": "menu-list",
-      "title": "Framework7.io",
+      "title": "MenuList",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Menu List is not a separate component, but just a particular case of using <List> and <ListItem> components.",
       "keywords": [
-        "Framework7.io",
+        "MenuList",
         "framework7",
         "menu-list",
         "react",
@@ -649,82 +939,131 @@
       ],
       "aliases": [
         "menulist",
-        "framework7.io"
+        "menulist"
       ],
       "url": "https://framework7.io/react/menu-list.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Menu List is not a separate component, but just a particular case of using <List> and <ListItem> components.\nProps: \nEvents:"
     },
     {
       "id": "component:messagebar",
       "slug": "messagebar",
-      "title": "Framework7.io",
+      "title": "Messagebar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Messagebar React component represents Framework7's Messagebar component.",
       "keywords": [
-        "Framework7.io",
+        "Messagebar",
+        "attachmentsVisible",
+        "checked",
+        "deletable",
+        "disabled",
         "framework7",
+        "image",
+        "init",
+        "maxHeight",
         "messagebar",
+        "placeholder",
         "react",
+        "readonly",
+        "resizable",
+        "resizePage",
+        "sendLink",
+        "sheetVisible",
+        "textareaId",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "messagebar",
-        "framework7.io"
+        "messagebar"
       ],
       "url": "https://framework7.io/react/messagebar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Messagebar React component represents Framework7's Messagebar component.\nProps: init, textareaId, placeholder, value, readonly, disabled, sendLink, maxHeight, resizable, sheetVisible, attachmentsVisible, resizePage, image, checked, deletable\nEvents: change, input, focus, blur, submit, attachmentClick, attachmentDelete"
     },
     {
       "id": "component:messages",
       "slug": "messages",
-      "title": "Framework7.io",
+      "title": "MessagesComponent",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Messages React component represents Messages component.",
       "keywords": [
-        "Framework7.io",
+        "MessagesComponent",
+        "avatar",
+        "first",
+        "footer",
         "framework7",
+        "header",
+        "image",
+        "init",
+        "last",
         "messages",
+        "newMessagesFirst",
         "react",
+        "sameAvatar",
+        "sameFooter",
+        "sameHeader",
+        "sameName",
+        "scrollMessages",
+        "scrollMessagesOnEdge",
+        "tail",
+        "text",
+        "textFooter",
+        "textHeader",
         "tsx",
-        "typescript"
+        "type",
+        "typescript",
+        "typing"
       ],
       "aliases": [
         "messages",
-        "framework7.io"
+        "messagescomponent"
       ],
       "url": "https://framework7.io/react/messages.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Messages React component represents Messages component.\nProps: init, newMessagesFirst, scrollMessages, scrollMessagesOnEdge, typing, type, text, avatar, image, header, footer, textHeader, textFooter, first, last, tail, sameName, sameHeader, sameFooter, sameAvatar\nEvents: click, clickName, clickText, clickAvatar, clickHeader, clickFooter, clickBubble"
     },
     {
       "id": "component:navbar",
       "slug": "navbar",
-      "title": "Framework7.io",
+      "title": "Navbar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Navbar is a fixed (with Fixed and Through layout types) area at the top of a screen that contains Page title and navigation elements.",
       "keywords": [
-        "Framework7.io",
+        "Navbar",
+        "backLink",
+        "backLinkForce",
+        "backLinkShowText",
+        "backLinkUrl",
         "framework7",
+        "hidden",
+        "innerClass",
+        "innerClassName",
+        "large",
         "navbar",
+        "outline",
         "react",
+        "sliding",
+        "subtitle",
+        "title",
+        "titleLarge",
+        "transparent",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "navbar",
-        "framework7.io"
+        "navbar"
       ],
       "url": "https://framework7.io/react/navbar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Navbar is a fixed (with Fixed and Through layout types) area at the top of a screen that contains Page title and navigation elements.\nProps: title, subtitle, backLink, backLinkUrl, backLinkForce, backLinkShowText, sliding, outline, hidden, innerClass, innerClassName, large, transparent, titleLarge\nEvents: backClick, navbarHide, navbarShow, navbarCollapse, navbarExpand"
     },
     {
       "id": "component:notification",
       "slug": "notification",
-      "title": "Framework7.io",
+      "title": "Notification",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Notification React component, you need to use core Notification component .",
       "keywords": [
-        "Framework7.io",
+        "Notification",
         "framework7",
         "notification",
         "react",
@@ -733,82 +1072,145 @@
       ],
       "aliases": [
         "notification",
-        "framework7.io"
+        "notification"
       ],
       "url": "https://framework7.io/react/notification.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Notification React component, you need to use core Notification component .\nProps: \nEvents:"
     },
     {
       "id": "component:page",
       "slug": "page",
-      "title": "Framework7.io",
+      "title": "Page",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Page in Framework7 has the same meaning as when you think about web pages. Page is the main component to display and operate content.",
       "keywords": [
-        "Framework7.io",
+        "Page",
         "framework7",
+        "hideBarsOnScroll",
+        "hideNavbarOnScroll",
+        "hideToolbarOnScroll",
+        "infinite",
+        "infiniteDistance",
+        "infinitePreloader",
+        "infiniteTop",
+        "loginScreen",
+        "messagesContent",
+        "noNavbar",
+        "noSwipeback",
+        "noToolbar",
         "page",
+        "pageContent",
+        "ptr",
+        "ptrBottom",
+        "ptrDistance",
+        "ptrMousewheel",
+        "ptrPreloader",
         "react",
+        "tab",
+        "tabActive",
+        "tabs",
         "tsx",
-        "typescript"
+        "typescript",
+        "withSubnavbar"
       ],
       "aliases": [
         "page",
-        "framework7.io"
+        "page"
       ],
       "url": "https://framework7.io/react/page.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Page in Framework7 has the same meaning as when you think about web pages. Page is the main component to display and operate content.\nProps: messagesContent, pageContent, tabs, loginScreen, noSwipeback, withSubnavbar, noNavbar, noToolbar, hideBarsOnScroll, hideNavbarOnScroll, hideToolbarOnScroll, ptr, ptrDistance, ptrPreloader, ptrBottom, ptrMousewheel, infinite, infiniteTop, infiniteDistance, infinitePreloader, tab, tabActive\nEvents: pageMounted, pageInit, pageReinit, pageBeforeIn, pageAfterIn, pageBeforeOut, pageAfterOut, pageBeforeUnmount, pageBeforeRemove, pageTabShow, pageTabHide, ptrPullStart, ptrPullMove, ptrPullEnd, ptrRefresh, ptrDone, infinite, tabShow, tabHide"
     },
     {
       "id": "component:panel",
       "slug": "panel",
-      "title": "Framework7.io",
+      "title": "Panel",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Panel React component represents Side Panels component.",
       "keywords": [
-        "Framework7.io",
+        "Panel",
+        "backdrop",
+        "backdropEl",
+        "closeByBackdropClick",
+        "collapsedBreakpoint",
+        "containerEl",
+        "cover",
+        "effect",
+        "floating",
         "framework7",
+        "left",
+        "opened",
         "panel",
+        "push",
         "react",
+        "resizable",
+        "reveal",
+        "right",
+        "side",
+        "swipe",
+        "swipeActiveArea",
+        "swipeNoFollow",
+        "swipeOnlyClose",
+        "swipeThreshold",
         "tsx",
-        "typescript"
+        "typescript",
+        "visibleBreakpoint"
       ],
       "aliases": [
         "panel",
-        "framework7.io"
+        "panel"
       ],
       "url": "https://framework7.io/react/panel.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Panel React component represents Side Panels component.\nProps: side, left, right, effect, cover, reveal, push, floating, visibleBreakpoint, collapsedBreakpoint, swipe, swipeNoFollow, swipeActiveArea, swipeOnlyClose, swipeThreshold, backdrop, backdropEl, closeByBackdropClick, resizable, containerEl, opened\nEvents: panelOpen, panelOpened, panelClose, panelClosed, panelBackdropClick, panelSwipe, panelSwipeOpen, panelCollapsedBreakpoint, panelBreakpoint"
     },
     {
       "id": "component:photo-browser",
       "slug": "photo-browser",
-      "title": "Framework7.io",
+      "title": "PhotoBrowser",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Photo Browser is an photo browser component to display collection of photos / images. Photos can be zoomed and panned (optional).",
       "keywords": [
-        "Framework7.io",
+        "PhotoBrowser",
+        "closeByBackdropClick",
+        "exposition",
+        "expositionHideCaptions",
         "framework7",
+        "iconsColor",
+        "init",
+        "navbar",
+        "navbarOfText",
+        "navbarShowCount",
+        "pageBackLinkText",
+        "params",
         "photo-browser",
+        "photos",
+        "popupCloseLinkText",
         "react",
+        "routableModals",
+        "swipeToClose",
+        "swiper",
+        "thumbs",
+        "toolbar",
         "tsx",
-        "typescript"
+        "type",
+        "typescript",
+        "url",
+        "virtualSlides"
       ],
       "aliases": [
         "photobrowser",
-        "framework7.io"
+        "photobrowser"
       ],
       "url": "https://framework7.io/react/photo-browser.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Photo Browser is an photo browser component to display collection of photos / images. Photos can be zoomed and panned (optional).\nProps: init, params, photos, thumbs, url, routableModals, swiper, virtualSlides, closeByBackdropClick, exposition, expositionHideCaptions, swipeToClose, type, navbar, toolbar, pageBackLinkText, popupCloseLinkText, navbarShowCount, navbarOfText, iconsColor\nEvents: photoBrowserOpen, photoBrowserOpened, photoBrowserClose, photoBrowserClosed, photoBrowserSwipeToClose"
     },
     {
       "id": "component:picker",
       "slug": "picker",
-      "title": "Framework7.io",
+      "title": "Picker",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Picker React component, you need to use core Picker component .",
       "keywords": [
-        "Framework7.io",
+        "Picker",
         "framework7",
         "picker",
         "react",
@@ -817,104 +1219,136 @@
       ],
       "aliases": [
         "picker",
-        "framework7.io"
+        "picker"
       ],
       "url": "https://framework7.io/react/picker.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Picker React component, you need to use core Picker component .\nProps: \nEvents:"
     },
     {
       "id": "component:pie-chart",
       "slug": "pie-chart",
-      "title": "Framework7.io",
+      "title": "PieChart",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with simple Pie Chart component. It produces nice looking fully responsive SVG charts.",
       "keywords": [
-        "Framework7.io",
+        "PieChart",
+        "datasets",
+        "formatTooltip",
         "framework7",
+        "id",
         "pie-chart",
         "react",
+        "size",
+        "tooltip",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "piechart",
-        "framework7.io"
+        "piechart"
       ],
       "url": "https://framework7.io/react/pie-chart.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with simple Pie Chart component. It produces nice looking fully responsive SVG charts.\nProps: id, size, tooltip, datasets, formatTooltip\nEvents: select"
     },
     {
       "id": "component:popover",
       "slug": "popover",
-      "title": "Framework7.io",
+      "title": "Popover",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Popover component is used to manage the presentation of content in a popover. You use popovers to present information temporarily. The popover remains visible until the user taps outside of the popover window or you explicitly dismiss it.",
       "keywords": [
-        "Framework7.io",
+        "Popover",
+        "animate",
+        "arrow",
+        "backdrop",
+        "backdropEl",
+        "backdropUnique",
+        "closeByBackdropClick",
+        "closeByOutsideClick",
+        "closeOnEscape",
+        "containerEl",
         "framework7",
+        "opened",
         "popover",
         "react",
+        "targetEl",
         "tsx",
-        "typescript"
+        "typescript",
+        "verticalPosition"
       ],
       "aliases": [
         "popover",
-        "framework7.io"
+        "popover"
       ],
       "url": "https://framework7.io/react/popover.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Popover component is used to manage the presentation of content in a popover. You use popovers to present information temporarily. The popover remains visible until the user taps outside of the popover window or you explicitly dismiss it.\nProps: opened, arrow, targetEl, verticalPosition, backdrop, backdropEl, backdropUnique, closeByBackdropClick, closeByOutsideClick, closeOnEscape, animate, containerEl\nEvents: popoverOpen, popoverOpened, popoverClose, popoverClosed"
     },
     {
       "id": "component:popup",
       "slug": "popup",
-      "title": "Framework7.io",
+      "title": "Popup",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Popup is a popup window with any HTML content that pops up over App's main content. Popup as all other overlays is part of so called \"Temporary Views\".",
       "keywords": [
-        "Framework7.io",
+        "Popup",
+        "animate",
+        "backdrop",
+        "backdropEl",
+        "backdropUnique",
+        "closeByBackdropClick",
+        "closeOnEscape",
+        "containerEl",
         "framework7",
+        "opened",
         "popup",
+        "push",
         "react",
+        "swipeHandler",
+        "swipeToClose",
+        "tabletFullscreen",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "popup",
-        "framework7.io"
+        "popup"
       ],
       "url": "https://framework7.io/react/popup.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Popup is a popup window with any HTML content that pops up over App's main content. Popup as all other overlays is part of so called \"Temporary Views\".\nProps: tabletFullscreen, opened, backdrop, backdropEl, backdropUnique, closeByBackdropClick, closeOnEscape, animate, swipeToClose, swipeHandler, push, containerEl\nEvents: popupOpen, popupOpened, popupClose, popupClosed, popupSwipeStart, popupSwipeMove, popupSwipeEnd, popupSwipeClose"
     },
     {
       "id": "component:preloader",
       "slug": "preloader",
-      "title": "Framework7.io",
+      "title": "Preloader",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Preloader / Spinner React component represents Preloader element.",
       "keywords": [
-        "Framework7.io",
+        "Preloader",
         "framework7",
         "preloader",
         "react",
+        "size",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "preloader",
-        "framework7.io"
+        "preloader"
       ],
       "url": "https://framework7.io/react/preloader.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Preloader / Spinner React component represents Preloader element.\nProps: size\nEvents:"
     },
     {
       "id": "component:progressbar",
       "slug": "progressbar",
-      "title": "Framework7.io",
+      "title": "Progressbar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Progressbar React component represents Progressbar element.",
       "keywords": [
-        "Framework7.io",
+        "Progressbar",
         "framework7",
+        "infinite",
+        "progress",
         "progressbar",
         "react",
         "tsx",
@@ -922,19 +1356,19 @@
       ],
       "aliases": [
         "progressbar",
-        "framework7.io"
+        "progressbar"
       ],
       "url": "https://framework7.io/react/progressbar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Progressbar React component represents Progressbar element.\nProps: progress, infinite\nEvents:"
     },
     {
       "id": "component:pull-to-refresh",
       "slug": "pull-to-refresh",
-      "title": "Framework7.io",
+      "title": "PullToRefresh",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Pull To Refresh in React components is a part of the Page React Component .",
       "keywords": [
-        "Framework7.io",
+        "PullToRefresh",
         "framework7",
         "pull-to-refresh",
         "react",
@@ -943,124 +1377,203 @@
       ],
       "aliases": [
         "pulltorefresh",
-        "framework7.io"
+        "pulltorefresh"
       ],
       "url": "https://framework7.io/react/pull-to-refresh.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Pull To Refresh in React components is a part of the Page React Component .\nProps: \nEvents:"
     },
     {
       "id": "component:radio",
       "slug": "radio",
-      "title": "Framework7.io",
+      "title": "Radio",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Radio React component represents Radio component.",
       "keywords": [
-        "Framework7.io",
+        "Radio",
+        "checked",
+        "defaultChecked",
+        "disabled",
         "framework7",
         "radio",
         "react",
+        "readonly",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "radio",
-        "framework7.io"
+        "radio"
       ],
       "url": "https://framework7.io/react/radio.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Radio React component represents Radio component.\nProps: checked, defaultChecked, value, disabled, readonly\nEvents: change"
     },
     {
       "id": "component:range-slider",
       "slug": "range-slider",
-      "title": "Framework7.io",
+      "title": "RangeSlider",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Range Slider React component represents Range Slider component.",
       "keywords": [
-        "Framework7.io",
+        "RangeSlider",
+        "disabled",
+        "draggableBar",
+        "dual",
+        "formatLabel",
+        "formatScaleLabel",
         "framework7",
+        "id",
+        "init",
+        "input",
+        "inputId",
+        "label",
+        "limitKnobPosition",
+        "max",
+        "min",
         "range-slider",
         "react",
+        "scale",
+        "scaleSteps",
+        "scaleSubSteps",
+        "step",
         "tsx",
-        "typescript"
+        "typescript",
+        "value",
+        "vertical",
+        "verticalReversed"
       ],
       "aliases": [
         "rangeslider",
-        "framework7.io"
+        "rangeslider"
       ],
       "url": "https://framework7.io/react/range-slider.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Range Slider React component represents Range Slider component.\nProps: init, value, min, max, step, label, dual, vertical, verticalReversed, draggableBar, formatLabel, scale, scaleSteps, scaleSubSteps, formatScaleLabel, limitKnobPosition, disabled, id, input, inputId\nEvents: rangeChange, rangeChanged"
     },
     {
       "id": "component:searchbar",
       "slug": "searchbar",
-      "title": "Framework7.io",
+      "title": "Searchbar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Searchbar React component represents Framework7's Searchbar component.",
       "keywords": [
-        "Framework7.io",
+        "Searchbar",
+        "backdrop",
+        "backdropEl",
+        "clearButton",
+        "customSearch",
+        "disableButton",
+        "disableButtonText",
+        "expandable",
+        "form",
+        "foundEl",
         "framework7",
+        "hideGroupTitles",
+        "hideGroups",
+        "ignore",
+        "init",
+        "inline",
+        "notFoundEl",
+        "outline",
+        "placeholder",
         "react",
+        "removeDiacritics",
+        "searchContainer",
+        "searchGroup",
+        "searchGroupTitle",
+        "searchIn",
+        "searchItem",
         "searchbar",
+        "spellcheck",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "searchbar",
-        "framework7.io"
+        "searchbar"
       ],
       "url": "https://framework7.io/react/searchbar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Searchbar React component represents Framework7's Searchbar component.\nProps: init, value, form, placeholder, disableButton, disableButtonText, clearButton, expandable, inline, spellcheck, searchContainer, searchIn, searchItem, searchGroup, searchGroupTitle, foundEl, notFoundEl, backdrop, backdropEl, ignore, customSearch, removeDiacritics, hideGroupTitles, hideGroups, outline\nEvents: searchbarSearch, searchbarClear, searchbarEnable, searchbarDisable, change, input, focus, blur, clickClear, clickDisable"
     },
     {
       "id": "component:segmented",
       "slug": "segmented",
-      "title": "Framework7.io",
+      "title": "Segmented",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There are following components included:",
       "keywords": [
-        "Framework7.io",
+        "Segmented",
         "framework7",
+        "raised",
+        "raisedIos",
+        "raisedMd",
         "react",
+        "round",
+        "roundIos",
+        "roundMd",
         "segmented",
+        "strong",
+        "strongIos",
+        "strongMd",
+        "tag",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "segmented",
-        "framework7.io"
+        "segmented"
       ],
       "url": "https://framework7.io/react/segmented.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There are following components included:\nProps: raised, raisedIos, raisedMd, round, roundIos, roundMd, strong, strongIos, strongMd, tag\nEvents:"
     },
     {
       "id": "component:sheet-modal",
       "slug": "sheet-modal",
-      "title": "Framework7.io",
+      "title": "SheetModal",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Sheet Modal is a special overlay type which is similar to Picker/Calendar's overlay. Such modal allows to create custom picker overlays with custom content.",
       "keywords": [
-        "Framework7.io",
+        "SheetModal",
+        "animate",
+        "backdrop",
+        "backdropBreakpoint",
+        "backdropEl",
+        "backdropUnique",
+        "bottom",
+        "breakpoints",
+        "closeByBackdropClick",
+        "closeByOutsideClick",
+        "closeOnEscape",
+        "containerEl",
         "framework7",
+        "opened",
+        "position",
+        "push",
+        "pushBreakpoint",
         "react",
         "sheet-modal",
+        "swipeHandler",
+        "swipeToClose",
+        "swipeToStep",
+        "top",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "sheetmodal",
-        "framework7.io"
+        "sheetmodal"
       ],
       "url": "https://framework7.io/react/sheet-modal.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Sheet Modal is a special overlay type which is similar to Picker/Calendar's overlay. Such modal allows to create custom picker overlays with custom content.\nProps: position, top, bottom, backdrop, backdropEl, backdropUnique, opened, closeByBackdropClick, closeByOutsideClick, closeOnEscape, swipeToClose, swipeToStep, swipeHandler, push, breakpoints, backdropBreakpoint, pushBreakpoint, animate, containerEl\nEvents: sheetOpen, sheetOpened, sheetClose, sheetClosed, sheetStepOpen, sheetStepClose, sheetStepProgress, sheetBreakpoint"
     },
     {
       "id": "component:skeleton",
       "slug": "skeleton",
-      "title": "Framework7.io",
+      "title": "Skeleton",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with Skeleton Elements library (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for improved perceived performance.",
       "keywords": [
-        "Framework7.io",
+        "Skeleton",
         "framework7",
         "react",
         "skeleton",
@@ -1069,40 +1582,42 @@
       ],
       "aliases": [
         "skeleton",
-        "framework7.io"
+        "skeleton"
       ],
       "url": "https://framework7.io/react/skeleton.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with Skeleton Elements library (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for improved perceived performance.\nProps: \nEvents:"
     },
     {
       "id": "component:smart-select",
       "slug": "smart-select",
-      "title": "Framework7.io",
+      "title": "SmartSelect",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Smart Select allows you to easily convert your usual form selects to dynamic pages with grouped radio inputs. You can see such feature in many native apps.",
       "keywords": [
-        "Framework7.io",
+        "SmartSelect",
         "framework7",
         "react",
         "smart-select",
+        "smartSelect",
+        "smartSelectParams",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "smartselect",
-        "framework7.io"
+        "smartselect"
       ],
       "url": "https://framework7.io/react/smart-select.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Smart Select allows you to easily convert your usual form selects to dynamic pages with grouped radio inputs. You can see such feature in many native apps.\nProps: smartSelect, smartSelectParams\nEvents:"
     },
     {
       "id": "component:sortable",
       "slug": "sortable",
-      "title": "Framework7.io",
+      "title": "Sortable",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Sortable is not a separate component, but just a particular case of using <List> and <ListItem> components.",
       "keywords": [
-        "Framework7.io",
+        "Sortable",
         "framework7",
         "react",
         "sortable",
@@ -1111,82 +1626,125 @@
       ],
       "aliases": [
         "sortable",
-        "framework7.io"
+        "sortable"
       ],
       "url": "https://framework7.io/react/sortable.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Sortable is not a separate component, but just a particular case of using <List> and <ListItem> components.\nProps: \nEvents: sortableEnable, sortableDisable, sortableSort, sortableMove"
     },
     {
       "id": "component:stepper",
       "slug": "stepper",
-      "title": "Framework7.io",
+      "title": "Stepper",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Stepper React component represents Stepper component.",
       "keywords": [
-        "Framework7.io",
+        "Stepper",
+        "autorepeat",
+        "autorepeatDynamic",
+        "buttonsEndInputMode",
+        "buttonsOnly",
+        "decimalPoint",
+        "disabled",
+        "fill",
+        "fillIos",
+        "fillMd",
+        "formatValue",
         "framework7",
+        "init",
+        "input",
+        "inputReadonly",
+        "large",
+        "largeIos",
+        "largeMd",
+        "manualInputMode",
+        "max",
+        "min",
+        "raised",
+        "raisedIos",
+        "raisedMd",
         "react",
+        "round",
+        "roundIos",
+        "roundMd",
+        "small",
+        "smallIos",
+        "smallMd",
+        "step",
         "stepper",
         "tsx",
-        "typescript"
+        "typescript",
+        "value",
+        "wraps"
       ],
       "aliases": [
         "stepper",
-        "framework7.io"
+        "stepper"
       ],
       "url": "https://framework7.io/react/stepper.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Stepper React component represents Stepper component.\nProps: init, value, min, max, step, wraps, autorepeat, autorepeatDynamic, input, inputReadonly, buttonsOnly, formatValue, manualInputMode, decimalPoint, buttonsEndInputMode, disabled, round, roundIos, roundMd, large, largeIos, largeMd, small, smallIos, smallMd, fill, fillIos, fillMd, raised, raisedIos\nEvents: stepperChange, stepperMinusClick, stepperPlusClick, input"
     },
     {
       "id": "component:subnavbar",
       "slug": "subnavbar",
-      "title": "Framework7.io",
+      "title": "Subnavbar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Subnavbar is useful when you need to put any additional elements into Navbar, like Tab Links or Search Bar. It also remains visible when Navbar hidden.",
       "keywords": [
-        "Framework7.io",
+        "Subnavbar",
         "framework7",
+        "inner",
         "react",
+        "sliding",
         "subnavbar",
+        "title",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "subnavbar",
-        "framework7.io"
+        "subnavbar"
       ],
       "url": "https://framework7.io/react/subnavbar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Subnavbar is useful when you need to put any additional elements into Navbar, like Tab Links or Search Bar. It also remains visible when Navbar hidden.\nProps: sliding, title, inner\nEvents:"
     },
     {
       "id": "component:swipeout",
       "slug": "swipeout",
-      "title": "Framework7.io",
+      "title": "Swipeout",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Swipeout List is not a separate component, but just a particular case of using <List> , <ListItem swipeout> React components and additional Swipeout components.",
       "keywords": [
-        "Framework7.io",
+        "Swipeout",
+        "close",
+        "confirmText",
+        "confirmTitle",
+        "delete",
         "framework7",
+        "left",
+        "overswipe",
         "react",
+        "right",
+        "side",
         "swipeout",
+        "text",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "swipeout",
-        "framework7.io"
+        "swipeout"
       ],
       "url": "https://framework7.io/react/swipeout.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Swipeout List is not a separate component, but just a particular case of using <List> , <ListItem swipeout> React components and additional Swipeout components.\nProps: side, right, left, delete, close, overswipe, text, confirmText, confirmTitle\nEvents: click, swipeout, swipeoutOpen, swipeoutOpened, swipeoutClose, swipeoutClosed, swipeoutDelete, swipeoutDeleted, swipeoutOverswipeEnter, swipeoutOverswipeExit"
     },
     {
       "id": "component:swiper",
       "slug": "swiper",
-      "title": "Framework7.io",
+      "title": "Swiper",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with powerful and most modern touch slider ever - Swiper Slider with super flexible configuration and lot, lot of features.",
       "keywords": [
-        "Framework7.io",
+        "Swiper",
         "framework7",
         "react",
         "swiper",
@@ -1195,61 +1753,77 @@
       ],
       "aliases": [
         "swiper",
-        "framework7.io"
+        "swiper"
       ],
       "url": "https://framework7.io/react/swiper.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with powerful and most modern touch slider ever - Swiper Slider with super flexible configuration and lot, lot of features.\nProps: \nEvents:"
     },
     {
       "id": "component:tabs",
       "slug": "tabs",
-      "title": "Framework7.io",
+      "title": "Tabs",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Tabs allow to simply switch between different content. Tabs React component represents Tabs component.",
       "keywords": [
-        "Framework7.io",
+        "Tabs",
+        "animated",
         "framework7",
+        "id",
         "react",
+        "routable",
+        "swipeable",
+        "swiperParams",
+        "tabActive",
         "tabs",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "tabs",
-        "framework7.io"
+        "tabs"
       ],
       "url": "https://framework7.io/react/tabs.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Tabs allow to simply switch between different content. Tabs React component represents Tabs component.\nProps: animated, swipeable, routable, swiperParams, tabActive, id\nEvents: tabShow, tabHide"
     },
     {
       "id": "component:text-editor",
       "slug": "text-editor",
-      "title": "Framework7.io",
+      "title": "TextEditor",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Text Editor React component represents Text Editor component.",
       "keywords": [
-        "Framework7.io",
+        "TextEditor",
+        "buttons",
+        "clearFormattingOnPaste",
+        "customButtons",
+        "dividers",
         "framework7",
+        "imageUrlText",
+        "linkUrlText",
+        "mode",
+        "placeholder",
         "react",
+        "resizable",
         "text-editor",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "texteditor",
-        "framework7.io"
+        "texteditor"
       ],
       "url": "https://framework7.io/react/text-editor.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Text Editor React component represents Text Editor component.\nProps: value, placeholder, resizable, mode, buttons, dividers, imageUrlText, linkUrlText, clearFormattingOnPaste, customButtons\nEvents: textEditorChange, textEditorInput, textEditorFocus, textEditorBlur, textEditorButtonClick, textEditorKeyboardOpen, textEditorKeyboardClose, textEditorPopoverOpen, textEditorPopoverClose, textEditorBeforeDestroy"
     },
     {
       "id": "component:timeline",
       "slug": "timeline",
-      "title": "Framework7.io",
+      "title": "Timeline",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Timeline React component, you need to use core Timeline component .",
       "keywords": [
-        "Framework7.io",
+        "Timeline",
         "framework7",
         "react",
         "timeline",
@@ -1258,19 +1832,19 @@
       ],
       "aliases": [
         "timeline",
-        "framework7.io"
+        "timeline"
       ],
       "url": "https://framework7.io/react/timeline.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Timeline React component, you need to use core Timeline component .\nProps: \nEvents:"
     },
     {
       "id": "component:toast",
       "slug": "toast",
-      "title": "Framework7.io",
+      "title": "Toast",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Toast React component, you need to use core Toast component .",
       "keywords": [
-        "Framework7.io",
+        "Toast",
         "framework7",
         "react",
         "toast",
@@ -1279,61 +1853,81 @@
       ],
       "aliases": [
         "toast",
-        "framework7.io"
+        "toast"
       ],
       "url": "https://framework7.io/react/toast.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Toast React component, you need to use core Toast component .\nProps: \nEvents:"
     },
     {
       "id": "component:toggle",
       "slug": "toggle",
-      "title": "Framework7.io",
+      "title": "Toggle",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Toggle React component represents Toggle component.",
       "keywords": [
-        "Framework7.io",
+        "Toggle",
+        "checked",
+        "disabled",
         "framework7",
+        "init",
         "react",
+        "readonly",
         "toggle",
+        "tooltip",
+        "tooltipTrigger",
         "tsx",
-        "typescript"
+        "typescript",
+        "value"
       ],
       "aliases": [
         "toggle",
-        "framework7.io"
+        "toggle"
       ],
       "url": "https://framework7.io/react/toggle.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Toggle React component represents Toggle component.\nProps: init, value, checked, disabled, readonly, tooltip, tooltipTrigger\nEvents: change, toggleChange"
     },
     {
       "id": "component:toolbar-tabbar",
       "slug": "toolbar-tabbar",
-      "title": "Framework7.io",
+      "title": "Toolbar",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Toolbar is a fixed (with Fixed and Through layout types) area at the bottom of a screen that contains navigation elements. Toolbar does not have any parts, just plain links inside",
       "keywords": [
-        "Framework7.io",
+        "Toolbar",
+        "bottom",
+        "bottomIos",
+        "bottomMd",
         "framework7",
+        "hidden",
+        "icons",
+        "inner",
+        "outline",
+        "position",
         "react",
+        "scrollable",
+        "tabbar",
         "toolbar-tabbar",
+        "top",
+        "topIos",
+        "topMd",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "toolbartabbar",
-        "framework7.io"
+        "toolbar"
       ],
       "url": "https://framework7.io/react/toolbar-tabbar.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Toolbar is a fixed (with Fixed and Through layout types) area at the bottom of a screen that contains navigation elements. Toolbar does not have any parts, just plain links inside\nProps: inner, position, top, topIos, topMd, bottom, bottomIos, bottomMd, tabbar, icons, scrollable, outline, hidden\nEvents: toolbarHide, toolbarShow"
     },
     {
       "id": "component:tooltip",
       "slug": "tooltip",
-      "title": "Framework7.io",
+      "title": "Tooltip",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "There is no specific Tooltip React component, you need to use core Tooltip component .",
       "keywords": [
-        "Framework7.io",
+        "Tooltip",
         "framework7",
         "react",
         "tooltip",
@@ -1342,82 +1936,96 @@
       ],
       "aliases": [
         "tooltip",
-        "framework7.io"
+        "tooltip"
       ],
       "url": "https://framework7.io/react/tooltip.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "There is no specific Tooltip React component, you need to use core Tooltip component .\nProps: \nEvents:"
     },
     {
       "id": "component:treeview",
       "slug": "treeview",
-      "title": "Framework7.io",
+      "title": "Treeview",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Treeview React component represents Framework7's Treeview component.",
       "keywords": [
-        "Framework7.io",
+        "Treeview",
         "framework7",
+        "itemToggle",
+        "label",
+        "link",
+        "loadChildren",
+        "opened",
         "react",
+        "selectable",
+        "selected",
+        "toggle",
         "treeview",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "treeview",
-        "framework7.io"
+        "treeview"
       ],
       "url": "https://framework7.io/react/treeview.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Treeview React component represents Framework7's Treeview component.\nProps: toggle, itemToggle, selectable, selected, opened, label, loadChildren, link\nEvents: click, treeviewOpen, treeviewClose, treeviewLoadChildren"
     },
     {
       "id": "component:view",
       "slug": "view",
-      "title": "Framework7.io",
+      "title": "View",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "View - is a separate visual part of app with its own settings, navigation and history. Each view also may have different navbar and toolbar layouts, different styles. So it is some kind of app in app. Such kind of functionality allows you easily manipulate each part of your app.",
       "keywords": [
-        "Framework7.io",
+        "View",
         "framework7",
+        "init",
         "react",
+        "tab",
+        "tabActive",
+        "tabs",
         "tsx",
         "typescript",
         "view"
       ],
       "aliases": [
         "view",
-        "framework7.io"
+        "view"
       ],
       "url": "https://framework7.io/react/view.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "View - is a separate visual part of app with its own settings, navigation and history. Each view also may have different navbar and toolbar layouts, different styles. So it is some kind of app in app. Such kind of functionality allows you easily manipulate each part of your app.\nProps: init, tab, tabActive, tabs\nEvents: viewInit, viewResize, swipeBackMove, swipeBackBeforeChange, swipeBackAfterChange, swipeBackBeforeReset, swipeBackAfterReset, tabShow, tabHide"
     },
     {
       "id": "component:virtual-list",
       "slug": "virtual-list",
-      "title": "Framework7.io",
+      "title": "VirtualList",
       "category": "component",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Virtual List is not a separate React component, but just a particular case of using <List> , <ListItem> React components and special Framework7's Virtual List component.",
       "keywords": [
-        "Framework7.io",
+        "VirtualList",
         "framework7",
         "react",
         "tsx",
         "typescript",
-        "virtual-list"
+        "virtual-list",
+        "virtualList",
+        "virtualListParams"
       ],
       "aliases": [
         "virtuallist",
-        "framework7.io"
+        "virtuallist"
       ],
       "url": "https://framework7.io/react/virtual-list.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Virtual List is not a separate React component, but just a particular case of using <List> , <ListItem> React components and special Framework7's Virtual List component.\nProps: virtualList, virtualListParams\nEvents: virtualItemBeforeInsert, virtualItemsBeforeInsert, virtualItemsAfterInsert, virtualBeforeClear"
     },
     {
       "id": "core:app-layout",
       "slug": "app-layout",
-      "title": "Framework7.io",
+      "title": "AppLayout",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "First thing we should do for our App is to create index.html file with app's skeleton. Framework7 React intended to be used with bundlers like webpack, so the index.html styles and scripts should be auto injected/generated.",
       "keywords": [
-        "Framework7.io",
+        "AppLayout",
         "app-layout",
         "framework7",
         "react",
@@ -1426,40 +2034,47 @@
       ],
       "aliases": [
         "applayout",
-        "framework7.io"
+        "applayout"
       ],
       "url": "https://framework7.io/react/app-layout.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "First thing we should do for our App is to create index.html file with app's skeleton. Framework7 React intended to be used with bundlers like webpack, so the index.html styles and scripts should be auto injected/generated.\nProps: \nEvents:"
     },
     {
       "id": "core:colors",
       "slug": "colors",
-      "title": "Framework7.io",
+      "title": "ColorProperties",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "All Framework7-React components supports same set of color properties that allow to set separate element colors and color themes:",
       "keywords": [
-        "Framework7.io",
+        "ColorProperties",
+        "bgColor",
+        "borderTheme",
+        "color",
+        "colorTheme",
         "colors",
+        "dark",
         "framework7",
         "react",
+        "rippleColor",
+        "textColor",
         "tsx",
         "typescript"
       ],
       "aliases": [
         "colors",
-        "framework7.io"
+        "colorproperties"
       ],
       "url": "https://framework7.io/react/colors.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "All Framework7-React components supports same set of color properties that allow to set separate element colors and color themes:\nProps: color, colorTheme, textColor, bgColor, borderTheme, rippleColor, dark\nEvents:"
     },
     {
       "id": "core:init-app",
       "slug": "init-app",
-      "title": "Framework7.io",
+      "title": "InitializeApp",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "After we have our app layout now we need to mount React components and initialize the app. You can read about all possible Framework7 initialization parameters in appropriate Framework7 App Parameters section.",
       "keywords": [
-        "Framework7.io",
+        "InitializeApp",
         "framework7",
         "init-app",
         "react",
@@ -1468,10 +2083,10 @@
       ],
       "aliases": [
         "initapp",
-        "framework7.io"
+        "initializeapp"
       ],
       "url": "https://framework7.io/react/init-app.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "After we have our app layout now we need to mount React components and initialize the app. You can read about all possible Framework7 initialization parameters in appropriate Framework7 App Parameters section.\nProps: \nEvents:"
     },
     {
       "id": "core:introduction",
@@ -1497,11 +2112,11 @@
     {
       "id": "core:navigation-router",
       "slug": "navigation-router",
-      "title": "Framework7.io",
+      "title": "NavigationRouter",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7-React as Framework7 itself comes with powerful and flexible router. And to make it work we must specify Routes .",
       "keywords": [
-        "Framework7.io",
+        "NavigationRouter",
         "framework7",
         "navigation-router",
         "react",
@@ -1510,19 +2125,19 @@
       ],
       "aliases": [
         "navigationrouter",
-        "framework7.io"
+        "navigationrouter"
       ],
       "url": "https://framework7.io/react/navigation-router.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7-React as Framework7 itself comes with powerful and flexible router. And to make it work we must specify Routes .\nProps: \nEvents:"
     },
     {
       "id": "core:package",
       "slug": "package",
-      "title": "Framework7.io",
+      "title": "Framework7ReactPackageStructure",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 React Framework7ReactPackageStructure component.",
       "keywords": [
-        "Framework7.io",
+        "Framework7ReactPackageStructure",
         "framework7",
         "package",
         "react",
@@ -1531,19 +2146,18 @@
       ],
       "aliases": [
         "package",
-        "framework7.io"
+        "framework7reactpackagestructure"
       ],
       "url": "https://framework7.io/react/package.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 React Framework7ReactPackageStructure component.\nProps: \nEvents:"
     },
     {
       "id": "core:react-component-extensions",
       "slug": "react-component-extensions",
-      "title": "Framework7.io",
+      "title": "",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "After React mounts the app and init Framework7, we will have access to Framework7's initialized instance and some other useful properties that can be imported from framework7-react package.",
       "keywords": [
-        "Framework7.io",
         "framework7",
         "react",
         "react-component-extensions",
@@ -1552,19 +2166,19 @@
       ],
       "aliases": [
         "reactcomponentextensions",
-        "framework7.io"
+        ""
       ],
       "url": "https://framework7.io/react/react-component-extensions.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "After React mounts the app and init Framework7, we will have access to Framework7's initialized instance and some other useful properties that can be imported from framework7-react package.\nProps: \nEvents:"
     },
     {
       "id": "core:store",
       "slug": "store",
-      "title": "Framework7.io",
+      "title": "Store",
       "category": "core",
-      "summary": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.",
+      "summary": "Framework7 comes with a built-in lightweight application state management library - Store. It serves as a centralized Store for all the components in an application.",
       "keywords": [
-        "Framework7.io",
+        "Store",
         "framework7",
         "react",
         "store",
@@ -1573,10 +2187,10 @@
       ],
       "aliases": [
         "store",
-        "framework7.io"
+        "store"
       ],
       "url": "https://framework7.io/react/store.html",
-      "retrieval_text": "framework7.io\nPerforming security verification\nThis website uses a security service to protect against malicious bots.\nProps: \nEvents:"
+      "retrieval_text": "Framework7 comes with a built-in lightweight application state management library - Store. It serves as a centralized Store for all the components in an application.\nProps: \nEvents:"
     }
   ]
 }
