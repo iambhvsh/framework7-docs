@@ -1,18 +1,36 @@
-[
-  {
-    "key": "knowledge.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"count\": 0, \"docs\": []}"
+{
+  "manifest": {
+    "version": "v9",
+    "generatedAt": "2026-05-23T06:35:00.357614+00:00",
+    "documentCount": 0,
+    "componentCount": 0,
+    "coreCount": 0,
+    "count": 0,
+    "items": []
   },
-  {
-    "key": "manifest.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"documentCount\": 0, \"componentCount\": 0, \"coreCount\": 0, \"count\": 0, \"items\": []}"
+  "searchIndex": {
+    "version": "v9",
+    "generatedAt": "2026-05-23T06:35:00.357614+00:00",
+    "count": 0,
+    "items": []
   },
-  {
-    "key": "search-index.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"count\": 0, \"items\": []}"
+  "metadata": {
+    "version": "v9",
+    "generatedAt": "2026-05-23T06:35:00.357614+00:00",
+    "documentCount": 0,
+    "checksum": "d9e5569f4fd7a22e76d0bac9cd383b42c91adabe5dbdd10cc0f83512a32ec629",
+    "buildId": "2026-05-23T06:35:00.357614+00:00",
+    "stats": {
+      "components": 0,
+      "core": 0,
+      "totalProps": 0,
+      "totalEvents": 0
+    }
   },
-  {
-    "key": "metadata.json",
-    "value": "{\"version\": \"v9\", \"generatedAt\": \"2026-05-22T11:48:17.621955Z\", \"documentCount\": 0, \"checksum\": \"584f5015afc410b1089f8dadd626aec060bf99a4d774a89dfcb9c77c7e19acf0\", \"buildId\": \"20260522\", \"sourceFile\": \"D:\\\\Bhavesh\\\\framework7\\\\framework7_react_docs_tsx.json\", \"stats\": {\"documents\": 0, \"categories\": {}, \"total_props\": 0, \"total_events\": 0}, \"checksums\": {\"knowledge_sha256\": \"584f5015afc410b1089f8dadd626aec060bf99a4d774a89dfcb9c77c7e19acf0\"}}"
+  "knowledge": {
+    "version": "v9",
+    "generatedAt": "2026-05-23T06:35:00.357614+00:00",
+    "count": 0,
+    "docs": []
   }
-]
+}
