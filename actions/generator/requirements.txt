@@ -1,4 +1,0 @@
-beautifulsoup4
-lxml
-pydantic>=2
-python-dateutil

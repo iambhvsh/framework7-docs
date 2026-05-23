@@ -1,0 +1,6 @@
+playwright
+trafilatura
+beautifulsoup4
+lxml
+pydantic
+python-dotenv
