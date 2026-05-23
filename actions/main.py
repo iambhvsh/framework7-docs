@@ -27,14 +27,28 @@ from pathlib import Path
 from typing import Optional
 
 from bs4 import BeautifulSoup
-from playwright.async_api import async_playwright
+try:
+    from playwright.async_api import async_playwright
+except Exception:
+    async_playwright = None
 import trafilatura
 from pydantic import BaseModel, field_validator
+from urllib.request import Request, urlopen
 
 # ── env ───────────────────────────────────────────────────────────────────────
 CACHE_DIR   = Path.home() / ".f7_cache"
-OUTPUT_FILE = Path("framework7_react_docs_tsx.json")
+DATA_DIR = Path("actions/data")
 CACHE_DIR.mkdir(exist_ok=True)
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+ARTIFACT_FILES = [
+    "knowledge.json",
+    "manifest.json",
+    "search-index.json",
+    "metadata.json",
+    "kv-bulk.json",
+]
+
 
 # ── URL manifest ─────────────────────────────────────────────────────────────
 URLS = [
@@ -219,9 +233,14 @@ async def fetch_html(url: str, page) -> str:
     ck = CACHE_DIR / (hashlib.md5(url.encode()).hexdigest() + ".html")
     if ck.exists():
         return ck.read_text(encoding="utf-8")
-    await page.goto(url, wait_until="networkidle", timeout=60000)
-    await page.wait_for_timeout(600)
-    html = await page.content()
+    if page is not None:
+        await page.goto(url, wait_until="networkidle", timeout=60000)
+        await page.wait_for_timeout(600)
+        html = await page.content()
+    else:
+        req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urlopen(req, timeout=60) as resp:
+            html = resp.read().decode("utf-8", errors="replace")
     ck.write_text(html, encoding="utf-8")
     await asyncio.sleep(0.4)
     return html
@@ -715,8 +734,111 @@ def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
 # MAIN
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def save(output: dict) -> None:
-    OUTPUT_FILE.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+def to_id(category: str, slug: str) -> str:
+    prefix = "core" if category == "core" else "component"
+    return f"{prefix}:{slug}"
+
+def doc_to_item(slug: str, category: str, doc: dict) -> dict:
+    title = doc.get("component") or "".join(w.capitalize() for w in slug.split("-"))
+    summary = (doc.get("description") or "").strip() or f"Framework7 React {title} documentation."
+    keywords = sorted(set(
+        [slug, title, "framework7", "react", "typescript", "tsx"] +
+        [p.get("name", "") for p in doc.get("props", []) if isinstance(p, dict)]
+    ))
+    return {
+        "id": to_id(category, slug),
+        "slug": slug,
+        "title": title,
+        "category": category,
+        "summary": summary,
+        "keywords": [k for k in keywords if k],
+        "aliases": [slug.replace("-", ""), title.lower()],
+        "url": doc.get("url"),
+        "retrieval_text": "\n".join([
+            summary,
+            f"Props: {', '.join(p.get('name','') for p in doc.get('props', [])[:30] if isinstance(p, dict))}",
+            f"Events: {', '.join(e.get('name','') for e in doc.get('events', [])[:30] if isinstance(e, dict))}",
+        ]).strip(),
+    }
+
+def initialize_artifacts() -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    empty_output = {
+        "meta": {"generated_at": now},
+        "core_docs": {},
+        "components": {},
+    }
+    write_artifacts(empty_output)
+
+
+def write_artifacts(output: dict) -> None:
+    generated_at = output["meta"]["generated_at"]
+    version = "v9"
+    docs = []
+    for bucket, category in (("core_docs", "core"), ("components", "component")):
+        for slug, item in output.get(bucket, {}).items():
+            if not isinstance(item, dict) or "error" in item:
+                continue
+            doc_item = doc_to_item(slug, category, item)
+            docs.append({
+                **doc_item,
+                "props": item.get("props", []),
+                "events": item.get("events", []),
+                "notes": item.get("notes", []),
+                "tsx_example": item.get("tsx_example", ""),
+                "content": "\n".join(filter(None, [
+                    item.get("description", ""),
+                    "Methods: " + ", ".join(item.get("methods", [])) if item.get("methods") else "",
+                    "Slots: " + ", ".join(item.get("slots", [])) if item.get("slots") else "",
+                ])).strip(),
+            })
+    docs.sort(key=lambda d: d["id"])
+    manifest_items = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords")} for d in docs]
+    search_items = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords", "aliases", "url", "retrieval_text")} for d in docs]
+
+    knowledge = {"version": version, "generatedAt": generated_at, "count": len(docs), "docs": docs}
+    manifest = {
+        "version": version,
+        "generatedAt": generated_at,
+        "documentCount": len(docs),
+        "componentCount": sum(1 for d in docs if d["category"] == "component"),
+        "coreCount": sum(1 for d in docs if d["category"] == "core"),
+        "count": len(docs),
+        "items": manifest_items,
+    }
+    search_index = {"version": version, "generatedAt": generated_at, "count": len(search_items), "items": search_items}
+    checksum = hashlib.sha256(json.dumps(knowledge, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
+    metadata = {
+        "version": version,
+        "generatedAt": generated_at,
+        "documentCount": len(docs),
+        "checksum": checksum,
+        "buildId": generated_at,
+        "stats": {
+            "components": manifest["componentCount"],
+            "core": manifest["coreCount"],
+            "totalProps": sum(len(d.get("props", [])) for d in docs),
+            "totalEvents": sum(len(d.get("events", [])) for d in docs),
+        },
+    }
+    kv_bulk = {
+        "manifest": manifest,
+        "searchIndex": search_index,
+        "metadata": metadata,
+        "knowledge": knowledge,
+    }
+    payloads = {
+        "knowledge.json": knowledge,
+        "manifest.json": manifest,
+        "search-index.json": search_index,
+        "metadata.json": metadata,
+        "kv-bulk.json": kv_bulk,
+    }
+    for artifact in ARTIFACT_FILES:
+        (DATA_DIR / artifact).write_text(
+            json.dumps(payloads[artifact], indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
 
 async def main() -> None:
@@ -739,55 +861,65 @@ async def main() -> None:
         "components": {},
     }
 
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(headless=True)
-        ctx = await browser.new_context(
-            user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-            java_script_enabled=True,
-        )
-        # Block binary assets — docs only need HTML
-        await ctx.route(
-            re.compile(r"\.(png|jpg|jpeg|gif|webp|svg|woff2?|ttf|eot|mp4|mp3|ico)(\?.*)?$"),
-            lambda r: r.abort()
-        )
-        page = await ctx.new_page()
+    initialize_artifacts()
 
-        total = len(URLS)
-        for i, (slug, url, category) in enumerate(URLS, 1):
-            bucket = "core_docs" if category == "core" else "components"
-            tag = f"[{i:02d}/{total}]"
+    browser = None
+    page = None
+    try:
+        if async_playwright is None:
+            raise RuntimeError("Playwright is not installed; using urllib fallback")
+        async with async_playwright() as pw:
+            browser = await pw.chromium.launch(headless=True)
+            ctx = await browser.new_context(
+                user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+                java_script_enabled=True,
+            )
+            # Block binary assets — docs only need HTML
+            await ctx.route(
+                re.compile(r"\.(png|jpg|jpeg|gif|webp|svg|woff2?|ttf|eot|mp4|mp3|ico)(\?.*)?$"),
+                lambda r: r.abort()
+            )
+            page = await ctx.new_page()
+    except Exception as e:
+        print(f"Playwright unavailable, falling back to urllib HTML fetch: {e}")
 
-            print(f"{tag} {slug}", end="  ", flush=True)
-            try:
-                html = await fetch_html(url, page)
-                print(f"scraped({len(html)//1024}KB)", end="  ", flush=True)
-            except Exception as e:
-                print(f"SCRAPE FAIL: {e}")
-                output[bucket][slug] = {"error": "scrape_failed", "url": url, "detail": str(e)}
-                continue
+    total = len(URLS)
+    for i, (slug, url, category) in enumerate(URLS, 1):
+        bucket = "core_docs" if category == "core" else "components"
+        tag = f"[{i:02d}/{total}]"
 
-            try:
-                doc = assemble(slug, url, category, html)
-                output[bucket][slug] = doc.model_dump(exclude={"slug", "category"})
-                prop_count  = len(doc.props)
-                event_count = len(doc.events)
-                print(f"props={prop_count} events={event_count}  ✓")
-            except Exception as e:
-                print(f"ASSEMBLE FAIL: {e}")
-                output[bucket][slug] = {"error": "assemble_failed", "url": url, "detail": str(e)}
+        print(f"{tag} {slug}", end="  ", flush=True)
+        try:
+            html = await fetch_html(url, page)
+            print(f"scraped({len(html)//1024}KB)", end="  ", flush=True)
+        except Exception as e:
+            print(f"SCRAPE FAIL: {e}")
+            output[bucket][slug] = {"error": "scrape_failed", "url": url, "detail": str(e)}
+            continue
 
-            if i % 10 == 0:
-                save(output)
-                print(f"  ── checkpoint {i}/{total} saved ──")
+        try:
+            doc = assemble(slug, url, category, html)
+            output[bucket][slug] = doc.model_dump(exclude={"slug", "category"})
+            prop_count  = len(doc.props)
+            event_count = len(doc.events)
+            print(f"props={prop_count} events={event_count}  ✓")
+        except Exception as e:
+            print(f"ASSEMBLE FAIL: {e}")
+            output[bucket][slug] = {"error": "assemble_failed", "url": url, "detail": str(e)}
 
+        if i % 10 == 0:
+            write_artifacts(output)
+            print(f"  ── checkpoint {i}/{total} artifacts updated ──")
+
+    if browser is not None:
         await browser.close()
 
-    save(output)
+    write_artifacts(output)
     core_n  = len(output["core_docs"])
     comp_n  = len(output["components"])
     print(f"\n{'─'*56}")
     print(f"Done.  core={core_n}  components={comp_n}")
-    print(f"Output → {OUTPUT_FILE.resolve()}")
+    print(f"Output → {(DATA_DIR / 'knowledge.json').resolve()}")
 
 
 if __name__ == "__main__":
