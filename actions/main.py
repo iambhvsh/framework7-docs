@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from dotenv import load_dotenv
 load_dotenv()
-import asyncio, hashlib, json, os, re, sys
+import asyncio, hashlib, json, re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -21,11 +21,8 @@ CACHE_DIR.mkdir(exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 ARTIFACT_FILES = [
-    "knowledge.json",
-    "manifest.json",
-    "search-index.json",
-    "metadata.json",
-    "kv-bulk.json",
+    "knowledge.json", "manifest.json", "search-index.json",
+    "metadata.json", "kv-bulk.json",
 ]
 
 URLS = [
@@ -106,15 +103,21 @@ URLS = [
     ("virtual-list",               "https://framework7.io/react/virtual-list.html",               "component"),
 ]
 
+# ── Type validation ───────────────────────────────────────────────────────────
+
 _TS_TYPE_RE = re.compile(
-    r"^([A-Za-z_][A-Za-z0-9_.<>[\], ]*|\([^)]*\)\s*=>\s*[A-Za-z_][A-Za-z0-9_.<>[\], ]*)(\s*(\||&)\s*([A-Za-z_][A-Za-z0-9_.<>[\], ]*|\([^)]*\)\s*=>\s*[A-Za-z_][A-Za-z0-9_.<>[\], ]*))*$"
+    r"^([A-Za-z_][A-Za-z0-9_.<>[\], ]*"
+    r"|\([^)]*\)\s*=>\s*[A-Za-z_][A-Za-z0-9_.<>[\], ]*)"
+    r"(\s*(\||&)\s*"
+    r"([A-Za-z_][A-Za-z0-9_.<>[\], ]*"
+    r"|\([^)]*\)\s*=>\s*[A-Za-z_][A-Za-z0-9_.<>[\], ]*))*$"
 )
 
 def is_valid_ts_type(ts_type: str) -> bool:
     t = (ts_type or "").strip()
-    if not t:
-        return False
-    return _TS_TYPE_RE.match(t) is not None
+    return bool(t and _TS_TYPE_RE.match(t))
+
+# ── Pydantic models ───────────────────────────────────────────────────────────
 
 class Prop(BaseModel):
     name: str
@@ -122,52 +125,50 @@ class Prop(BaseModel):
     default: Optional[str]
     required: bool
     description: str
-    source_text: Optional[str] = None
     source_table_header: Optional[str] = None
     inference_method: str = "table"
     confidence: str = "high"
 
     @field_validator("name")
     @classmethod
-    def name_must_be_identifierish(cls, v: str) -> str:
+    def name_ok(cls, v: str) -> str:
         val = (v or "").strip()
         if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", val):
-            raise ValueError(f"Invalid prop name: {v}")
+            raise ValueError(f"Bad prop name: {v!r}")
         return val
 
     @field_validator("ts_type")
     @classmethod
-    def ts_type_must_be_valid(cls, v: str) -> str:
+    def type_ok(cls, v: str) -> str:
         val = (v or "").strip()
         if not is_valid_ts_type(val):
-            raise ValueError(f"Invalid TypeScript type: {v}")
+            raise ValueError(f"Bad TS type: {v!r}")
         return val
 
     @field_validator("description")
     @classmethod
-    def description_not_empty(cls, v: str) -> str:
+    def desc_ok(cls, v: str) -> str:
         return (v or "").strip() or "No description provided."
 
 class EventEntry(BaseModel):
     name: str
     ts_type: str
     description: str
-    source_text: Optional[str] = None
     source_table_header: Optional[str] = None
     inference_method: str = "table"
     confidence: str = "high"
 
     @field_validator("ts_type")
     @classmethod
-    def event_ts_type_must_be_valid(cls, v: str) -> str:
+    def type_ok(cls, v: str) -> str:
         val = (v or "").strip()
         if not is_valid_ts_type(val):
-            raise ValueError(f"Invalid event TypeScript type: {v}")
+            raise ValueError(f"Bad event TS type: {v!r}")
         return val
 
     @field_validator("description")
     @classmethod
-    def event_description_not_empty(cls, v: str) -> str:
+    def desc_ok(cls, v: str) -> str:
         return (v or "").strip() or "No description provided."
 
 class ComponentDoc(BaseModel):
@@ -187,29 +188,50 @@ class ComponentDoc(BaseModel):
 
     @field_validator("description")
     @classmethod
-    def component_description_not_empty(cls, v: str) -> str:
+    def desc_ok(cls, v: str) -> str:
         val = (v or "").strip()
         if len(val) < 10:
-            raise ValueError("Component description is too short.")
+            raise ValueError("Description too short.")
         return val
 
+# ── Fetch (Playwright-only, no urllib fallback for CF-protected site) ─────────
+
+MIN_USEFUL_HTML = 50_000  # bytes — shell-only pages are ~21 bytes or ~30KB
+
+def cache_key(url: str) -> Path:
+    return CACHE_DIR / (hashlib.md5(url.encode()).hexdigest() + ".html")
+
+def cache_valid(path: Path) -> bool:
+    if not path.exists():
+        return False
+    content = path.read_text(encoding="utf-8", errors="replace")
+    # Reject stale shells: must contain a <table and a <td to be a real page
+    return len(content) >= MIN_USEFUL_HTML and "<table" in content and "<td" in content
+
 async def fetch_html(url: str, page) -> str:
-    ck = CACHE_DIR / (hashlib.md5(url.encode()).hexdigest() + ".html")
-    if ck.exists():
+    ck = cache_key(url)
+    if cache_valid(ck):
         return ck.read_text(encoding="utf-8")
-    if page is not None:
-        await page.goto(url, wait_until="networkidle", timeout=60000)
-        await page.wait_for_timeout(600)
-        html = await page.content()
-    else:
-        req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urlopen(req, timeout=60) as resp:
-            html = resp.read().decode("utf-8", errors="replace")
+
+    if page is None:
+        raise RuntimeError("Playwright required (site blocks plain HTTP)")
+
+    await page.goto(url, wait_until="networkidle", timeout=60_000)
+    # Wait until at least one <table> with <td> cells is in the DOM
+    try:
+        await page.wait_for_selector("table td", timeout=15_000)
+    except Exception:
+        pass  # page may genuinely have no tables (intro pages)
+    await page.wait_for_timeout(500)
+
+    html = await page.content()
     ck.write_text(html, encoding="utf-8")
-    await asyncio.sleep(0.4)
+    await asyncio.sleep(0.3)
     return html
 
-_TYPE_MAP = {
+# ── Type normalisation ────────────────────────────────────────────────────────
+
+_TYPE_MAP: dict[str, str] = {
     "boolean": "boolean", "bool": "boolean",
     "string": "string", "str": "string",
     "number": "number", "integer": "number", "int": "number", "float": "number",
@@ -223,116 +245,160 @@ _TYPE_MAP = {
     "": "unknown",
 }
 
+# Known two-word type phrases the docs write as "string boolean" (space-separated union)
+_SPACE_UNION_RE = re.compile(
+    r"^(string|number|boolean|object|array|function|any|unknown)"
+    r"(\s+(string|number|boolean|object|array|function|any|unknown))+$"
+)
+
 def normalise_type(raw: str) -> str:
     if not raw:
         return "unknown"
-    clean = raw.strip().lower()
+    stripped = raw.strip()
+
+    # Framework7 docs write "string   boolean" (multi-space) for unions — handle first
+    normalised_spaces = re.sub(r"\s{2,}", "  ", stripped)  # collapse to double-space sentinel
+    if "  " in normalised_spaces:
+        parts = [normalise_type(p.strip()) for p in re.split(r"\s{2,}", stripped) if p.strip()]
+        parts = list(dict.fromkeys(p for p in parts if p))
+        return " | ".join(parts) if parts else "unknown"
+
+    clean = stripped.lower()
     clean = re.sub(r"\b(function|func)\s*\([^)]*\)", "function", clean)
     if clean.startswith("function(") or clean.startswith("func("):
         return "() => void"
-    clean = clean.replace(";", " ").replace(",", " | ").replace("/", " | ")
+
+    # Pipe/slash/comma/semicolon unions
+    if any(c in clean for c in ("|", "/", ",")):
+        sep = "|" if "|" in clean else ("/" if "/" in clean else ",")
+        parts = [normalise_type(p.strip()) for p in clean.split(sep)]
+        parts = list(dict.fromkeys(p for p in parts if p))
+        return " | ".join(parts) if parts else "unknown"
+
     clean = re.sub(r"\bor\b", "|", clean)
-    clean = re.sub(r"\s+", " ", clean).strip()
     if "|" in clean:
         parts = [normalise_type(p.strip()) for p in clean.split("|")]
-        seen, uniq = set(), []
-        for p in parts:
-            if p and p not in seen:
-                seen.add(p)
-                uniq.append(p)
-        return " | ".join(uniq) if uniq else "unknown"
-    if " " in clean:
-        parts = [p for p in re.split(r"\s+", clean) if p]
-        if len(parts) > 1:
-            mapped = [m for m in (normalise_type(p) for p in parts) if m]
-            return " | ".join(mapped) if mapped else "unknown"
+        parts = list(dict.fromkeys(p for p in parts if p))
+        return " | ".join(parts) if parts else "unknown"
+
     if clean.endswith("[]"):
         return normalise_type(clean[:-2]) + "[]"
     if clean.startswith("array of "):
-        return normalise_type(clean.replace("array of ", "", 1)) + "[]"
-    return _TYPE_MAP.get(clean, raw.strip())
+        return normalise_type(clean[len("array of "):]) + "[]"
 
-def split_prop_names(name: str) -> list[str]:
-    n = (name or "").strip().rstrip("*").strip()
-    if not n:
-        return []
-    if re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", n):
-        return [n]
-    parts = [p for p in re.split(r"\s+", n) if p]
-    if len(parts) > 1 and all(re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", p) for p in parts):
-        return parts
-    return []
+    # Single-word space union (e.g. "string boolean" — rare but present)
+    if " " in clean and _SPACE_UNION_RE.match(clean):
+        parts = list(dict.fromkeys(normalise_type(p) for p in clean.split()))
+        return " | ".join(parts)
+
+    return _TYPE_MAP.get(clean, stripped)
+
+# ── Table parsing ─────────────────────────────────────────────────────────────
+
+def _is_section_header_row(tr) -> bool:
+    """Detect rows like <tr><th colspan="4">&lt;Button&gt; properties</th></tr>."""
+    tds = tr.find_all(["th", "td"])
+    if len(tds) == 1 and tds[0].get("colspan"):
+        return True
+    # Also catches rows where ALL cells are <th> and the first looks like a section label
+    if all(td.name == "th" for td in tds):
+        first = tds[0].get_text(strip=True)
+        if first.startswith("<") or "properties" in first.lower() or "events" in first.lower():
+            return True
+    return False
 
 def parse_prop_tables(soup: BeautifulSoup) -> tuple[list[dict], list[dict]]:
     props: list[dict] = []
     events: list[dict] = []
 
     for table in soup.find_all("table"):
-        headers = [th.get_text(strip=True).lower() for th in table.find_all("th")]
-        if not headers:
-            first_tr = table.find("tr")
-            if first_tr:
-                headers = [td.get_text(strip=True).lower() for td in first_tr.find_all(["td", "th"])]
+        # ── Detect column layout from <thead> or first non-section-header <tr> ──
+        thead = table.find("thead")
+        header_row = None
+        if thead:
+            header_row = thead.find("tr")
+        if not header_row:
+            for tr in table.find_all("tr"):
+                if not _is_section_header_row(tr):
+                    header_row = tr
+                    break
+        if not header_row:
+            continue
 
-        col = {}
+        headers = [th.get_text(strip=True).lower() for th in header_row.find_all(["th", "td"])]
+        col: dict[str, int] = {}
         for i, h in enumerate(headers):
-            h_norm = h.strip().lower()
-            if h_norm.startswith("<") and h_norm.endswith(">"):
-                continue
-            if re.search(r"\b(prop|name|parameter|event)\b", h_norm) and "name" not in col:
+            if re.search(r"\b(prop|name|parameter|event)\b", h) and "name" not in col:
                 col["name"] = i
-            elif "type" in h_norm and "type" not in col:
+            elif "type" in h and "type" not in col:
                 col["type"] = i
-            elif "default" in h_norm and "default" not in col:
+            elif "default" in h and "default" not in col:
                 col["default"] = i
-            elif ("description" in h_norm or "desc" in h_norm) and "description" not in col:
+            elif ("description" in h or "desc" in h) and "description" not in col:
                 col["description"] = i
 
         if "name" not in col:
             continue
 
-        is_event = any("event" in h or "callback" in h for h in headers)
+        is_event_table = any("event" in h or "callback" in h for h in headers)
         table_header = " | ".join(headers)
 
-        for tr in table.find_all("tr")[1:]:
-            cells = [td.get_text(" ", strip=True) for td in tr.find_all("td")]
+        for tr in table.find_all("tr"):
+            if _is_section_header_row(tr):
+                # Check if this section header changes event/prop context
+                label = tr.get_text(strip=True).lower()
+                if "event" in label:
+                    is_event_table = True
+                elif "propert" in label:
+                    is_event_table = False
+                continue
+
+            cells = tr.find_all("td")
             if not cells or len(cells) < 2:
                 continue
 
             def cell(key: str) -> str:
                 idx = col.get(key)
-                return cells[idx].strip() if idx is not None and idx < len(cells) else ""
+                if idx is None or idx >= len(cells):
+                    return ""
+                return cells[idx].get_text(" ", strip=True).strip()
 
-            name = cell("name")
-            if not name or name.lower() in ("prop", "name", "parameter"):
+            raw_name = cell("name")
+            if not raw_name or raw_name.lower() in ("prop", "name", "parameter", "event"):
                 continue
+
+            # Split merged names like "ptr ptrDistance ptrPreloader"
+            clean_name = raw_name.rstrip("*").strip()
+            name_parts = [clean_name]
+            if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", clean_name):
+                candidates = re.split(r"\s+", clean_name)
+                if all(re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", p) for p in candidates if p):
+                    name_parts = [p for p in candidates if p]
 
             raw_type = cell("type")
-            ts_type  = normalise_type(raw_type)
-            default  = cell("default") or None
+            ts_type   = normalise_type(raw_type)
+            default   = cell("default") or None
             if default in ("-", "—", "undefined", "null", ""):
                 default = None
-            desc = cell("description")
-            required = name.endswith("*") or "required" in desc.lower()
-            names = split_prop_names(name)
-            if not names:
-                continue
+            desc      = cell("description")
+            required  = raw_name.endswith("*") or "required" in desc.lower()
 
-            for one_name in names:
+            for name in name_parts:
+                if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", name):
+                    continue
                 entry = {
-                    "name": one_name,
+                    "name": name,
                     "ts_type": ts_type,
                     "raw_type": raw_type,
                     "default": default,
                     "required": required,
                     "description": desc,
-                    "source_text": " | ".join(cells),
                     "source_table_header": table_header,
                     "inference_method": "table",
                     "confidence": "high",
                 }
-                if is_event:
-                    entry["ts_type"] = infer_event_type(one_name, raw_type)
+                if is_event_table:
+                    entry["ts_type"] = infer_event_type(name, raw_type)
                     entry["inference_method"] = "event_name_inference"
                     entry["confidence"] = "medium"
                     events.append(entry)
@@ -343,17 +409,15 @@ def parse_prop_tables(soup: BeautifulSoup) -> tuple[list[dict], list[dict]]:
 
 def infer_event_type(name: str, raw_type: str) -> str:
     n = name.lower()
-    if n in ("onclick", "ontap"):
-        return "(e: React.MouseEvent) => void"
-    if n == "onchange":
-        return "(value: unknown) => void"
+    if n in ("onclick", "ontap"):        return "(e: React.MouseEvent) => void"
+    if n == "onchange":                  return "(value: unknown) => void"
     if n in ("oninput", "onkeydown", "onkeyup", "onkeypress"):
-        return "(e: React.KeyboardEvent) => void"
-    if n in ("onfocus", "onblur"):
-        return "(e: React.FocusEvent) => void"
-    if n == "onsubmit":
-        return "(e: React.FormEvent) => void"
+                                         return "(e: React.KeyboardEvent) => void"
+    if n in ("onfocus", "onblur"):       return "(e: React.FocusEvent) => void"
+    if n == "onsubmit":                  return "(e: React.FormEvent) => void"
     return "() => void"
+
+# ── Page extraction helpers ───────────────────────────────────────────────────
 
 def extract_description(soup: BeautifulSoup) -> str:
     h1 = soup.find("h1")
@@ -363,48 +427,40 @@ def extract_description(soup: BeautifulSoup) -> str:
             if nxt.name == "p":
                 txt = nxt.get_text(" ", strip=True)
                 if len(txt) > 20:
-                    return txt[:300]
+                    return txt[:400]
             if nxt.name in ("h2", "table"):
                 break
             nxt = nxt.find_next_sibling()
     text = trafilatura.extract(str(soup), include_tables=False) or ""
     for s in re.split(r"(?<=[.!?])\s+", text)[:5]:
         if len(s) > 30:
-            return s[:300]
+            return s[:400]
     return ""
 
 def extract_component_name(soup: BeautifulSoup, slug: str) -> str:
     h1 = soup.find("h1")
     if h1:
         txt = h1.get_text(strip=True)
-        name = re.split(r"\s*/\s*|\s+component", txt, flags=re.I)[0].strip()
+        name = re.split(r"\s*/\s*|\s+(?:react\s+)?component", txt, flags=re.I)[0].strip()
         name = "".join(w.capitalize() for w in re.split(r"[\s\-_]+", name))
         if name:
             return name
     return "".join(w.capitalize() for w in slug.split("-"))
 
 def extract_code_examples(soup: BeautifulSoup) -> list[str]:
-    blocks = []
-    for pre in soup.find_all("pre"):
-        code = pre.find("code") or pre
-        txt = code.get_text()
-        if len(txt) > 30:
-            blocks.append(txt)
-    return blocks
+    return [
+        (pre.find("code") or pre).get_text()
+        for pre in soup.find_all("pre")
+        if len((pre.find("code") or pre).get_text()) > 30
+    ]
 
 def extract_structured_sections(soup: BeautifulSoup) -> dict:
-    out = {"methods": [], "slots": [], "examples": [], "notes": []}
+    out: dict[str, list[str]] = {"methods": [], "slots": [], "examples": [], "notes": []}
+    bucket_map = {"method": "methods", "slot": "slots", "example": "examples",
+                  "note": "notes", "tip": "notes", "warning": "notes"}
     for heading in soup.find_all(["h2", "h3"]):
         title = heading.get_text(" ", strip=True).lower()
-        bucket = None
-        if "method" in title:
-            bucket = "methods"
-        elif "slot" in title:
-            bucket = "slots"
-        elif "example" in title:
-            bucket = "examples"
-        elif "note" in title or "tip" in title or "warning" in title:
-            bucket = "notes"
+        bucket = next((v for k, v in bucket_map.items() if k in title), None)
         if not bucket:
             continue
         node = heading.find_next_sibling()
@@ -419,11 +475,9 @@ def extract_structured_sections(soup: BeautifulSoup) -> dict:
                 if 10 < len(txt) < 260:
                     out[bucket].append(txt)
             node = node.find_next_sibling()
-    for k, v in out.items():
-        out[k] = list(dict.fromkeys(v))[:12]
-    return out
+    return {k: list(dict.fromkeys(v))[:12] for k, v in out.items()}
 
-def dedupe_entries(entries: list[dict]) -> list[dict]:
+def dedupe(entries: list[dict]) -> list[dict]:
     by_name: dict[str, dict] = {}
     order: list[str] = []
     for e in entries:
@@ -435,16 +489,17 @@ def dedupe_entries(entries: list[dict]) -> list[dict]:
             order.append(name)
             continue
         cur = by_name[name]
-        if len((e.get("description") or "")) > len((cur.get("description") or "")):
+        if len(e.get("description") or "") > len(cur.get("description") or ""):
             cur["description"] = e["description"]
-        if cur.get("default") in (None, "") and e.get("default") not in (None, ""):
+        if not cur.get("default") and e.get("default"):
             cur["default"] = e["default"]
-        if (cur.get("ts_type") or "").strip().lower() == "unknown" and (e.get("ts_type") or "").strip():
+        if (cur.get("ts_type") or "").lower() == "unknown" and (e.get("ts_type") or ""):
             cur["ts_type"] = e["ts_type"]
-        by_name[name] = cur
     return [by_name[n] for n in order]
 
-_JSX_ONLY_PATTERNS = [
+# ── JSX → TSX transforms ──────────────────────────────────────────────────────
+
+_STRIP_PATTERNS = [
     (r"[A-Za-z]+\.propTypes\s*=\s*\{[^}]*\}", ""),
     (r"[A-Za-z]+\.defaultProps\s*=\s*\{[^}]*\}", ""),
     (r"React\.createClass\(", "React.Component("),
@@ -453,7 +508,7 @@ _JSX_ONLY_PATTERNS = [
 def jsx_to_tsx(code: str, component_name: str, props: list[dict]) -> str:
     if not code or len(code) < 10:
         return code
-    for pat, repl in _JSX_ONLY_PATTERNS:
+    for pat, repl in _STRIP_PATTERNS:
         code = re.sub(pat, repl, code, flags=re.DOTALL)
     code = re.sub(
         rf"(const\s+{component_name})\s*=\s*\((.*?)\)\s*=>",
@@ -466,25 +521,25 @@ def jsx_to_tsx(code: str, component_name: str, props: list[dict]) -> str:
         code, flags=re.DOTALL
     )
     if props and f"interface {component_name}Props" not in code:
-        prop_lines = []
-        for p in props[:12]:
-            opt = "" if p.get("required") else "?"
-            prop_lines.append(f"  {p['name']}{opt}: {p['ts_type']};")
-        interface = f"interface {component_name}Props {{\n" + "\n".join(prop_lines) + "\n}\n\n"
-        code = interface + code
+        lines = [
+            f"  {p['name']}{'?' if not p.get('required') else ''}: {p['ts_type']};"
+            for p in props[:15]
+        ]
+        code = f"interface {component_name}Props {{\n" + "\n".join(lines) + "\n}\n\n" + code
     if "import React" not in code and "from 'react'" not in code:
         code = "import React from 'react';\n" + code
     code = code.replace(".jsx", ".tsx")
     code = re.sub(r"useState\(\)", "useState<unknown>()", code)
     code = re.sub(r"useState\(null\)", "useState<unknown>(null)", code)
-    code = re.sub(r"\n{3,}", "\n\n", code).strip()
-    return code
+    return re.sub(r"\n{3,}", "\n\n", code).strip()
 
 def build_import_statement(component_name: str, slug: str) -> str:
     names = {component_name}
     for p in slug.replace("-", " ").title().split():
         names.add(p)
     return f"import {{ {', '.join(sorted(names))} }} from 'framework7-react';"
+
+# ── Assembly ──────────────────────────────────────────────────────────────────
 
 def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
     soup = BeautifulSoup(html, "lxml")
@@ -494,47 +549,47 @@ def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
     code_blocks = extract_code_examples(soup)
     sections    = extract_structured_sections(soup)
 
-    props_raw  = dedupe_entries(props_raw)
-    events_raw = dedupe_entries(events_raw)
+    props_raw  = dedupe(props_raw)
+    events_raw = dedupe(events_raw)
 
-    best_code = ""
-    for block in code_blocks:
-        if component in block or slug.replace("-", "") in block.lower():
-            best_code = block
-            break
-    if not best_code and code_blocks:
-        best_code = max(code_blocks, key=len)
+    best_code = next(
+        (b for b in code_blocks if component in b or slug.replace("-", "") in b.lower()),
+        max(code_blocks, key=len) if code_blocks else ""
+    )
 
     tsx_example = jsx_to_tsx(best_code, component, props_raw) if best_code else (
         f"import React from 'react';\n"
         f"import {{ {component} }} from 'framework7-react';\n\n"
         f"interface {component}Props {{}}\n\n"
-        f"const Example: React.FC = () => (\n"
-        f"  <{component} />\n"
-        f");\n\n"
+        f"const Example: React.FC = () => (\n  <{component} />\n);\n\n"
         f"export default Example;"
     )
 
-    props = [Prop(**{k: v for k, v in p.items() if k != "raw_type"}) for p in props_raw]
-    events = [
-        EventEntry(
-            name=e["name"],
-            ts_type=e["ts_type"],
-            description=e["description"],
-            source_text=e.get("source_text"),
-            source_table_header=e.get("source_table_header"),
-            inference_method=e.get("inference_method", "table"),
-            confidence=e.get("confidence", "high"),
-        )
-        for e in events_raw
-    ]
+    props = []
+    for p in props_raw:
+        try:
+            props.append(Prop(**{k: v for k, v in p.items() if k != "raw_type"}))
+        except Exception:
+            pass
+
+    events = []
+    for e in events_raw:
+        try:
+            events.append(EventEntry(
+                name=e["name"], ts_type=e["ts_type"], description=e["description"],
+                source_table_header=e.get("source_table_header"),
+                inference_method=e.get("inference_method", "table"),
+                confidence=e.get("confidence", "high"),
+            ))
+        except Exception:
+            pass
 
     notes = []
     for tag in soup.find_all("blockquote"):
         txt = tag.get_text(" ", strip=True)
         if 20 < len(txt) < 300:
             notes.append(txt)
-    for tag in soup.select(".note, .warning, .tip, .alert"):
+    for tag in soup.select(".note, .warning, .tip, .alert, .important-note"):
         txt = tag.get_text(" ", strip=True)
         if 20 < len(txt) < 300:
             notes.append(txt)
@@ -542,20 +597,18 @@ def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
     notes = list(dict.fromkeys(notes))[:5]
 
     return ComponentDoc(
-        slug=slug,
-        url=url,
-        component=component,
-        category=category,
+        slug=slug, url=url, component=component, category=category,
         description=description,
         import_statement=build_import_statement(component, slug),
-        props=props,
-        events=events,
+        props=props, events=events,
         methods=sections.get("methods", []),
         slots=sections.get("slots", []),
         examples=sections.get("examples", []),
         tsx_example=tsx_example,
         notes=notes,
     )
+
+# ── Artifact writers ──────────────────────────────────────────────────────────
 
 def to_id(category: str, slug: str) -> str:
     return f"{'core' if category == 'core' else 'component'}:{slug}"
@@ -568,24 +621,17 @@ def doc_to_item(slug: str, category: str, doc: dict) -> dict:
         [p.get("name", "") for p in doc.get("props", []) if isinstance(p, dict)]
     ))
     return {
-        "id": to_id(category, slug),
-        "slug": slug,
-        "title": title,
-        "category": category,
-        "summary": summary,
+        "id": to_id(category, slug), "slug": slug, "title": title,
+        "category": category, "summary": summary,
         "keywords": [k for k in keywords if k],
         "aliases": [slug.replace("-", ""), title.lower()],
         "url": doc.get("url"),
-        "retrieval_text": "\n".join([
+        "retrieval_text": "\n".join(filter(None, [
             summary,
-            f"Props: {', '.join(p.get('name','') for p in doc.get('props', [])[:30] if isinstance(p, dict))}",
-            f"Events: {', '.join(e.get('name','') for e in doc.get('events', [])[:30] if isinstance(e, dict))}",
-        ]).strip(),
+            "Props: " + ", ".join(p.get("name", "") for p in doc.get("props", [])[:30] if isinstance(p, dict)),
+            "Events: " + ", ".join(e.get("name", "") for e in doc.get("events", [])[:30] if isinstance(e, dict)),
+        ])).strip(),
     }
-
-def initialize_artifacts() -> None:
-    now = datetime.now(timezone.utc).isoformat()
-    write_artifacts({"meta": {"generated_at": now}, "core_docs": {}, "components": {}})
 
 def write_artifacts(output: dict) -> None:
     generated_at = output["meta"]["generated_at"]
@@ -605,13 +651,12 @@ def write_artifacts(output: dict) -> None:
                 "content": "\n".join(filter(None, [
                     item.get("description", ""),
                     "Methods: " + ", ".join(item.get("methods", [])) if item.get("methods") else "",
-                    "Slots: " + ", ".join(item.get("slots", [])) if item.get("slots") else "",
+                    "Slots: "   + ", ".join(item.get("slots", []))   if item.get("slots") else "",
                 ])).strip(),
             })
     docs.sort(key=lambda d: d["id"])
     manifest_items = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords")} for d in docs]
     search_items   = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords", "aliases", "url", "retrieval_text")} for d in docs]
-
     knowledge = {"version": version, "generatedAt": generated_at, "count": len(docs), "docs": docs}
     manifest  = {
         "version": version, "generatedAt": generated_at,
@@ -623,28 +668,25 @@ def write_artifacts(output: dict) -> None:
     search_index = {"version": version, "generatedAt": generated_at, "count": len(search_items), "items": search_items}
     checksum = hashlib.sha256(json.dumps(knowledge, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
     metadata = {
-        "version": version, "generatedAt": generated_at,
-        "documentCount": len(docs), "checksum": checksum, "buildId": generated_at,
+        "version": version, "generatedAt": generated_at, "documentCount": len(docs),
+        "checksum": checksum, "buildId": generated_at,
         "stats": {
-            "components": manifest["componentCount"],
-            "core": manifest["coreCount"],
-            "totalProps": sum(len(d.get("props", [])) for d in docs),
+            "components": manifest["componentCount"], "core": manifest["coreCount"],
+            "totalProps":  sum(len(d.get("props",  [])) for d in docs),
             "totalEvents": sum(len(d.get("events", [])) for d in docs),
         },
     }
     kv_bulk = {"manifest": manifest, "searchIndex": search_index, "metadata": metadata, "knowledge": knowledge}
     payloads = {
-        "knowledge.json": knowledge,
-        "manifest.json": manifest,
-        "search-index.json": search_index,
-        "metadata.json": metadata,
-        "kv-bulk.json": kv_bulk,
+        "knowledge.json": knowledge, "manifest.json": manifest,
+        "search-index.json": search_index, "metadata.json": metadata, "kv-bulk.json": kv_bulk,
     }
     for artifact in ARTIFACT_FILES:
         (DATA_DIR / artifact).write_text(
-            json.dumps(payloads[artifact], indent=2, ensure_ascii=False),
-            encoding="utf-8",
+            json.dumps(payloads[artifact], indent=2, ensure_ascii=False), encoding="utf-8"
         )
+
+# ── Main ──────────────────────────────────────────────────────────────────────
 
 async def process_all(page, output: dict) -> None:
     total = len(URLS)
@@ -677,33 +719,31 @@ async def main() -> None:
             "target_stack": "React + TypeScript (TSX)",
             "total_pages": len(URLS),
         },
-        "core_docs": {},
-        "components": {},
+        "core_docs": {}, "components": {},
     }
 
-    initialize_artifacts()
+    write_artifacts(output)  # empty init
 
     if async_playwright is None:
-        print("Playwright unavailable, using urllib fallback")
-        await process_all(None, output)
-    else:
-        try:
-            async with async_playwright() as pw:
-                browser = await pw.chromium.launch(headless=True)
-                ctx = await browser.new_context(
-                    user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-                    java_script_enabled=True,
-                )
-                await ctx.route(
-                    re.compile(r"\.(png|jpg|jpeg|gif|webp|svg|woff2?|ttf|eot|mp4|mp3|ico)(\?.*)?$"),
-                    lambda r: r.abort()
-                )
-                page = await ctx.new_page()
-                await process_all(page, output)
-                await browser.close()
-        except Exception as e:
-            print(f"Playwright failed ({e}), falling back to urllib")
-            await process_all(None, output)
+        raise RuntimeError("Playwright is required — site is Cloudflare-protected")
+
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch(headless=True)
+        ctx = await browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (X11; Linux x86_64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            java_script_enabled=True,
+        )
+        await ctx.route(
+            re.compile(r"\.(png|jpg|jpeg|gif|webp|svg|woff2?|ttf|eot|mp4|mp3|ico)(\?.*)?$"),
+            lambda r: r.abort()
+        )
+        page = await ctx.new_page()
+        await process_all(page, output)
+        await browser.close()
 
     write_artifacts(output)
     print(f"\n{'─'*56}")
