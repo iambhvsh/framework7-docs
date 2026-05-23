@@ -1,23 +1,16 @@
 #!/usr/bin/env python3
 from dotenv import load_dotenv
 load_dotenv()
-import asyncio, hashlib, json, re
+
+import asyncio, hashlib, html, json, re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
-
-from bs4 import BeautifulSoup
-try:
-    from playwright.async_api import async_playwright
-except Exception:
-    async_playwright = None
-import trafilatura
-from pydantic import BaseModel, field_validator
 from urllib.request import Request, urlopen
 
-CACHE_DIR = Path.home() / ".f7_cache"
-DATA_DIR  = Path("actions/data")
-CACHE_DIR.mkdir(exist_ok=True)
+from pydantic import BaseModel, field_validator
+
+DATA_DIR = Path("actions/data")
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 ARTIFACT_FILES = [
@@ -25,85 +18,89 @@ ARTIFACT_FILES = [
     "metadata.json", "kv-bulk.json",
 ]
 
-URLS = [
-    ("introduction",               "https://framework7.io/docs/introduction.html",               "core"),
-    ("package",                    "https://framework7.io/react/package.html",                    "core"),
-    ("app-layout",                 "https://framework7.io/react/app-layout.html",                 "core"),
-    ("init-app",                   "https://framework7.io/react/init-app.html",                   "core"),
-    ("react-component-extensions", "https://framework7.io/react/react-component-extensions.html", "core"),
-    ("navigation-router",          "https://framework7.io/react/navigation-router.html",          "core"),
-    ("colors",                     "https://framework7.io/react/colors.html",                     "core"),
-    ("store",                      "https://framework7.io/react/store.html",                      "core"),
-    ("app",                        "https://framework7.io/react/app.html",                        "component"),
-    ("accordion",                  "https://framework7.io/react/accordion.html",                  "component"),
-    ("action-sheet",               "https://framework7.io/react/action-sheet.html",               "component"),
-    ("area-chart",                 "https://framework7.io/react/area-chart.html",                 "component"),
-    ("autocomplete",               "https://framework7.io/react/autocomplete.html",               "component"),
-    ("badge",                      "https://framework7.io/react/badge.html",                      "component"),
-    ("block",                      "https://framework7.io/react/block.html",                      "component"),
-    ("breadcrumbs",                "https://framework7.io/react/breadcrumbs.html",                "component"),
-    ("button",                     "https://framework7.io/react/button.html",                     "component"),
-    ("calendar",                   "https://framework7.io/react/calendar.html",                   "component"),
-    ("cards",                      "https://framework7.io/react/cards.html",                      "component"),
-    ("checkbox",                   "https://framework7.io/react/checkbox.html",                   "component"),
-    ("chips",                      "https://framework7.io/react/chips.html",                      "component"),
-    ("color-picker",               "https://framework7.io/react/color-picker.html",               "component"),
-    ("contacts-list",              "https://framework7.io/react/contacts-list.html",              "component"),
-    ("data-table",                 "https://framework7.io/react/data-table.html",                 "component"),
-    ("dialog",                     "https://framework7.io/react/dialog.html",                     "component"),
-    ("floating-action-button",     "https://framework7.io/react/floating-action-button.html",     "component"),
-    ("form",                       "https://framework7.io/react/form.html",                       "component"),
-    ("gauge",                      "https://framework7.io/react/gauge.html",                      "component"),
-    ("grid",                       "https://framework7.io/react/grid.html",                       "component"),
-    ("icon",                       "https://framework7.io/react/icon.html",                       "component"),
-    ("infinite-scroll",            "https://framework7.io/react/infinite-scroll.html",            "component"),
-    ("inputs",                     "https://framework7.io/react/inputs.html",                     "component"),
-    ("link",                       "https://framework7.io/react/link.html",                       "component"),
-    ("list-view",                  "https://framework7.io/react/list-view.html",                  "component"),
-    ("list-button",                "https://framework7.io/react/list-button.html",                "component"),
-    ("list-index",                 "https://framework7.io/react/list-index.html",                 "component"),
-    ("list-item",                  "https://framework7.io/react/list-item.html",                  "component"),
-    ("login-screen",               "https://framework7.io/react/login-screen.html",               "component"),
-    ("menu-list",                  "https://framework7.io/react/menu-list.html",                  "component"),
-    ("messagebar",                 "https://framework7.io/react/messagebar.html",                 "component"),
-    ("messages",                   "https://framework7.io/react/messages.html",                   "component"),
-    ("navbar",                     "https://framework7.io/react/navbar.html",                     "component"),
-    ("notification",               "https://framework7.io/react/notification.html",               "component"),
-    ("page",                       "https://framework7.io/react/page.html",                       "component"),
-    ("panel",                      "https://framework7.io/react/panel.html",                      "component"),
-    ("photo-browser",              "https://framework7.io/react/photo-browser.html",              "component"),
-    ("picker",                     "https://framework7.io/react/picker.html",                     "component"),
-    ("pie-chart",                  "https://framework7.io/react/pie-chart.html",                  "component"),
-    ("popover",                    "https://framework7.io/react/popover.html",                    "component"),
-    ("popup",                      "https://framework7.io/react/popup.html",                      "component"),
-    ("preloader",                  "https://framework7.io/react/preloader.html",                  "component"),
-    ("progressbar",                "https://framework7.io/react/progressbar.html",                "component"),
-    ("pull-to-refresh",            "https://framework7.io/react/pull-to-refresh.html",            "component"),
-    ("radio",                      "https://framework7.io/react/radio.html",                      "component"),
-    ("range-slider",               "https://framework7.io/react/range-slider.html",               "component"),
-    ("searchbar",                  "https://framework7.io/react/searchbar.html",                  "component"),
-    ("segmented",                  "https://framework7.io/react/segmented.html",                  "component"),
-    ("sheet-modal",                "https://framework7.io/react/sheet-modal.html",                "component"),
-    ("skeleton",                   "https://framework7.io/react/skeleton.html",                   "component"),
-    ("smart-select",               "https://framework7.io/react/smart-select.html",               "component"),
-    ("sortable",                   "https://framework7.io/react/sortable.html",                   "component"),
-    ("stepper",                    "https://framework7.io/react/stepper.html",                    "component"),
-    ("subnavbar",                  "https://framework7.io/react/subnavbar.html",                  "component"),
-    ("swipeout",                   "https://framework7.io/react/swipeout.html",                   "component"),
-    ("swiper",                     "https://framework7.io/react/swiper.html",                     "component"),
-    ("tabs",                       "https://framework7.io/react/tabs.html",                       "component"),
-    ("text-editor",                "https://framework7.io/react/text-editor.html",                "component"),
-    ("timeline",                   "https://framework7.io/react/timeline.html",                   "component"),
-    ("toast",                      "https://framework7.io/react/toast.html",                      "component"),
-    ("toggle",                     "https://framework7.io/react/toggle.html",                     "component"),
-    ("toolbar-tabbar",             "https://framework7.io/react/toolbar-tabbar.html",             "component"),
-    ("tooltip",                    "https://framework7.io/react/tooltip.html",                    "component"),
-    ("treeview",                   "https://framework7.io/react/treeview.html",                   "component"),
-    ("view",                       "https://framework7.io/react/view.html",                       "component"),
-    ("virtual-list",               "https://framework7.io/react/virtual-list.html",               "component"),
+RAW_BASE = "https://raw.githubusercontent.com/framework7io/framework7-website/master/src/pug/react"
+
+# (slug, pug_filename, category)
+# core pages live in docs/, components in react/
+PAGES = [
+    ("introduction",               "https://raw.githubusercontent.com/framework7io/framework7-website/master/src/pug/docs/introduction.pug", "core"),
+    ("package",                    f"{RAW_BASE}/package.pug",                    "core"),
+    ("app-layout",                 f"{RAW_BASE}/app-layout.pug",                 "core"),
+    ("init-app",                   f"{RAW_BASE}/init-app.pug",                   "core"),
+    ("react-component-extensions", f"{RAW_BASE}/react-component-extensions.pug", "core"),
+    ("navigation-router",          f"{RAW_BASE}/navigation-router.pug",          "core"),
+    ("colors",                     f"{RAW_BASE}/colors.pug",                     "core"),
+    ("store",                      f"{RAW_BASE}/store.pug",                      "core"),
+    ("app",                        f"{RAW_BASE}/app.pug",                        "component"),
+    ("accordion",                  f"{RAW_BASE}/accordion.pug",                  "component"),
+    ("action-sheet",               f"{RAW_BASE}/action-sheet.pug",               "component"),
+    ("area-chart",                 f"{RAW_BASE}/area-chart.pug",                 "component"),
+    ("autocomplete",               f"{RAW_BASE}/autocomplete.pug",               "component"),
+    ("badge",                      f"{RAW_BASE}/badge.pug",                      "component"),
+    ("block",                      f"{RAW_BASE}/block.pug",                      "component"),
+    ("breadcrumbs",                f"{RAW_BASE}/breadcrumbs.pug",                "component"),
+    ("button",                     f"{RAW_BASE}/button.pug",                     "component"),
+    ("calendar",                   f"{RAW_BASE}/calendar.pug",                   "component"),
+    ("cards",                      f"{RAW_BASE}/cards.pug",                      "component"),
+    ("checkbox",                   f"{RAW_BASE}/checkbox.pug",                   "component"),
+    ("chips",                      f"{RAW_BASE}/chips.pug",                      "component"),
+    ("color-picker",               f"{RAW_BASE}/color-picker.pug",               "component"),
+    ("contacts-list",              f"{RAW_BASE}/contacts-list.pug",              "component"),
+    ("data-table",                 f"{RAW_BASE}/data-table.pug",                 "component"),
+    ("dialog",                     f"{RAW_BASE}/dialog.pug",                     "component"),
+    ("floating-action-button",     f"{RAW_BASE}/floating-action-button.pug",     "component"),
+    ("form",                       f"{RAW_BASE}/form.pug",                       "component"),
+    ("gauge",                      f"{RAW_BASE}/gauge.pug",                      "component"),
+    ("grid",                       f"{RAW_BASE}/grid.pug",                       "component"),
+    ("icon",                       f"{RAW_BASE}/icon.pug",                       "component"),
+    ("infinite-scroll",            f"{RAW_BASE}/infinite-scroll.pug",            "component"),
+    ("inputs",                     f"{RAW_BASE}/inputs.pug",                     "component"),
+    ("link",                       f"{RAW_BASE}/link.pug",                       "component"),
+    ("list-view",                  f"{RAW_BASE}/list-view.pug",                  "component"),
+    ("list-button",                f"{RAW_BASE}/list-button.pug",                "component"),
+    ("list-index",                 f"{RAW_BASE}/list-index.pug",                 "component"),
+    ("list-item",                  f"{RAW_BASE}/list-item.pug",                  "component"),
+    ("login-screen",               f"{RAW_BASE}/login-screen.pug",               "component"),
+    ("menu-list",                  f"{RAW_BASE}/menu-list.pug",                  "component"),
+    ("messagebar",                 f"{RAW_BASE}/messagebar.pug",                 "component"),
+    ("messages",                   f"{RAW_BASE}/messages.pug",                   "component"),
+    ("navbar",                     f"{RAW_BASE}/navbar.pug",                     "component"),
+    ("notification",               f"{RAW_BASE}/notification.pug",               "component"),
+    ("page",                       f"{RAW_BASE}/page.pug",                       "component"),
+    ("panel",                      f"{RAW_BASE}/panel.pug",                      "component"),
+    ("photo-browser",              f"{RAW_BASE}/photo-browser.pug",              "component"),
+    ("picker",                     f"{RAW_BASE}/picker.pug",                     "component"),
+    ("pie-chart",                  f"{RAW_BASE}/pie-chart.pug",                  "component"),
+    ("popover",                    f"{RAW_BASE}/popover.pug",                    "component"),
+    ("popup",                      f"{RAW_BASE}/popup.pug",                      "component"),
+    ("preloader",                  f"{RAW_BASE}/preloader.pug",                  "component"),
+    ("progressbar",                f"{RAW_BASE}/progressbar.pug",                "component"),
+    ("pull-to-refresh",            f"{RAW_BASE}/pull-to-refresh.pug",            "component"),
+    ("radio",                      f"{RAW_BASE}/radio.pug",                      "component"),
+    ("range-slider",               f"{RAW_BASE}/range-slider.pug",               "component"),
+    ("searchbar",                  f"{RAW_BASE}/searchbar.pug",                  "component"),
+    ("segmented",                  f"{RAW_BASE}/segmented.pug",                  "component"),
+    ("sheet-modal",                f"{RAW_BASE}/sheet-modal.pug",                "component"),
+    ("skeleton",                   f"{RAW_BASE}/skeleton.pug",                   "component"),
+    ("smart-select",               f"{RAW_BASE}/smart-select.pug",               "component"),
+    ("sortable",                   f"{RAW_BASE}/sortable.pug",                   "component"),
+    ("stepper",                    f"{RAW_BASE}/stepper.pug",                    "component"),
+    ("subnavbar",                  f"{RAW_BASE}/subnavbar.pug",                  "component"),
+    ("swipeout",                   f"{RAW_BASE}/swipeout.pug",                   "component"),
+    ("swiper",                     f"{RAW_BASE}/swiper.pug",                     "component"),
+    ("tabs",                       f"{RAW_BASE}/tabs.pug",                       "component"),
+    ("text-editor",                f"{RAW_BASE}/text-editor.pug",                "component"),
+    ("timeline",                   f"{RAW_BASE}/timeline.pug",                   "component"),
+    ("toast",                      f"{RAW_BASE}/toast.pug",                      "component"),
+    ("toggle",                     f"{RAW_BASE}/toggle.pug",                     "component"),
+    ("toolbar-tabbar",             f"{RAW_BASE}/toolbar-tabbar.pug",             "component"),
+    ("tooltip",                    f"{RAW_BASE}/tooltip.pug",                    "component"),
+    ("treeview",                   f"{RAW_BASE}/treeview.pug",                   "component"),
+    ("view",                       f"{RAW_BASE}/view.pug",                       "component"),
+    ("virtual-list",               f"{RAW_BASE}/virtual-list.pug",               "component"),
 ]
 
-# ── Type validation ───────────────────────────────────────────────────────────
+# ── Pydantic models ───────────────────────────────────────────────────────────
 
 _TS_TYPE_RE = re.compile(
     r"^([A-Za-z_][A-Za-z0-9_.<>[\], ]*"
@@ -113,11 +110,9 @@ _TS_TYPE_RE = re.compile(
     r"|\([^)]*\)\s*=>\s*[A-Za-z_][A-Za-z0-9_.<>[\], ]*))*$"
 )
 
-def is_valid_ts_type(ts_type: str) -> bool:
-    t = (ts_type or "").strip()
-    return bool(t and _TS_TYPE_RE.match(t))
-
-# ── Pydantic models ───────────────────────────────────────────────────────────
+def is_valid_ts_type(v: str) -> bool:
+    v = (v or "").strip()
+    return bool(v and _TS_TYPE_RE.match(v))
 
 class Prop(BaseModel):
     name: str
@@ -126,24 +121,22 @@ class Prop(BaseModel):
     required: bool
     description: str
     source_table_header: Optional[str] = None
-    inference_method: str = "table"
-    confidence: str = "high"
 
     @field_validator("name")
     @classmethod
     def name_ok(cls, v: str) -> str:
-        val = (v or "").strip()
-        if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", val):
+        v = (v or "").strip()
+        if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", v):
             raise ValueError(f"Bad prop name: {v!r}")
-        return val
+        return v
 
     @field_validator("ts_type")
     @classmethod
     def type_ok(cls, v: str) -> str:
-        val = (v or "").strip()
-        if not is_valid_ts_type(val):
+        v = (v or "").strip()
+        if not is_valid_ts_type(v):
             raise ValueError(f"Bad TS type: {v!r}")
-        return val
+        return v
 
     @field_validator("description")
     @classmethod
@@ -155,16 +148,14 @@ class EventEntry(BaseModel):
     ts_type: str
     description: str
     source_table_header: Optional[str] = None
-    inference_method: str = "table"
-    confidence: str = "high"
 
     @field_validator("ts_type")
     @classmethod
     def type_ok(cls, v: str) -> str:
-        val = (v or "").strip()
-        if not is_valid_ts_type(val):
+        v = (v or "").strip()
+        if not is_valid_ts_type(v):
             raise ValueError(f"Bad event TS type: {v!r}")
-        return val
+        return v
 
     @field_validator("description")
     @classmethod
@@ -182,56 +173,49 @@ class ComponentDoc(BaseModel):
     events: list[EventEntry]
     methods: list[str] = []
     slots: list[str] = []
-    examples: list[str] = []
     tsx_example: str
     notes: list[str]
 
     @field_validator("description")
     @classmethod
     def desc_ok(cls, v: str) -> str:
-        val = (v or "").strip()
-        if len(val) < 10:
-            raise ValueError("Description too short.")
-        return val
+        return (v or "").strip() or "No description provided."
 
-# ── Fetch (Playwright-only, no urllib fallback for CF-protected site) ─────────
+# ── Fetch ─────────────────────────────────────────────────────────────────────
 
-MIN_USEFUL_HTML = 50_000  # bytes — shell-only pages are ~21 bytes or ~30KB
+def fetch_raw(url: str) -> str:
+    req = Request(url, headers={"User-Agent": "framework7-docs-builder/1.0"})
+    with urlopen(req, timeout=30) as r:
+        return r.read().decode("utf-8", errors="replace")
 
-def cache_key(url: str) -> Path:
-    return CACHE_DIR / (hashlib.md5(url.encode()).hexdigest() + ".html")
+# ── Pug text helpers ──────────────────────────────────────────────────────────
 
-def cache_valid(path: Path) -> bool:
-    if not path.exists():
-        return False
-    content = path.read_text(encoding="utf-8", errors="replace")
-    # Reject stale shells: must contain a <table and a <td to be a real page
-    return len(content) >= MIN_USEFUL_HTML and "<table" in content and "<td" in content
+def pug_text(raw: str) -> str:
+    """Strip inline HTML tags and decode HTML entities from a pug cell value."""
+    # Remove inline tags: <br>, <a ...>, <span ...>, <code>, <strong>, <b>, etc.
+    t = re.sub(r"<[^>]+>", " ", raw)
+    t = html.unescape(t)
+    # Collapse whitespace
+    t = re.sub(r"\s+", " ", t).strip()
+    # Strip backtick code markers
+    t = t.replace("`", "")
+    return t
 
-async def fetch_html(url: str, page) -> str:
-    ck = cache_key(url)
-    if cache_valid(ck):
-        return ck.read_text(encoding="utf-8")
+def pug_type(raw: str) -> str:
+    """
+    Convert pug type cell to TypeScript union type.
+    Pug uses <br> as delimiter: 'string<br>boolean' → 'string | boolean'
+    """
+    # Split on <br> (various forms)
+    parts = re.split(r"<br\s*/?>", raw, flags=re.I)
+    ts_parts = []
+    for p in parts:
+        clean = pug_text(p).strip().lower()
+        ts_parts.append(_map_type(clean))
+    ts_parts = list(dict.fromkeys(p for p in ts_parts if p))
+    return " | ".join(ts_parts) if ts_parts else "unknown"
 
-    if page is None:
-        raise RuntimeError("Playwright required (site blocks plain HTTP)")
-
-    await page.goto(url, wait_until="networkidle", timeout=60_000)
-    # Wait until at least one <table> with <td> cells is in the DOM
-    try:
-        await page.wait_for_selector("table td", timeout=15_000)
-    except Exception:
-        pass  # page may genuinely have no tables (intro pages)
-    await page.wait_for_timeout(500)
-
-    html = await page.content()
-    ck.write_text(html, encoding="utf-8")
-    await asyncio.sleep(0.3)
-    return html
-
-# ── Type normalisation ────────────────────────────────────────────────────────
-
-_TYPE_MAP: dict[str, str] = {
+_TYPE_MAP = {
     "boolean": "boolean", "bool": "boolean",
     "string": "string", "str": "string",
     "number": "number", "integer": "number", "int": "number", "float": "number",
@@ -240,324 +224,303 @@ _TYPE_MAP: dict[str, str] = {
     "array": "unknown[]",
     "any": "unknown", "mixed": "unknown",
     "reactnode": "React.ReactNode", "node": "React.ReactNode",
-    "element": "React.ReactElement", "reactelement": "React.ReactElement",
-    "ref": "React.Ref<unknown>",
+    "element": "React.ReactElement",
     "": "unknown",
 }
 
-# Known two-word type phrases the docs write as "string boolean" (space-separated union)
-_SPACE_UNION_RE = re.compile(
-    r"^(string|number|boolean|object|array|function|any|unknown)"
-    r"(\s+(string|number|boolean|object|array|function|any|unknown))+$"
-)
-
-def normalise_type(raw: str) -> str:
-    if not raw:
+def _map_type(t: str) -> str:
+    if not t:
         return "unknown"
-    stripped = raw.strip()
+    if t.endswith("[]"):
+        return _map_type(t[:-2]) + "[]"
+    if t.startswith("array of "):
+        return _map_type(t[len("array of "):]) + "[]"
+    return _TYPE_MAP.get(t, t)
 
-    # Framework7 docs write "string   boolean" (multi-space) for unions — handle first
-    normalised_spaces = re.sub(r"\s{2,}", "  ", stripped)  # collapse to double-space sentinel
-    if "  " in normalised_spaces:
-        parts = [normalise_type(p.strip()) for p in re.split(r"\s{2,}", stripped) if p.strip()]
-        parts = list(dict.fromkeys(p for p in parts if p))
-        return " | ".join(parts) if parts else "unknown"
-
-    clean = stripped.lower()
-    clean = re.sub(r"\b(function|func)\s*\([^)]*\)", "function", clean)
-    if clean.startswith("function(") or clean.startswith("func("):
-        return "() => void"
-
-    # Pipe/slash/comma/semicolon unions
-    if any(c in clean for c in ("|", "/", ",")):
-        sep = "|" if "|" in clean else ("/" if "/" in clean else ",")
-        parts = [normalise_type(p.strip()) for p in clean.split(sep)]
-        parts = list(dict.fromkeys(p for p in parts if p))
-        return " | ".join(parts) if parts else "unknown"
-
-    clean = re.sub(r"\bor\b", "|", clean)
-    if "|" in clean:
-        parts = [normalise_type(p.strip()) for p in clean.split("|")]
-        parts = list(dict.fromkeys(p for p in parts if p))
-        return " | ".join(parts) if parts else "unknown"
-
-    if clean.endswith("[]"):
-        return normalise_type(clean[:-2]) + "[]"
-    if clean.startswith("array of "):
-        return normalise_type(clean[len("array of "):]) + "[]"
-
-    # Single-word space union (e.g. "string boolean" — rare but present)
-    if " " in clean and _SPACE_UNION_RE.match(clean):
-        parts = list(dict.fromkeys(normalise_type(p) for p in clean.split()))
-        return " | ".join(parts)
-
-    return _TYPE_MAP.get(clean, stripped)
-
-# ── Table parsing ─────────────────────────────────────────────────────────────
-
-def _is_section_header_row(tr) -> bool:
-    """Detect rows like <tr><th colspan="4">&lt;Button&gt; properties</th></tr>."""
-    tds = tr.find_all(["th", "td"])
-    if len(tds) == 1 and tds[0].get("colspan"):
-        return True
-    # Also catches rows where ALL cells are <th> and the first looks like a section label
-    if all(td.name == "th" for td in tds):
-        first = tds[0].get_text(strip=True)
-        if first.startswith("<") or "properties" in first.lower() or "events" in first.lower():
-            return True
-    return False
-
-def parse_prop_tables(soup: BeautifulSoup) -> tuple[list[dict], list[dict]]:
-    props: list[dict] = []
-    events: list[dict] = []
-
-    for table in soup.find_all("table"):
-        # ── Detect column layout from <thead> or first non-section-header <tr> ──
-        thead = table.find("thead")
-        header_row = None
-        if thead:
-            header_row = thead.find("tr")
-        if not header_row:
-            for tr in table.find_all("tr"):
-                if not _is_section_header_row(tr):
-                    header_row = tr
-                    break
-        if not header_row:
-            continue
-
-        headers = [th.get_text(strip=True).lower() for th in header_row.find_all(["th", "td"])]
-        col: dict[str, int] = {}
-        for i, h in enumerate(headers):
-            if re.search(r"\b(prop|name|parameter|event)\b", h) and "name" not in col:
-                col["name"] = i
-            elif "type" in h and "type" not in col:
-                col["type"] = i
-            elif "default" in h and "default" not in col:
-                col["default"] = i
-            elif ("description" in h or "desc" in h) and "description" not in col:
-                col["description"] = i
-
-        if "name" not in col:
-            continue
-
-        is_event_table = any("event" in h or "callback" in h for h in headers)
-        table_header = " | ".join(headers)
-
-        for tr in table.find_all("tr"):
-            if _is_section_header_row(tr):
-                # Check if this section header changes event/prop context
-                label = tr.get_text(strip=True).lower()
-                if "event" in label:
-                    is_event_table = True
-                elif "propert" in label:
-                    is_event_table = False
-                continue
-
-            cells = tr.find_all("td")
-            if not cells or len(cells) < 2:
-                continue
-
-            def cell(key: str) -> str:
-                idx = col.get(key)
-                if idx is None or idx >= len(cells):
-                    return ""
-                return cells[idx].get_text(" ", strip=True).strip()
-
-            raw_name = cell("name")
-            if not raw_name or raw_name.lower() in ("prop", "name", "parameter", "event"):
-                continue
-
-            # Split merged names like "ptr ptrDistance ptrPreloader"
-            clean_name = raw_name.rstrip("*").strip()
-            name_parts = [clean_name]
-            if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", clean_name):
-                candidates = re.split(r"\s+", clean_name)
-                if all(re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", p) for p in candidates if p):
-                    name_parts = [p for p in candidates if p]
-
-            raw_type = cell("type")
-            ts_type   = normalise_type(raw_type)
-            default   = cell("default") or None
-            if default in ("-", "—", "undefined", "null", ""):
-                default = None
-            desc      = cell("description")
-            required  = raw_name.endswith("*") or "required" in desc.lower()
-
-            for name in name_parts:
-                if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", name):
-                    continue
-                entry = {
-                    "name": name,
-                    "ts_type": ts_type,
-                    "raw_type": raw_type,
-                    "default": default,
-                    "required": required,
-                    "description": desc,
-                    "source_table_header": table_header,
-                    "inference_method": "table",
-                    "confidence": "high",
-                }
-                if is_event_table:
-                    entry["ts_type"] = infer_event_type(name, raw_type)
-                    entry["inference_method"] = "event_name_inference"
-                    entry["confidence"] = "medium"
-                    events.append(entry)
-                else:
-                    props.append(entry)
-
-    return props, events
-
-def infer_event_type(name: str, raw_type: str) -> str:
+def infer_event_type(name: str) -> str:
     n = name.lower()
-    if n in ("onclick", "ontap"):        return "(e: React.MouseEvent) => void"
-    if n == "onchange":                  return "(value: unknown) => void"
-    if n in ("oninput", "onkeydown", "onkeyup", "onkeypress"):
-                                         return "(e: React.KeyboardEvent) => void"
-    if n in ("onfocus", "onblur"):       return "(e: React.FocusEvent) => void"
-    if n == "onsubmit":                  return "(e: React.FormEvent) => void"
+    if n in ("onclick", "ontap", "click"):       return "(e: React.MouseEvent) => void"
+    if n in ("onchange", "change"):               return "(value: unknown) => void"
+    if n in ("oninput", "onkeydown", "onkeyup"): return "(e: React.KeyboardEvent) => void"
+    if n in ("onfocus", "onblur"):                return "(e: React.FocusEvent) => void"
+    if n == "onsubmit":                           return "(e: React.FormEvent) => void"
     return "() => void"
 
-# ── Page extraction helpers ───────────────────────────────────────────────────
+# ── Pug parser ────────────────────────────────────────────────────────────────
 
-def extract_description(soup: BeautifulSoup) -> str:
-    h1 = soup.find("h1")
-    if h1:
-        nxt = h1.find_next_sibling()
-        while nxt:
-            if nxt.name == "p":
-                txt = nxt.get_text(" ", strip=True)
-                if len(txt) > 20:
-                    return txt[:400]
-            if nxt.name in ("h2", "table"):
+def indent(line: str) -> int:
+    return len(line) - len(line.lstrip(" "))
+
+def parse_pug(source: str, slug: str) -> dict:
+    lines = source.splitlines()
+
+    component = "".join(w.capitalize() for w in slug.split("-"))
+    description = ""
+    props: list[dict] = []
+    events: list[dict] = []
+    methods: list[str] = []
+    slots: list[str] = []
+    notes: list[str] = []
+    example_lines: list[str] = []
+
+    # Extract h1 component name
+    for line in lines:
+        m = re.search(r"\bh1\s+(.+)", line)
+        if m:
+            raw = m.group(1).strip()
+            # strip HTML
+            raw = re.sub(r"<[^>]+>", "", raw)
+            raw = html.unescape(raw)
+            # strip "React Component" suffix
+            raw = re.sub(r"\s*react\s+component.*", "", raw, flags=re.I).strip()
+            # strip " / Side Panel" alternates
+            raw = re.split(r"\s*/\s*", raw)[0].strip()
+            component = "".join(w.capitalize() for w in re.split(r"[\s\-_]+", raw) if w)
+            break
+
+    # Extract first description paragraph (p tag after h1, before first h2)
+    found_h1 = False
+    for line in lines:
+        stripped = line.strip()
+        if re.match(r"h1\b", stripped):
+            found_h1 = True
+            continue
+        if found_h1:
+            if re.match(r"h2\b", stripped):
                 break
-            nxt = nxt.find_next_sibling()
-    text = trafilatura.extract(str(soup), include_tables=False) or ""
-    for s in re.split(r"(?<=[.!?])\s+", text)[:5]:
-        if len(s) > 30:
-            return s[:400]
-    return ""
+            m = re.match(r"p\s+(.+)", stripped)
+            if m:
+                txt = pug_text(m.group(1))
+                if len(txt) > 20:
+                    description = txt[:400]
+                    break
 
-def extract_component_name(soup: BeautifulSoup, slug: str) -> str:
-    h1 = soup.find("h1")
-    if h1:
-        txt = h1.get_text(strip=True)
-        name = re.split(r"\s*/\s*|\s+(?:react\s+)?component", txt, flags=re.I)[0].strip()
-        name = "".join(w.capitalize() for w in re.split(r"[\s\-_]+", name))
-        if name:
-            return name
-    return "".join(w.capitalize() for w in slug.split("-"))
-
-def extract_code_examples(soup: BeautifulSoup) -> list[str]:
-    return [
-        (pre.find("code") or pre).get_text()
-        for pre in soup.find_all("pre")
-        if len((pre.find("code") or pre).get_text()) > 30
-    ]
-
-def extract_structured_sections(soup: BeautifulSoup) -> dict:
-    out: dict[str, list[str]] = {"methods": [], "slots": [], "examples": [], "notes": []}
-    bucket_map = {"method": "methods", "slot": "slots", "example": "examples",
-                  "note": "notes", "tip": "notes", "warning": "notes"}
-    for heading in soup.find_all(["h2", "h3"]):
-        title = heading.get_text(" ", strip=True).lower()
-        bucket = next((v for k, v in bucket_map.items() if k in title), None)
-        if not bucket:
+    # Extract important-note blocks
+    in_note = False
+    note_indent = 0
+    note_buf: list[str] = []
+    for line in lines:
+        stripped = line.strip()
+        ind = indent(line)
+        if ".important-note" in stripped or "blockquote" in stripped:
+            in_note = True
+            note_indent = ind
+            note_buf = []
             continue
-        node = heading.find_next_sibling()
-        while node and node.name not in ("h2", "h3"):
-            if node.name in ("ul", "ol"):
-                for li in node.find_all("li"):
-                    txt = li.get_text(" ", strip=True)
-                    if 3 < len(txt) < 220:
-                        out[bucket].append(txt)
-            elif node.name == "p":
-                txt = node.get_text(" ", strip=True)
-                if 10 < len(txt) < 260:
-                    out[bucket].append(txt)
-            node = node.find_next_sibling()
-    return {k: list(dict.fromkeys(v))[:12] for k, v in out.items()}
+        if in_note:
+            if stripped and ind <= note_indent and not stripped.startswith("p "):
+                if note_buf:
+                    notes.append(pug_text(" ".join(note_buf))[:300])
+                in_note = False
+                note_buf = []
+            elif stripped.startswith("p "):
+                note_buf.append(stripped[2:])
 
-def dedupe(entries: list[dict]) -> list[dict]:
-    by_name: dict[str, dict] = {}
-    order: list[str] = []
-    for e in entries:
-        name = (e.get("name") or "").strip()
-        if not name:
+    # ── Table parsing ─────────────────────────────────────────────────────────
+    # State machine over lines to extract tables
+    # Tables: params-table (props), events-table (events), methods-table (methods)
+
+    TABLE_NONE    = 0
+    TABLE_PARAMS  = 1
+    TABLE_EVENTS  = 2
+    TABLE_METHODS = 3
+    TABLE_SLOTS   = 4
+
+    table_state = TABLE_NONE
+    table_indent = 0
+    in_tbody = False
+    current_section = ""   # tracks <Component> label for multi-component tables
+    row_cells: list[str] = []
+    col_count = 0          # detected from thead
+
+    def flush_row():
+        nonlocal row_cells
+        if not row_cells:
+            return
+        cells = row_cells[:]
+        row_cells = []
+        if table_state == TABLE_PARAMS:
+            _process_prop_row(cells, current_section)
+        elif table_state == TABLE_EVENTS:
+            _process_event_row(cells, current_section)
+        elif table_state == TABLE_METHODS:
+            _process_method_row(cells)
+
+    def _process_prop_row(cells: list[str], section: str):
+        if len(cells) < 2:
+            return
+        raw_name = cells[0].strip().rstrip("*")
+        if not raw_name or raw_name.lower() in ("prop", "name", "parameter"):
+            return
+        # Split merged names
+        names = [raw_name]
+        if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", raw_name):
+            parts = re.split(r"\s+", raw_name)
+            if all(re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", p) for p in parts if p):
+                names = [p for p in parts if p]
+        raw_type = cells[1] if len(cells) > 1 else ""
+        default  = pug_text(cells[2]) if len(cells) > 2 else ""
+        desc     = pug_text(cells[3]) if len(cells) > 3 else ""
+        if default in ("-", "—", "undefined", "null", ""):
+            default = None  # type: ignore[assignment]
+        required = cells[0].strip().endswith("*") or "required" in desc.lower()
+        ts_type  = pug_type(raw_type)
+        if not is_valid_ts_type(ts_type):
+            ts_type = "unknown"
+        for name in names:
+            if not re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", name):
+                continue
+            props.append({
+                "name": name, "ts_type": ts_type, "default": default,
+                "required": required, "description": desc,
+                "source_table_header": section,
+            })
+
+    def _process_event_row(cells: list[str], section: str):
+        if len(cells) < 1:
+            return
+        # event cells: [name, description]  (name may have <br> for aliases)
+        raw_name = cells[0]
+        desc = pug_text(cells[1]) if len(cells) > 1 else ""
+        # Split on <br> to get aliases, use first as primary
+        names = [pug_text(n) for n in re.split(r"<br\s*/?>", raw_name, flags=re.I)]
+        names = [n for n in names if n and re.match(r"^[A-Za-z_][A-Za-z0-9_:-]*$", n)]
+        if not names:
+            return
+        primary = names[0]
+        if primary.lower() in ("event", "name"):
+            return
+        events.append({
+            "name": primary, "ts_type": infer_event_type(primary),
+            "description": desc, "source_table_header": section,
+        })
+
+    def _process_method_row(cells: list[str]):
+        if cells:
+            m = pug_text(cells[0])
+            if m and m.lower() not in ("method", "name"):
+                methods.append(m)
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+        ind = indent(line)
+
+        # Detect table start
+        if re.match(r"table\.(params|events|methods|slots)-table", stripped):
+            flush_row()
+            if "params" in stripped:
+                table_state = TABLE_PARAMS
+            elif "events" in stripped:
+                table_state = TABLE_EVENTS
+            elif "methods" in stripped:
+                table_state = TABLE_METHODS
+            elif "slots" in stripped:
+                table_state = TABLE_SLOTS
+            table_indent = ind
+            in_tbody = False
+            row_cells = []
+            i += 1
             continue
-        if name not in by_name:
-            by_name[name] = e
-            order.append(name)
+
+        # Exit table when we return to same or lesser indent with non-table content
+        if table_state != TABLE_NONE and stripped and ind <= table_indent and not re.match(r"(thead|tbody|tr|td|th)\b", stripped):
+            flush_row()
+            table_state = TABLE_NONE
+            in_tbody = False
+
+        if table_state == TABLE_NONE:
+            # Slots extraction from ul after "h2 * Slots"
+            if re.match(r"h2\s+.*Slots", stripped):
+                j = i + 1
+                while j < len(lines) and not re.match(r"\s*h2\b", lines[j]):
+                    s = lines[j].strip()
+                    m = re.match(r"li\s+`([^`]+)`\s*[-–—]?\s*(.*)", s)
+                    if m:
+                        slots.append(f"`{m.group(1)}` - {pug_text(m.group(2))}")
+                    j += 1
+
+            # Example code blocks (indented lines after +examplePreview or h4)
+            if stripped.startswith("+examplePreview") or re.match(r"h4\s+", stripped):
+                # Collect following indented lines as code
+                j = i + 1
+                code_buf: list[str] = []
+                base_ind = ind + 2
+                while j < len(lines):
+                    l = lines[j]
+                    if l.strip() == "" or indent(l) >= base_ind:
+                        code_buf.append(l.rstrip())
+                        j += 1
+                    else:
+                        break
+                if code_buf:
+                    example_lines.extend(code_buf)
+
+            i += 1
             continue
-        cur = by_name[name]
-        if len(e.get("description") or "") > len(cur.get("description") or ""):
-            cur["description"] = e["description"]
-        if not cur.get("default") and e.get("default"):
-            cur["default"] = e["default"]
-        if (cur.get("ts_type") or "").lower() == "unknown" and (e.get("ts_type") or ""):
-            cur["ts_type"] = e["ts_type"]
-    return [by_name[n] for n in order]
 
-# ── JSX → TSX transforms ──────────────────────────────────────────────────────
+        # Inside a table
+        if stripped.startswith("tbody"):
+            in_tbody = True
+            i += 1
+            continue
+        if stripped.startswith("thead"):
+            in_tbody = False
+            i += 1
+            continue
 
-_STRIP_PATTERNS = [
-    (r"[A-Za-z]+\.propTypes\s*=\s*\{[^}]*\}", ""),
-    (r"[A-Za-z]+\.defaultProps\s*=\s*\{[^}]*\}", ""),
-    (r"React\.createClass\(", "React.Component("),
-]
+        # Section header row: th(colspan="N") <Component> properties/events
+        m = re.match(r'th\(colspan=["\']?\d+["\']?\)\s*(.*)', stripped)
+        if m:
+            flush_row()
+            label = html.unescape(m.group(1))
+            label = re.sub(r"<[^>]+>", "", label).strip()
+            current_section = label
+            i += 1
+            continue
 
-def jsx_to_tsx(code: str, component_name: str, props: list[dict]) -> str:
-    if not code or len(code) < 10:
-        return code
-    for pat, repl in _STRIP_PATTERNS:
-        code = re.sub(pat, repl, code, flags=re.DOTALL)
-    code = re.sub(
-        rf"(const\s+{component_name})\s*=\s*\((.*?)\)\s*=>",
-        rf"\1: React.FC<{component_name}Props> = (\2) =>",
-        code, flags=re.DOTALL
-    )
-    code = re.sub(
-        rf"(function\s+{component_name})\s*\((.*?)\)\s*\{{",
-        rf"\1(\2: {component_name}Props): JSX.Element {{",
-        code, flags=re.DOTALL
-    )
-    if props and f"interface {component_name}Props" not in code:
-        lines = [
-            f"  {p['name']}{'?' if not p.get('required') else ''}: {p['ts_type']};"
-            for p in props[:15]
-        ]
-        code = f"interface {component_name}Props {{\n" + "\n".join(lines) + "\n}\n\n" + code
-    if "import React" not in code and "from 'react'" not in code:
-        code = "import React from 'react';\n" + code
-    code = code.replace(".jsx", ".tsx")
-    code = re.sub(r"useState\(\)", "useState<unknown>()", code)
-    code = re.sub(r"useState\(null\)", "useState<unknown>(null)", code)
-    return re.sub(r"\n{3,}", "\n\n", code).strip()
+        # New row
+        if stripped == "tr" or stripped.startswith("tr "):
+            flush_row()
+            i += 1
+            continue
 
-def build_import_statement(component_name: str, slug: str) -> str:
-    names = {component_name}
-    for p in slug.replace("-", " ").title().split():
-        names.add(p)
-    return f"import {{ {', '.join(sorted(names))} }} from 'framework7-react';"
+        # Cell: td or th without colspan
+        if re.match(r"td\b|th\b(?!\(colspan)", stripped):
+            # Cell value may be on same line or on next indented lines
+            m = re.match(r"(td|th)\s+(.*)", stripped)
+            cell_val = m.group(2).strip() if m else ""
 
-# ── Assembly ──────────────────────────────────────────────────────────────────
+            # Collect continuation lines (deeper indent)
+            cell_ind = ind
+            j = i + 1
+            while j < len(lines):
+                nxt = lines[j]
+                nxt_stripped = nxt.strip()
+                if not nxt_stripped:
+                    j += 1
+                    continue
+                if indent(nxt) > cell_ind and not re.match(r"(tr|td|th|thead|tbody)\b", nxt_stripped):
+                    cell_val = cell_val + " " + nxt_stripped
+                    j += 1
+                else:
+                    break
+            i = j
+            row_cells.append(cell_val)
+            continue
 
-def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
-    soup = BeautifulSoup(html, "lxml")
-    component   = extract_component_name(soup, slug)
-    description = extract_description(soup)
-    props_raw, events_raw = parse_prop_tables(soup)
-    code_blocks = extract_code_examples(soup)
-    sections    = extract_structured_sections(soup)
+        i += 1
 
-    props_raw  = dedupe(props_raw)
-    events_raw = dedupe(events_raw)
+    flush_row()
 
-    best_code = next(
-        (b for b in code_blocks if component in b or slug.replace("-", "") in b.lower()),
-        max(code_blocks, key=len) if code_blocks else ""
-    )
+    # Dedupe props and events
+    props_out  = _dedupe(props)
+    events_out = _dedupe(events)
 
-    tsx_example = jsx_to_tsx(best_code, component, props_raw) if best_code else (
+    # Build TSX example from collected inline code
+    raw_code = "\n".join(example_lines).strip()
+    tsx_example = _jsx_to_tsx(raw_code, component, props_out) if raw_code else (
         f"import React from 'react';\n"
         f"import {{ {component} }} from 'framework7-react';\n\n"
         f"interface {component}Props {{}}\n\n"
@@ -565,70 +528,95 @@ def assemble(slug: str, url: str, category: str, html: str) -> ComponentDoc:
         f"export default Example;"
     )
 
-    props = []
-    for p in props_raw:
-        try:
-            props.append(Prop(**{k: v for k, v in p.items() if k != "raw_type"}))
-        except Exception:
-            pass
+    return {
+        "component": component,
+        "description": description or f"Framework7 React {component} component.",
+        "props": props_out,
+        "events": events_out,
+        "methods": list(dict.fromkeys(methods))[:10],
+        "slots": list(dict.fromkeys(slots))[:10],
+        "tsx_example": tsx_example,
+        "notes": list(dict.fromkeys(notes))[:5],
+    }
 
-    events = []
-    for e in events_raw:
-        try:
-            events.append(EventEntry(
-                name=e["name"], ts_type=e["ts_type"], description=e["description"],
-                source_table_header=e.get("source_table_header"),
-                inference_method=e.get("inference_method", "table"),
-                confidence=e.get("confidence", "high"),
-            ))
-        except Exception:
-            pass
+def _dedupe(entries: list[dict]) -> list[dict]:
+    seen: dict[str, dict] = {}
+    order: list[str] = []
+    for e in entries:
+        name = e.get("name", "").strip()
+        if not name:
+            continue
+        if name not in seen:
+            seen[name] = e
+            order.append(name)
+        else:
+            cur = seen[name]
+            if len(e.get("description", "")) > len(cur.get("description", "")):
+                cur["description"] = e["description"]
+            if not cur.get("default") and e.get("default"):
+                cur["default"] = e["default"]
+    return [seen[n] for n in order]
 
-    notes = []
-    for tag in soup.find_all("blockquote"):
-        txt = tag.get_text(" ", strip=True)
-        if 20 < len(txt) < 300:
-            notes.append(txt)
-    for tag in soup.select(".note, .warning, .tip, .alert, .important-note"):
-        txt = tag.get_text(" ", strip=True)
-        if 20 < len(txt) < 300:
-            notes.append(txt)
-    notes.extend(sections.get("notes", []))
-    notes = list(dict.fromkeys(notes))[:5]
+# ── JSX → TSX ─────────────────────────────────────────────────────────────────
 
-    return ComponentDoc(
-        slug=slug, url=url, component=component, category=category,
-        description=description,
-        import_statement=build_import_statement(component, slug),
-        props=props, events=events,
-        methods=sections.get("methods", []),
-        slots=sections.get("slots", []),
-        examples=sections.get("examples", []),
-        tsx_example=tsx_example,
-        notes=notes,
+def _jsx_to_tsx(code: str, component: str, props: list[dict]) -> str:
+    if not code or len(code) < 10:
+        return code
+    for pat, repl in [
+        (r"[A-Za-z]+\.propTypes\s*=\s*\{[^}]*\}", ""),
+        (r"[A-Za-z]+\.defaultProps\s*=\s*\{[^}]*\}", ""),
+    ]:
+        code = re.sub(pat, repl, code, flags=re.DOTALL)
+    code = re.sub(
+        rf"(const\s+{component})\s*=\s*\((.*?)\)\s*=>",
+        rf"\1: React.FC<{component}Props> = (\2) =>",
+        code, flags=re.DOTALL,
     )
+    code = re.sub(
+        rf"(function\s+{component})\s*\((.*?)\)\s*\{{",
+        rf"\1(\2: {component}Props): JSX.Element {{",
+        code, flags=re.DOTALL,
+    )
+    if props and f"interface {component}Props" not in code:
+        lines = [f"  {p['name']}{'?' if not p.get('required') else ''}: {p['ts_type']};" for p in props[:15]]
+        code = f"interface {component}Props {{\n" + "\n".join(lines) + "\n}\n\n" + code
+    if "import React" not in code and "from 'react'" not in code:
+        code = "import React from 'react';\n" + code
+    code = code.replace(".jsx", ".tsx")
+    code = re.sub(r"useState\(\)", "useState<unknown>()", code)
+    code = re.sub(r"useState\(null\)", "useState<unknown>(null)", code)
+    return re.sub(r"\n{3,}", "\n\n", code).strip()
+
+def build_import(component: str, slug: str) -> str:
+    names = {component}
+    for p in slug.replace("-", " ").title().split():
+        names.add(p)
+    return f"import {{ {', '.join(sorted(names))} }} from 'framework7-react';"
+
+def page_url(slug: str, category: str) -> str:
+    if slug == "introduction":
+        return "https://framework7.io/docs/introduction.html"
+    return f"https://framework7.io/react/{slug}.html"
 
 # ── Artifact writers ──────────────────────────────────────────────────────────
 
 def to_id(category: str, slug: str) -> str:
     return f"{'core' if category == 'core' else 'component'}:{slug}"
 
-def doc_to_item(slug: str, category: str, doc: dict) -> dict:
-    title   = doc.get("component") or "".join(w.capitalize() for w in slug.split("-"))
+def doc_to_manifest_item(slug: str, category: str, doc: dict) -> dict:
+    title   = doc.get("component", "".join(w.capitalize() for w in slug.split("-")))
     summary = (doc.get("description") or "").strip() or f"Framework7 React {title} documentation."
-    keywords = sorted(set(
-        [slug, title, "framework7", "react", "typescript", "tsx"] +
-        [p.get("name", "") for p in doc.get("props", []) if isinstance(p, dict)]
-    ))
+    prop_names = [p.get("name", "") for p in doc.get("props", []) if isinstance(p, dict)]
+    keywords = sorted(set([slug, title, "framework7", "react", "typescript", "tsx"] + prop_names))
     return {
         "id": to_id(category, slug), "slug": slug, "title": title,
         "category": category, "summary": summary,
         "keywords": [k for k in keywords if k],
         "aliases": [slug.replace("-", ""), title.lower()],
-        "url": doc.get("url"),
+        "url": doc.get("url", page_url(slug, category)),
         "retrieval_text": "\n".join(filter(None, [
             summary,
-            "Props: " + ", ".join(p.get("name", "") for p in doc.get("props", [])[:30] if isinstance(p, dict)),
+            "Props: "  + ", ".join(prop_names[:30]),
             "Events: " + ", ".join(e.get("name", "") for e in doc.get("events", [])[:30] if isinstance(e, dict)),
         ])).strip(),
     }
@@ -641,28 +629,30 @@ def write_artifacts(output: dict) -> None:
         for slug, item in output.get(bucket, {}).items():
             if not isinstance(item, dict) or "error" in item:
                 continue
-            doc_item = doc_to_item(slug, category, item)
+            mi = doc_to_manifest_item(slug, category, item)
             docs.append({
-                **doc_item,
-                "props": item.get("props", []),
-                "events": item.get("events", []),
-                "notes": item.get("notes", []),
+                **mi,
+                "props":       item.get("props", []),
+                "events":      item.get("events", []),
+                "notes":       item.get("notes", []),
                 "tsx_example": item.get("tsx_example", ""),
                 "content": "\n".join(filter(None, [
                     item.get("description", ""),
                     "Methods: " + ", ".join(item.get("methods", [])) if item.get("methods") else "",
-                    "Slots: "   + ", ".join(item.get("slots", []))   if item.get("slots") else "",
+                    "Slots: "   + ", ".join(item.get("slots",   [])) if item.get("slots")   else "",
                 ])).strip(),
             })
     docs.sort(key=lambda d: d["id"])
-    manifest_items = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords")} for d in docs]
-    search_items   = [{k: d[k] for k in ("id", "slug", "title", "category", "summary", "keywords", "aliases", "url", "retrieval_text")} for d in docs]
+    mkeys = ("id", "slug", "title", "category", "summary", "keywords")
+    skeys = ("id", "slug", "title", "category", "summary", "keywords", "aliases", "url", "retrieval_text")
+    manifest_items = [{k: d[k] for k in mkeys} for d in docs]
+    search_items   = [{k: d[k] for k in skeys} for d in docs]
     knowledge = {"version": version, "generatedAt": generated_at, "count": len(docs), "docs": docs}
     manifest  = {
         "version": version, "generatedAt": generated_at,
         "documentCount": len(docs),
         "componentCount": sum(1 for d in docs if d["category"] == "component"),
-        "coreCount": sum(1 for d in docs if d["category"] == "core"),
+        "coreCount":      sum(1 for d in docs if d["category"] == "core"),
         "count": len(docs), "items": manifest_items,
     }
     search_index = {"version": version, "generatedAt": generated_at, "count": len(search_items), "items": search_items}
@@ -671,7 +661,8 @@ def write_artifacts(output: dict) -> None:
         "version": version, "generatedAt": generated_at, "documentCount": len(docs),
         "checksum": checksum, "buildId": generated_at,
         "stats": {
-            "components": manifest["componentCount"], "core": manifest["coreCount"],
+            "components":  manifest["componentCount"],
+            "core":        manifest["coreCount"],
             "totalProps":  sum(len(d.get("props",  [])) for d in docs),
             "totalEvents": sum(len(d.get("events", [])) for d in docs),
         },
@@ -681,74 +672,80 @@ def write_artifacts(output: dict) -> None:
         "knowledge.json": knowledge, "manifest.json": manifest,
         "search-index.json": search_index, "metadata.json": metadata, "kv-bulk.json": kv_bulk,
     }
-    for artifact in ARTIFACT_FILES:
-        (DATA_DIR / artifact).write_text(
-            json.dumps(payloads[artifact], indent=2, ensure_ascii=False), encoding="utf-8"
+    for name in ARTIFACT_FILES:
+        (DATA_DIR / name).write_text(
+            json.dumps(payloads[name], indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-async def process_all(page, output: dict) -> None:
-    total = len(URLS)
-    for i, (slug, url, category) in enumerate(URLS, 1):
-        bucket = "core_docs" if category == "core" else "components"
-        print(f"[{i:02d}/{total}] {slug}", end="  ", flush=True)
-        try:
-            html = await fetch_html(url, page)
-            print(f"scraped({len(html)//1024}KB)", end="  ", flush=True)
-        except Exception as e:
-            print(f"SCRAPE FAIL: {e}")
-            output[bucket][slug] = {"error": "scrape_failed", "url": url, "detail": str(e)}
-            continue
-        try:
-            doc = assemble(slug, url, category, html)
-            output[bucket][slug] = doc.model_dump(exclude={"slug", "category"})
-            print(f"props={len(doc.props)} events={len(doc.events)}  ✓")
-        except Exception as e:
-            print(f"ASSEMBLE FAIL: {e}")
-            output[bucket][slug] = {"error": "assemble_failed", "url": url, "detail": str(e)}
-        if i % 10 == 0:
-            write_artifacts(output)
-            print(f"  ── checkpoint {i}/{total} ──")
-
-async def main() -> None:
+def main() -> None:
     output: dict = {
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "source": "framework7.io",
+            "source": "github.com/framework7io/framework7-website (raw pug)",
             "target_stack": "React + TypeScript (TSX)",
-            "total_pages": len(URLS),
+            "total_pages": len(PAGES),
         },
         "core_docs": {}, "components": {},
     }
 
-    write_artifacts(output)  # empty init
+    total = len(PAGES)
+    for i, (slug, raw_url, category) in enumerate(PAGES, 1):
+        bucket = "core_docs" if category == "core" else "components"
+        print(f"[{i:02d}/{total}] {slug}", end="  ", flush=True)
+        try:
+            source = fetch_raw(raw_url)
+        except Exception as e:
+            print(f"FETCH FAIL: {e}")
+            output[bucket][slug] = {"error": "fetch_failed", "url": page_url(slug, category), "detail": str(e)}
+            continue
+        try:
+            parsed = parse_pug(source, slug)
+            # Validate through pydantic
+            props  = []
+            for p in parsed["props"]:
+                try:
+                    props.append(Prop(**p).model_dump())
+                except Exception:
+                    pass
+            events = []
+            for e in parsed["events"]:
+                try:
+                    events.append(EventEntry(**e).model_dump())
+                except Exception:
+                    pass
+            url = page_url(slug, category)
+            output[bucket][slug] = {
+                "url": url,
+                "component":        parsed["component"],
+                "description":      parsed["description"],
+                "import_statement": build_import(parsed["component"], slug),
+                "props":   props,
+                "events":  events,
+                "methods": parsed["methods"],
+                "slots":   parsed["slots"],
+                "tsx_example": parsed["tsx_example"],
+                "notes":   parsed["notes"],
+            }
+            print(f"props={len(props)} events={len(events)}  ✓")
+        except Exception as e:
+            print(f"PARSE FAIL: {e}")
+            output[bucket][slug] = {"error": "parse_failed", "url": page_url(slug, category), "detail": str(e)}
 
-    if async_playwright is None:
-        raise RuntimeError("Playwright is required — site is Cloudflare-protected")
-
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(headless=True)
-        ctx = await browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (X11; Linux x86_64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/124.0.0.0 Safari/537.36"
-            ),
-            java_script_enabled=True,
-        )
-        await ctx.route(
-            re.compile(r"\.(png|jpg|jpeg|gif|webp|svg|woff2?|ttf|eot|mp4|mp3|ico)(\?.*)?$"),
-            lambda r: r.abort()
-        )
-        page = await ctx.new_page()
-        await process_all(page, output)
-        await browser.close()
+        if i % 15 == 0:
+            write_artifacts(output)
+            print(f"  ── checkpoint {i}/{total} ──")
 
     write_artifacts(output)
+
+    k = json.loads((DATA_DIR / "knowledge.json").read_text())
+    total_props  = sum(len(d.get("props",  [])) for d in k["docs"])
+    total_events = sum(len(d.get("events", [])) for d in k["docs"])
     print(f"\n{'─'*56}")
-    print(f"Done.  core={len(output['core_docs'])}  components={len(output['components'])}")
-    print(f"Output → {(DATA_DIR / 'knowledge.json').resolve()}")
+    print(f"Done.  docs={k['count']}  props={total_props}  events={total_events}")
+    if total_props == 0:
+        raise SystemExit("ERROR: zero props — check parser")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
