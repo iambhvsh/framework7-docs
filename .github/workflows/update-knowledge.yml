@@ -12,8 +12,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +31,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r actions/requirements.txt
+
+      - name: Install Playwright browser
+        run: |
+          python -m playwright install --with-deps chromium
 
       - name: Build knowledge artifacts
         run: |
@@ -48,8 +54,10 @@ jobs:
             echo "No changes"
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add actions/data/*.json
           git commit -m "chore(data): update Framework7 knowledge artifacts"
           git push
