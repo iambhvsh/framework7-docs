@@ -1,0 +1,5 @@
+actions/data/knowledge.json merge=ours
+actions/data/manifest.json merge=ours
+actions/data/search-index.json merge=ours
+actions/data/metadata.json merge=ours
+actions/data/kv-bulk.json merge=ours

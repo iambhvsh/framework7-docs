@@ -27,7 +27,10 @@ from pathlib import Path
 from typing import Optional
 
 from bs4 import BeautifulSoup
-from playwright.async_api import async_playwright
+try:
+    from playwright.async_api import async_playwright
+except Exception:
+    async_playwright = None
 import trafilatura
 from pydantic import BaseModel, field_validator
 from urllib.request import Request, urlopen
@@ -863,6 +866,8 @@ async def main() -> None:
     browser = None
     page = None
     try:
+        if async_playwright is None:
+            raise RuntimeError("Playwright is not installed; using urllib fallback")
         async with async_playwright() as pw:
             browser = await pw.chromium.launch(headless=True)
             ctx = await browser.new_context(
@@ -914,7 +919,7 @@ async def main() -> None:
     comp_n  = len(output["components"])
     print(f"\n{'─'*56}")
     print(f"Done.  core={core_n}  components={comp_n}")
-    print(f"Output → {(DATA_DIR / "knowledge.json").resolve()}")
+    print(f"Output → {(DATA_DIR / 'knowledge.json').resolve()}")
 
 
 if __name__ == "__main__":
