@@ -35,6 +35,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r actions/requirements.txt
 
+      - name: Install Playwright Chromium
+        run: |
+          python -m playwright install --with-deps chromium
 
       - name: Build knowledge artifacts
         run: |
@@ -47,6 +50,7 @@ jobs:
           test -f actions/data/search-index.json
           test -f actions/data/metadata.json
           test -f actions/data/kv-bulk.json
+
           python -m json.tool actions/data/knowledge.json > /dev/null
           python -m json.tool actions/data/manifest.json > /dev/null
           python -m json.tool actions/data/search-index.json > /dev/null
@@ -63,6 +67,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add actions/data/knowledge.json actions/data/manifest.json actions/data/search-index.json actions/data/metadata.json actions/data/kv-bulk.json
+          git add \
+            actions/data/knowledge.json \
+            actions/data/manifest.json \
+            actions/data/search-index.json \
+            actions/data/metadata.json \
+            actions/data/kv-bulk.json
+
           git commit -m "chore(data): update Framework7 knowledge artifacts"
           git push
