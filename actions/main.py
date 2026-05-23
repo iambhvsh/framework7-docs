@@ -219,7 +219,7 @@ async def fetch_html(url: str, page) -> str:
     ck = CACHE_DIR / (hashlib.md5(url.encode()).hexdigest() + ".html")
     if ck.exists():
         return ck.read_text(encoding="utf-8")
-    await page.goto(url, wait_until="networkidle", timeout=30_000)
+    await page.goto(url, wait_until="networkidle", timeout=60000)
     await page.wait_for_timeout(600)
     html = await page.content()
     ck.write_text(html, encoding="utf-8")
