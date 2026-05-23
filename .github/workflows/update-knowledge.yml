@@ -38,26 +38,18 @@ jobs:
           path: /home/runner/.cache/ms-playwright
           key: playwright-chromium-${{ hashFiles('actions/requirements.txt') }}
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r actions/requirements.txt
 
-      - name: Install Playwright Chromium
+      - name: Install Playwright Chromium (browser binary)
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: python -m playwright install --with-deps chromium
 
-      - name: Install Playwright system deps only (cached browsers)
+      - name: Install Playwright system deps only (browser cached)
         if: steps.playwright-cache.outputs.cache-hit == 'true'
         run: python -m playwright install-deps chromium
-
-      - name: Cache scrape HTML
-        uses: actions/cache@v4
-        with:
-          path: ~/.f7_cache
-          key: f7-html-cache-${{ github.run_id }}
-          restore-keys: |
-            f7-html-cache-
 
       - name: Build knowledge artifacts
         run: python actions/main.py
@@ -65,8 +57,20 @@ jobs:
       - name: Validate artifacts
         run: |
           for f in knowledge.json manifest.json search-index.json metadata.json kv-bulk.json; do
-            test -f "actions/data/$f" && python -m json.tool "actions/data/$f" > /dev/null
+            test -f "actions/data/$f" || { echo "Missing: $f"; exit 1; }
+            python -m json.tool "actions/data/$f" > /dev/null || { echo "Invalid JSON: $f"; exit 1; }
           done
+          python - <<'EOF'
+          import json, sys
+          k = json.load(open("actions/data/knowledge.json"))
+          docs = k.get("docs", [])
+          total_props  = sum(len(d.get("props",  [])) for d in docs)
+          total_events = sum(len(d.get("events", [])) for d in docs)
+          print(f"docs={len(docs)}  props={total_props}  events={total_events}")
+          if total_props == 0:
+              print("ERROR: zero props extracted — scraping likely failed", file=sys.stderr)
+              sys.exit(1)
+          EOF
 
       - name: Commit if changed
         run: |
@@ -76,8 +80,11 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add actions/data/knowledge.json actions/data/manifest.json \
-                  actions/data/search-index.json actions/data/metadata.json \
-                  actions/data/kv-bulk.json
+          git add \
+            actions/data/knowledge.json \
+            actions/data/manifest.json \
+            actions/data/search-index.json \
+            actions/data/metadata.json \
+            actions/data/kv-bulk.json
           git commit -m "chore(data): update Framework7 knowledge artifacts"
           git push
