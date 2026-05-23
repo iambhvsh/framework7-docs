@@ -1,7 +1,13 @@
-import type { KnowledgeDoc } from "./types";
-import { buildJSONResponse, sanitizeQuery, withCORS } from "./cache";
-import { searchDocsWithScores } from "./search";
-import { getKnowledge, getKnowledgeDocById, getManifest, getMetadata, getSearchIndex } from "./storage";
+import type { KnowledgeDoc } from "../src/types";
+import { buildJSONResponse, sanitizeQuery, withCORS } from "../src/cache";
+import { searchDocsWithScores } from "../src/search";
+import {
+  getKnowledge,
+  getKnowledgeDocById,
+  getManifest,
+  getMetadata,
+  getSearchIndex,
+} from "../src/storage";
 
 export const config = {
   runtime: "edge",
@@ -66,11 +72,13 @@ export default async function handler(req: Request): Promise<Response> {
 
     if (path === "/metadata") {
       const metadata = await getMetadata();
-      const checksum = typeof metadata.checksum === "string"
-        ? metadata.checksum
-        : typeof metadata.checksums?.knowledge_sha256 === "string"
-        ? metadata.checksums.knowledge_sha256
-        : undefined;
+      const checksum =
+        typeof metadata.checksum === "string"
+          ? metadata.checksum
+          : typeof metadata.checksums?.knowledge_sha256 === "string"
+            ? metadata.checksums.knowledge_sha256
+            : undefined;
+
       const etag = checksum ? `W/"${checksum}"` : undefined;
       return buildJSONResponse(req, metadata, 300, 200, etag);
     }
@@ -92,6 +100,7 @@ export default async function handler(req: Request): Promise<Response> {
     if (path === "/search") {
       const q = sanitizeQuery(url.searchParams.get("q"));
       if (!q) return badRequest(req, "Missing or invalid q parameter");
+
       const normalizedQ = q.toLowerCase();
 
       const rawLimit = Number(url.searchParams.get("limit") || "10");
@@ -100,8 +109,10 @@ export default async function handler(req: Request): Promise<Response> {
       const cacheUrl = new URL(req.url);
       cacheUrl.searchParams.set("q", normalizedQ);
       cacheUrl.searchParams.set("limit", String(limit));
+
       const cacheKey = new Request(cacheUrl.toString(), { method: "GET" });
       const cache = (caches as any).default as Cache;
+
       if (cache) {
         const cached = await cache.match(cacheKey);
         if (cached) return cached;
@@ -110,7 +121,6 @@ export default async function handler(req: Request): Promise<Response> {
       const index = await getSearchIndex();
       const matches = searchDocsWithScores(index.items, normalizedQ, limit);
 
-      // LLM-optimized compact response.
       const response = {
         query: normalizedQ,
         count: matches.length,
@@ -123,26 +133,30 @@ export default async function handler(req: Request): Promise<Response> {
           score,
         })),
       };
+
       const out = buildJSONResponse(req, response, 600);
+
       if (cache) {
         await cache.put(cacheKey, out.clone());
       }
+
       return out;
     }
 
     if (path.startsWith("/knowledge/")) {
       const id = decodeURIComponent(path.slice("/knowledge/".length));
+
       if (!/^[a-z0-9:_-]{2,120}$/i.test(id)) {
         return badRequest(req, "Invalid id format");
       }
 
-      // Fast path: document stored under its own KV key.
       let doc = (await getKnowledgeDocById(id)) as KnowledgeDoc | null;
-      // Backward-compatible fallback if per-doc keys are not uploaded yet.
+
       if (!doc) {
         const knowledge = await getKnowledge();
         doc = knowledge.docs.find((d: KnowledgeDoc) => d.id === id) ?? null;
       }
+
       if (!doc) return notFound(req);
 
       return buildJSONResponse(req, doc, 86400);
@@ -151,6 +165,16 @@ export default async function handler(req: Request): Promise<Response> {
     return notFound(req);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unexpected error";
-    return buildJSONResponse(req, { error: true, message: "Internal error", detail: message }, 30, 500);
+
+    return buildJSONResponse(
+      req,
+      {
+        error: true,
+        message: "Internal error",
+        detail: message,
+      },
+      30,
+      500,
+    );
   }
 }
