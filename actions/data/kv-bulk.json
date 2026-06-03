@@ -1,7 +1,7 @@
 {
   "manifest": {
     "version": "v9",
-    "generatedAt": "2026-06-02T02:47:28.534522+00:00",
+    "generatedAt": "2026-06-03T02:56:10.484464+00:00",
     "documentCount": 75,
     "componentCount": 67,
     "coreCount": 8,
@@ -1750,7 +1750,7 @@
   },
   "searchIndex": {
     "version": "v9",
-    "generatedAt": "2026-06-02T02:47:28.534522+00:00",
+    "generatedAt": "2026-06-03T02:56:10.484464+00:00",
     "count": 75,
     "items": [
       {
@@ -3946,10 +3946,10 @@
   },
   "metadata": {
     "version": "v9",
-    "generatedAt": "2026-06-02T02:47:28.534522+00:00",
+    "generatedAt": "2026-06-03T02:56:10.484464+00:00",
     "documentCount": 75,
-    "checksum": "323c03fa0c56aaaa555b61c0047d3688aa243efc28d8480168102455f5f41f86",
-    "buildId": "2026-06-02T02:47:28.534522+00:00",
+    "checksum": "400504e8a4783a89e64ba1d461c05ac180bdd5488edf71f08d3b4adf2c9da750",
+    "buildId": "2026-06-03T02:56:10.484464+00:00",
     "stats": {
       "components": 67,
       "core": 8,
@@ -3959,7 +3959,7 @@
   },
   "knowledge": {
     "version": "v9",
-    "generatedAt": "2026-06-02T02:47:28.534522+00:00",
+    "generatedAt": "2026-06-03T02:56:10.484464+00:00",
     "count": 75,
     "docs": [
       {
